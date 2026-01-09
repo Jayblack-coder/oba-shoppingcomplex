@@ -32,7 +32,14 @@ export default function Navbar() {
 
   return (
     <>
-      <AppBar position="sticky" color="primary">
+      <AppBar
+        position="sticky"
+        sx={{
+          bgcolor: "#5C2D0C", // dark brown background
+          color: "#fff8f2", // soft white text
+          boxShadow: "0px 2px 10px rgba(0,0,0,0.1)",
+        }}
+      >
         <Toolbar>
           {/* Brand / Logo */}
           <Typography
@@ -48,8 +55,15 @@ export default function Navbar() {
             {navItems.map((item) => (
               <Button
                 key={item.label}
-                color="inherit"
                 onClick={() => navigate(item.path)}
+                sx={{
+                  color: "#fff8f2",
+                  fontWeight: 600,
+                  "&:hover": {
+                    bgcolor: "#8B4513", // lighter brown hover
+                    color: "#fff8f2",
+                  },
+                }}
               >
                 {item.label}
               </Button>
@@ -58,8 +72,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Icon */}
           <IconButton
-            color="inherit"
-            sx={{ display: { xs: "block", md: "none" } }}
+            sx={{ display: { xs: "block", md: "none" }, color: "#fff8f2" }}
             onClick={() => setOpen(true)}
           >
             <MenuIcon />
@@ -69,15 +82,21 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-        <Box sx={{ width: 250 }}>
+        <Box sx={{ width: 250, bgcolor: "#5C2D0C", height: "100%" }}>
           <List>
             {navItems.map((item) => (
               <ListItem
                 button
                 key={item.label}
                 onClick={() => handleNavigate(item.path)}
+                sx={{
+                  "&:hover": { bgcolor: "#8B4513" },
+                }}
               >
-                <ListItemText primary={item.label} />
+                <ListItemText
+                  primary={item.label}
+                  sx={{ color: "#fff8f2", fontWeight: 600 }}
+                />
               </ListItem>
             ))}
           </List>

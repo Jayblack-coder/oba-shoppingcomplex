@@ -187,151 +187,193 @@ export default function Home() {
           Secure your space in one of Anambra State’s most modern commercial hubs.
         </Typography>
 
-        <Typography variant="h4" fontWeight="bold" textAlign="center" gutterBottom color="#5C2D0C">
-          Shop Categories & Pricing
+       {/* PRICE TIERS */}
+<Box sx={{ mt: 10 }}>
+  <Typography
+    variant="h4"
+    fontWeight="bold"
+    textAlign="center"
+    gutterBottom
+  >
+    Shop Categories & Pricing
+  </Typography>
+
+  <Typography textAlign="center" color="text.secondary" mb={6}>
+    Choose a shop size that fits your business goals
+  </Typography>
+
+  <Grid
+    container
+    spacing={4}
+    justifyContent="center"
+    alignItems="stretch" // ensures cards take equal height
+  >
+    {/* STANDARD SHOP */}
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      display="flex"
+      justifyContent="center"
+    >
+      <Box
+        sx={{
+          p: 4,
+          borderRadius: 3,
+          boxShadow: 3,
+          textAlign: "center",
+          width: "100%",
+          maxWidth: 320,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          backgroundColor: "#fff8f2",
+        }}
+      >
+        <StorefrontIcon sx={{ fontSize: 50, color: "#8B4513" }} />
+        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
+          Standard Shop
         </Typography>
-        <Typography textAlign="center" color="text.secondary" mb={6}>
-          Choose a shop size that fits your business goals
+        <Typography color="text.secondary" mt={1}>
+          Ideal for small-scale retail businesses
         </Typography>
+        <Typography variant="h4" fontWeight="bold" mt={3}>
+          ₦3.5M
+        </Typography>
+        <Typography color="text.secondary">One-time payment</Typography>
+        <Typography color="text.secondary" mt={1}>
+          Or ₦1.2M x 3 installments
+        </Typography>
+        <Button
+          variant="contained"
+          fullWidth
+          sx={{ mt: 4, bgcolor: "#8B4513", "&:hover": { bgcolor: "#5C2D0C" } }}
+          onClick={() => navigate("/contact")}
+        >
+          Buy Standard Shop
+        </Button>
+      </Box>
+    </Grid>
 
-        <Grid container spacing={4}>
-          {/* STANDARD SHOP */}
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                p: 4,
-                borderRadius: 3,
-                boxShadow: 3,
-                textAlign: "center",
-                height: "100%",
-                backgroundColor: "#fff",
-              }}
-            >
-              <StorefrontIcon sx={{ fontSize: 50, color: "#8B4513" }} />
-              <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
-                Standard Shop
-              </Typography>
-              <Typography color="text.secondary" mt={1}>
-                Ideal for small-scale retail businesses
-              </Typography>
+    {/* PREMIUM SHOP */}
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      display="flex"
+      justifyContent="center"
+    >
+      <Box
+        sx={{
+          p: 4,
+          borderRadius: 3,
+          boxShadow: 6,
+          textAlign: "center",
+          width: "100%",
+          maxWidth: 320,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          border: "2px solid #8B4513",
+          position: "relative",
+          backgroundColor: "#fff8f2",
+        }}
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: -14,
+            left: "50%",
+            transform: "translateX(-50%)",
+            bgcolor: "#8B4513",
+            color: "white",
+            px: 3,
+            py: 0.5,
+            borderRadius: 5,
+            fontSize: 12,
+            fontWeight: "bold",
+          }}
+        >
+          MOST POPULAR
+        </Box>
 
-              <Typography variant="h4" fontWeight="bold" mt={3}>
-                ₦3.5M
-              </Typography>
-              <Typography color="text.secondary">One-time payment</Typography>
-              <Typography color="text.secondary" mt={1}>
-                Or ₦1.2M x 3 installments
-              </Typography>
+        <StarIcon sx={{ fontSize: 50, color: "#8B4513" }} />
+        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
+          Premium Shop
+        </Typography>
+        <Typography color="text.secondary" mt={1}>
+          High visibility & heavy foot traffic
+        </Typography>
+        <Typography variant="h4" fontWeight="bold" mt={3}>
+          ₦5.5M
+        </Typography>
+        <Typography color="text.secondary">One-time payment</Typography>
+        <Typography color="text.secondary" mt={1}>
+          Or ₦2M x 3 installments
+        </Typography>
+        <Button
+          variant="contained"
+          fullWidth
+          sx={{ mt: 4, bgcolor: "#8B4513", "&:hover": { bgcolor: "#5C2D0C" } }}
+          onClick={() => navigate("/contact")}
+        >
+          Buy Premium Shop
+        </Button>
+      </Box>
+    </Grid>
 
-              <Button
-                variant="contained"
-                fullWidth
-                sx={{ mt: 4, bgcolor: "#8B4513", "&:hover": { bgcolor: "#5C2D0C" } }}
-                onClick={() => navigate("/contact")}
-              >
-                Buy Standard Shop
-              </Button>
-            </Box>
-          </Grid>
+    {/* EXECUTIVE SHOP */}
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      display="flex"
+      justifyContent="center"
+    >
+      <Box
+        sx={{
+          p: 4,
+          borderRadius: 3,
+          boxShadow: 3,
+          textAlign: "center",
+          width: "100%",
+          maxWidth: 320,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          backgroundColor: "#fff8f2",
+        }}
+      >
+        <BusinessCenterIcon sx={{ fontSize: 50, color: "#8B4513" }} />
+        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
+          Executive Shop
+        </Typography>
+        <Typography color="text.secondary" mt={1}>
+          Corner shops & flagship locations
+        </Typography>
+        <Typography variant="h4" fontWeight="bold" mt={3}>
+          ₦8.5M
+        </Typography>
+        <Typography color="text.secondary">One-time payment</Typography>
+        <Typography color="text.secondary" mt={1}>
+          Or ₦3M x 3 installments
+        </Typography>
+        <Button
+          variant="contained"
+          fullWidth
+          sx={{ mt: 4, bgcolor: "#8B4513", "&:hover": { bgcolor: "#5C2D0C" } }}
+          onClick={() => navigate("/contact")}
+        >
+          Buy Executive Shop
+        </Button>
+      </Box>
+    </Grid>
+  </Grid>
+</Box>
 
-          {/* PREMIUM SHOP */}
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                p: 4,
-                borderRadius: 3,
-                boxShadow: 6,
-                textAlign: "center",
-                height: "100%",
-                border: "2px solid #8B4513",
-                position: "relative",
-                backgroundColor: "#fff",
-              }}
-            >
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: -14,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  bgcolor: "#8B4513",
-                  color: "white",
-                  px: 3,
-                  py: 0.5,
-                  borderRadius: 5,
-                  fontSize: 12,
-                  fontWeight: "bold",
-                }}
-              >
-                MOST POPULAR
-              </Box>
-
-              <StarIcon sx={{ fontSize: 50, color: "#8B4513" }} />
-              <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
-                Premium Shop
-              </Typography>
-              <Typography color="text.secondary" mt={1}>
-                High visibility & heavy foot traffic
-              </Typography>
-
-              <Typography variant="h4" fontWeight="bold" mt={3}>
-                ₦5.5M
-              </Typography>
-              <Typography color="text.secondary">One-time payment</Typography>
-              <Typography color="text.secondary" mt={1}>
-                Or ₦2M x 3 installments
-              </Typography>
-
-              <Button
-                variant="contained"
-                fullWidth
-                sx={{ mt: 4, bgcolor: "#8B4513", "&:hover": { bgcolor: "#5C2D0C" } }}
-                onClick={() => navigate("/contact")}
-              >
-                Buy Premium Shop
-              </Button>
-            </Box>
-          </Grid>
-
-          {/* EXECUTIVE SHOP */}
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                p: 4,
-                borderRadius: 3,
-                boxShadow: 3,
-                textAlign: "center",
-                height: "100%",
-                backgroundColor: "#fff",
-              }}
-            >
-              <BusinessCenterIcon sx={{ fontSize: 50, color: "#8B4513" }} />
-              <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
-                Executive Shop
-              </Typography>
-              <Typography color="text.secondary" mt={1}>
-                Corner shops & flagship locations
-              </Typography>
-
-              <Typography variant="h4" fontWeight="bold" mt={3}>
-                ₦8.5M
-              </Typography>
-              <Typography color="text.secondary">One-time payment</Typography>
-              <Typography color="text.secondary" mt={1}>
-                Or ₦3M x 3 installments
-              </Typography>
-
-              <Button
-                variant="contained"
-                fullWidth
-                sx={{ mt: 4, bgcolor: "#8B4513", "&:hover": { bgcolor: "#5C2D0C" } }}
-                onClick={() => navigate("/contact")}
-              >
-                Buy Executive Shop
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
       </Box>
     </Box>
   );
