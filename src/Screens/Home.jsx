@@ -15,6 +15,18 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 
 export default function Home() {
   const navigate = useNavigate();
+const sectionImageStyle = {
+  width: "100%",
+  height: { xs: 220, md: 400 },
+  objectFit: "cover",
+  borderRadius: 3,
+  boxShadow: 3,
+  transition: "all 0.4s ease",
+  "&:hover": {
+    transform: "scale(1.03)",
+    boxShadow: 6,
+  },
+};
 
   return (
     <Box sx={{ bgcolor: "#fff8f2" }}>
@@ -37,7 +49,6 @@ export default function Home() {
     height: { xs: 220, md: 400 },
     objectFit: "cover",
     borderRadius: 3,
-    mt: 4,
     boxShadow: 3,
     transition: "all 0.4s ease",
     "&:hover": {
@@ -92,13 +103,21 @@ export default function Home() {
 <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
 
       {/* SECTION 1 – OVERVIEW */}
-      <Grid container spacing={4} alignItems="center" px={{ xs: 2, md: 8 }} py={6}>
-        <Grid item xs={12} md={6}>
-          <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C">
-            Modern Commerce Redefined
-          </Typography>
-          <Typography color="text.secondary">
-            The newly constructed shopping complex at Oba International Market,
+      <Grid
+  container
+  spacing={4}
+  justifyContent="center"
+  alignItems="center"
+  px={{ xs: 2, md: 8 }}
+  py={6}
+>
+  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+
+    <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C" textAlign="center">
+      Modern Commerce Redefined
+    </Typography>
+    <Typography color="text.secondary">
+      The newly constructed shopping complex at Oba International Market,
             developed by <strong>Unlimited Resources and Investment Limited</strong>,
             stands as a modern architectural marvel and a major boost to commerce
             in Anambra State.
@@ -106,61 +125,48 @@ export default function Home() {
             This expansive facility comprises <strong>1,250 well-designed shops</strong>,
             purpose-built to support thriving businesses and elevate the trading
             experience for both sellers and customers.
-          </Typography>
-        </Grid>
+    </Typography>
+  </Grid>
 
-        <Grid item xs={12} md={6}>
-          <Box
-            component="img"
-            src="/src/assets/shop2.jpeg"
-            alt="Shop layout"
-            sx={{
-    width: "100%",
-    height: { xs: 220, md: 400 },
-    objectFit: "cover",
-    borderRadius: 3,
-    mt: 4,
-    boxShadow: 3,
-    transition: "all 0.4s ease",
-    "&:hover": {
-      transform: "scale(1.03)",
-      boxShadow: 6,
-    },
-  }}
-          />
-        </Grid>
-      </Grid>
+  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+
+    <Box
+      component="img"
+      src="/src/assets/shop2.jpeg"
+      alt="Shop layout"
+      sx={sectionImageStyle}
+    />
+  </Grid>
+</Grid>
+
       <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
 
       {/* SECTION 2 – SECURITY & ACCESS */}
-      <Grid container spacing={4} alignItems="center" px={{ xs: 2, md: 8 }} py={6}>
-        <Grid item xs={12} md={6}>
-          <Box
-            component="img"
-            src="/src/assets/shop4.jpeg"
-            alt="Security"
-           sx={{
-    width: "100%",
-    height: { xs: 220, md: 400 },
-    objectFit: "cover",
-    borderRadius: 3,
-    mt: 4,
-    boxShadow: 3,
-    transition: "all 0.4s ease",
-    "&:hover": {
-      transform: "scale(1.03)",
-      boxShadow: 6,
-    },
-  }}
-          />
-        </Grid>
+      <Grid
+  container
+  spacing={4}
+  justifyContent="center"
+  alignItems="center"
+  px={{ xs: 2, md: 8 }}
+  py={6}
+>
+  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
-        <Grid item xs={12} md={6}>
-          <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C">
-            Security, Comfort & Accessibility
-          </Typography>
-          <Typography color="text.secondary">
-            Each shop is thoughtfully constructed with <strong>personal toilets</strong>,
+    <Box
+      component="img"
+      src="/src/assets/shop4.jpeg"
+      alt="Security"
+      sx={sectionImageStyle}
+    />
+  </Grid>
+
+  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+
+    <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C" textAlign="center">
+      Security, Comfort & Accessibility
+    </Typography>
+    <Typography color="text.secondary">
+      Each shop is thoughtfully constructed with <strong>personal toilets</strong>,
             ensuring hygiene and comfort for traders and visitors alike.
             <br /><br />
             The complex operates with <strong>24-hour professional security services</strong>,
@@ -168,13 +174,15 @@ export default function Home() {
             <br /><br />
             Well-planned entry and exit points, along with ample parking space,
             ensure smooth traffic flow for motorists and pedestrians.
-          </Typography>
-        </Grid>
-      </Grid>
+    </Typography>
+  </Grid>
+</Grid>
+
 <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
 
+
       {/* SECTION 3 – AMENITIES */}
-<Box px={{ xs: 2, md: 8 }} py={8}>
+<Box px={{ xs: 2, md: 8 }} py={8} justifyContent="center">
   <Typography
     variant="h5"
     fontWeight="bold"
