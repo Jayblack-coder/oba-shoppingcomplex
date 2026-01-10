@@ -26,13 +26,18 @@ export default function Home() {
           src="/src/assets/shop4.jpeg"
           alt="Oba Shopping Complex"
           sx={{
-            width: "100%",
-            height: { xs: 220, md: 400 },
-            objectFit: "cover",
-            borderRadius: 3,
-            mt: 4,
-            boxShadow: 3,
-          }}
+    width: "100%",
+    height: { xs: 220, md: 400 },
+    objectFit: "cover",
+    borderRadius: 3,
+    mt: 4,
+    boxShadow: 3,
+    transition: "all 0.4s ease",
+    "&:hover": {
+      transform: "scale(1.03)",
+      boxShadow: 6,
+    },
+  }}
         />
 
         {/* HERO CTA BUTTONS */}
@@ -102,7 +107,19 @@ export default function Home() {
             component="img"
             src="/src/assets/shop2.jpeg"
             alt="Shop layout"
-            sx={{ width: "100%", borderRadius: 3, objectFit: "cover", boxShadow: 2 }}
+            sx={{
+    width: "100%",
+    height: { xs: 220, md: 400 },
+    objectFit: "cover",
+    borderRadius: 3,
+    mt: 4,
+    boxShadow: 3,
+    transition: "all 0.4s ease",
+    "&:hover": {
+      transform: "scale(1.03)",
+      boxShadow: 6,
+    },
+  }}
           />
         </Grid>
       </Grid>
@@ -115,7 +132,19 @@ export default function Home() {
             component="img"
             src="/src/assets/shop4.jpeg"
             alt="Security"
-            sx={{ width: "100%", borderRadius: 3, objectFit: "cover", boxShadow: 2 }}
+           sx={{
+    width: "100%",
+    height: { xs: 220, md: 400 },
+    objectFit: "cover",
+    borderRadius: 3,
+    mt: 4,
+    boxShadow: 3,
+    transition: "all 0.4s ease",
+    "&:hover": {
+      transform: "scale(1.03)",
+      boxShadow: 6,
+    },
+  }}
           />
         </Grid>
 
@@ -160,7 +189,19 @@ export default function Home() {
               component="img"
               src="/src/assets/shop3.jpeg"
               alt="Amenities"
-              sx={{ width: "100%", borderRadius: 3, objectFit: "cover", boxShadow: 2 }}
+             sx={{
+    width: "100%",
+    height: { xs: 220, md: 400 },
+    objectFit: "cover",
+    borderRadius: 3,
+    mt: 4,
+    boxShadow: 3,
+    transition: "all 0.4s ease",
+    "&:hover": {
+      transform: "scale(1.03)",
+      boxShadow: 6,
+    },
+  }}
             />
           </Grid>
         </Grid>
