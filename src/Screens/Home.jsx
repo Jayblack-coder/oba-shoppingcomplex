@@ -3,6 +3,13 @@ import { useNavigate } from "react-router-dom";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import StarIcon from "@mui/icons-material/Star";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import LocalParkingIcon from "@mui/icons-material/LocalParking";
+import SecurityIcon from "@mui/icons-material/Security";
+import WaterDropIcon from "@mui/icons-material/WaterDrop";
+import FireExtinguisherIcon from "@mui/icons-material/FireExtinguisher";
+import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+
 
 
 
@@ -167,47 +174,128 @@ export default function Home() {
 <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
 
       {/* SECTION 3 – AMENITIES */}
-      <Box px={{ xs: 2, md: 8 }} py={6}>
-        <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C">
-          World-Class Amenities
-        </Typography>
+<Box px={{ xs: 2, md: 8 }} py={8}>
+  <Typography
+    variant="h5"
+    fontWeight="bold"
+    gutterBottom
+    color="#5C2D0C"
+    textAlign="center"
+  >
+    World-Class Amenities
+  </Typography>
 
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <Typography color="text.secondary">
-              • Wide and paved walkways for easy movement<br />
-              • Modern drainage systems to prevent flooding<br />
-              • Fire safety installations and emergency exits<br />
-              • Clean water supply for drinking and sanitation<br />
-              • Designated loading and unloading zones<br />
-              • Common relaxation and social areas
-            </Typography>
-          </Grid>
+  <Typography
+    textAlign="center"
+    color="text.secondary"
+    maxWidth="700px"
+    mx="auto"
+    mb={6}
+  >
+    Every detail has been carefully planned to ensure safety, comfort,
+    efficiency, and a pleasant trading experience.
+  </Typography>
 
-          <Grid item xs={12} md={6}>
+  <Grid container spacing={4} alignItems="center">
+    {/* ICON FEATURES */}
+    <Grid item xs={12} md={6}>
+      <Grid container spacing={3}>
+        {[
+          {
+            icon: <DirectionsWalkIcon />,
+            title: "Wide Walkways",
+            desc: "Spacious paved walkways for easy and safe movement",
+          },
+          {
+            icon: <SecurityIcon />,
+            title: "24/7 Security",
+            desc: "Professional surveillance and patrol services",
+          },
+          {
+            icon: <FireExtinguisherIcon />,
+            title: "Fire Safety Systems",
+            desc: "Installed fire alarms and emergency exits",
+          },
+          {
+            icon: <WaterDropIcon />,
+            title: "Clean Water Supply",
+            desc: "Reliable water access for sanitation and hygiene",
+          },
+          {
+            icon: <LocalParkingIcon />,
+            title: "Ample Parking",
+            desc: "Well-organized parking for traders and visitors",
+          },
+          {
+            icon: <LocalShippingIcon />,
+            title: "Loading Zones",
+            desc: "Designated areas for smooth loading & offloading",
+          },
+        ].map((item, index) => (
+          <Grid item xs={12} sm={6} md={6} key={index}>
+
             <Box
-              component="img"
-              src="/src/assets/shop3.jpeg"
-              alt="Amenities"
-             sx={{
-    width: "100%",
-    height: { xs: 220, md: 400 },
-    objectFit: "cover",
-    borderRadius: 3,
-    mt: 4,
-    boxShadow: 3,
-    transition: "all 0.4s ease",
-    "&:hover": {
-      transform: "scale(1.03)",
-      boxShadow: 6,
-    },
-  }}
-            />
-          </Grid>
-        </Grid>
-      </Box>
-<Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
+              sx={{
+                display: "flex",
+                gap: 2,
+                p: 3,
+                borderRadius: 3,
+                bgcolor: "#fff8f2",
+                boxShadow: 2,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                  boxShadow: 6,
+                },
+              }}
+            >
+              <Box
+                sx={{
+                  color: "#8B4513",
+                  fontSize: 36,
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                {item.icon}
+              </Box>
 
+              <Box>
+                <Typography fontWeight="bold" color="#5C2D0C">
+                  {item.title}
+                </Typography>
+                <Typography color="text.secondary" fontSize={14}>
+                  {item.desc}
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+    </Grid>
+
+    {/* IMAGE */}
+    <Grid item xs={12} md={6}>
+      <Box
+        component="img"
+        src="/src/assets/shop3.jpeg"
+        alt="Amenities"
+        sx={{
+          width: "100%",
+          borderRadius: 3,
+          objectFit: "cover",
+          boxShadow: 2,
+          transition: "all 0.4s ease",
+          "&:hover": {
+            transform: "scale(1.03)",
+            boxShadow: 6,
+          },
+        }}
+      />
+    </Grid>
+  </Grid>
+</Box>
+<Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
       {/* SECTION 4 – CONCLUSION */}
       <Box textAlign="center" px={{ xs: 2, md: 8 }} py={6}>
         <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C">
@@ -276,6 +364,12 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           backgroundColor: "#fff8f2",
+          transition: "all 0.3s ease",
+"&:hover": {
+  transform: "translateY(-6px)",
+  boxShadow: 8,
+},
+
         }}
       >
         <StorefrontIcon sx={{ fontSize: 50, color: "#8B4513" }} />
@@ -326,6 +420,12 @@ export default function Home() {
           border: "2px solid #8B4513",
           position: "relative",
           backgroundColor: "#fff8f2",
+          transition: "all 0.3s ease",
+"&:hover": {
+  transform: "translateY(-6px)",
+  boxShadow: 8,
+},
+
         }}
       >
         <Box
@@ -392,6 +492,12 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           backgroundColor: "#fff8f2",
+          transition: "all 0.3s ease",
+"&:hover": {
+  transform: "translateY(-6px)",
+  boxShadow: 8,
+},
+
         }}
       >
         <BusinessCenterIcon sx={{ fontSize: 50, color: "#8B4513" }} />
