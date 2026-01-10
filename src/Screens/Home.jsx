@@ -1,8 +1,10 @@
-import { Box, Typography, Grid, Button, Stack } from "@mui/material";
+import { Box, Typography, Grid, Button, Stack,Divider } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import StarIcon from "@mui/icons-material/Star";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+
+
 
 export default function Home() {
   const navigate = useNavigate();
@@ -75,6 +77,7 @@ export default function Home() {
           </Button>
         </Stack>
       </Box>
+<Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
 
       {/* SECTION 1 – OVERVIEW */}
       <Grid container spacing={4} alignItems="center" px={{ xs: 2, md: 8 }} py={6}>
@@ -103,6 +106,7 @@ export default function Home() {
           />
         </Grid>
       </Grid>
+      <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
 
       {/* SECTION 2 – SECURITY & ACCESS */}
       <Grid container spacing={4} alignItems="center" px={{ xs: 2, md: 8 }} py={6}>
@@ -131,6 +135,7 @@ export default function Home() {
           </Typography>
         </Grid>
       </Grid>
+<Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
 
       {/* SECTION 3 – AMENITIES */}
       <Box px={{ xs: 2, md: 8 }} py={6}>
@@ -160,6 +165,7 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
+<Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
 
       {/* SECTION 4 – CONCLUSION */}
       <Box textAlign="center" px={{ xs: 2, md: 8 }} py={6}>
