@@ -9,10 +9,13 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#2A1409",
+        backgroundImage: 'url("/src/assets/plain-brown.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         color: "#F5F0EC",
-        pt: 5,
-        pb: 3,
+        pt: 6,
+        pb: 4,
         px: { xs: 2, md: 8 },
       }}
     >
