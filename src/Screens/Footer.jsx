@@ -4,6 +4,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "framer-motion";
+import dark from "../assets/dark-brown.jpg";
 
 
 export default function Footer() {
@@ -16,7 +17,7 @@ export default function Footer() {
   viewport={{ once: true }}
   sx={{
     mt: "auto", 
-    backgroundImage: 'url("/src/assets/dark-brown.jpg")',
+    backgroundImage: `url(${dark})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     py: 4,
