@@ -9,7 +9,7 @@ import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import FireExtinguisherIcon from "@mui/icons-material/FireExtinguisher";
 import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import dark-brown from
+import dark from "../assets/dark.jpg";
 
 
 
@@ -30,7 +30,7 @@ const sectionImageStyle = {
 };
 const pageBackgroundStyle = {
   // minHeight: "100vh",
-  backgroundImage: 'url("/src/assets/mahogany.jpg")',
+  backgroundImage: `url(${dark})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
