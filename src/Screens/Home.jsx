@@ -131,8 +131,9 @@ const pageBackgroundStyle = {
   justifyContent="center"
   alignItems="center"
   px={{ xs: 2, md: 8 }}
-  py={6}
+  py={{ xs: 4, md: 5 }}
 >
+
   <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
     <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
@@ -162,7 +163,16 @@ const pageBackgroundStyle = {
   </Grid>
 </Grid>
 
-      <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
+      {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
+      <Divider
+  sx={{
+    my: { xs: 4, md: 5 },
+    borderColor: "rgba(139, 69, 19, 0.15)",
+    maxWidth: "85%",
+    mx: "auto",
+  }}
+/>
+
 
       {/* SECTION 2 – SECURITY & ACCESS */}
       <Grid
@@ -171,8 +181,9 @@ const pageBackgroundStyle = {
   justifyContent="center"
   alignItems="center"
   px={{ xs: 2, md: 8 }}
-  py={6}
+  py={{ xs: 4, md: 5 }}
 >
+
   <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
     <Box
@@ -202,11 +213,20 @@ const pageBackgroundStyle = {
   </Grid>
 </Grid>
 
-<Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
+{/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
+<Divider
+  sx={{
+    my: { xs: 4, md: 5 },
+    borderColor: "rgba(139, 69, 19, 0.15)",
+    maxWidth: "85%",
+    mx: "auto",
+  }}
+/>
+
 
 
       {/* SECTION 3 – AMENITIES */}
-<Box px={{ xs: 2, md: 8 }} py={8} justifyContent="center">
+<Box px={{ xs: 2, md: 8 }} py={{ xs: 4, md: 5 }} justifyContent="center">
   <Typography
     variant="h5"
     fontWeight="bold"
@@ -222,7 +242,7 @@ const pageBackgroundStyle = {
     sx={{ color: "#F5F0EC" }}
     maxWidth="700px"
     mx="auto"
-    mb={6}
+    mb={4}
   >
     Every detail has been carefully planned to ensure safety, comfort,
     efficiency, and a pleasant trading experience.
@@ -327,9 +347,23 @@ const pageBackgroundStyle = {
     </Grid>
   </Grid>
 </Box>
-<Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
+{/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
+<Divider
+  sx={{
+    my: { xs: 4, md: 5 },
+    borderColor: "rgba(139, 69, 19, 0.15)",
+    maxWidth: "85%",
+    mx: "auto",
+  }}
+/>
+
       {/* SECTION 4 – CONCLUSION */}
-      <Box textAlign="center" px={{ xs: 2, md: 8 }} py={6}>
+      <Box
+  textAlign="center"
+  px={{ xs: 2, md: 8 }}
+  py={{ xs: 4, md: 5 }}
+>
+
         <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127">
           A Vibrant Commercial Hub
         </Typography>
@@ -346,7 +380,8 @@ const pageBackgroundStyle = {
       </Box>
 
       {/* FINAL CTA & PRICE TIERS */}
-      <Box px={{ xs: 2, md: 8 }} py={8}>
+      <Box px={{ xs: 2, md: 8 }} py={{ xs: 5, md: 6 }}>
+
         <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
           Ready to Own a Shop at Oba International Market?
         </Typography>
@@ -409,7 +444,7 @@ const pageBackgroundStyle = {
         }}
       >
         <StorefrontIcon sx={{ fontSize: 50, color: "#8B4513" }} />
-        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
+        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#da7127" }}>
           Standard Shop
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}mt={1}>
@@ -485,7 +520,7 @@ const pageBackgroundStyle = {
         </Box>
 
         <StarIcon sx={{ fontSize: 50, color: "#8B4513" }} />
-        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
+        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#da7127" }}>
           Premium Shop
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
@@ -540,7 +575,7 @@ const pageBackgroundStyle = {
         }}
       >
         <BusinessCenterIcon sx={{ fontSize: 50, color: "#8B4513" }} />
-        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
+        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#da7127" }}>
           Executive Shop
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
