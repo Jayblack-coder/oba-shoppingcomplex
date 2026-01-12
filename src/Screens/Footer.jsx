@@ -46,7 +46,7 @@ export default function Footer() {
             mt={1}
           >
             <PhoneIcon sx={{ color: "#da7127" }} />
-            <Typography fontSize={14} color="white">
+            <Typography fontSize={14} color= "rgba(245,240,236,0.7)">
               +234 800 000 0000
             </Typography>
           </Stack>
