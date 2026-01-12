@@ -4,7 +4,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "framer-motion";
-import dark from "../assets/dark-brown.jpg";
+import dark from "../assets/dark.jpg";
 
 
 export default function Footer() {
