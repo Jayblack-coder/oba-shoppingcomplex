@@ -27,15 +27,28 @@ const sectionImageStyle = {
     boxShadow: 6,
   },
 };
+const pageBackgroundStyle = {
+  minHeight: "100vh",
+  backgroundImage: 'url("/src/assets/plain-brown.jpg")',
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundAttachment: { xs: "scroll", md: "fixed" },
+};
+
 
   return (
-    <Box sx={{ bgcolor: "#fff8f2" }}>
+    <Box sx={pageBackgroundStyle}>
+
       {/* HERO SECTION */}
-      <Box sx={{ px: { xs: 2, md: 8 }, py: 10, textAlign: "center" }}>
-        <Typography variant="h3" fontWeight="bold" gutterBottom color="#5C2D0C">
+      {/* <Box sx={{ px: { xs: 2, md: 8 }, py: 10, textAlign: "center" }}> */}
+      <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 6, md: 8 }, textAlign: "center" }}>
+
+        <Typography variant="h3" fontWeight="bold" gutterBottom color="#da7127">
           Oba International Market Shopping Complex
         </Typography>
-        <Typography variant="h6" color="text.secondary">
+        <Typography sx={{ color: "#F5F0EC" }}>
+
           A New Landmark of Trade and Comfort
         </Typography>
 
@@ -69,7 +82,7 @@ const sectionImageStyle = {
             variant="contained"
             size="large"
             sx={{
-              bgcolor: "#8B4513",
+              bgcolor: "#da7127",
               px: 4,
               py: 1.5,
               fontWeight: "bold",
@@ -88,9 +101,9 @@ const sectionImageStyle = {
               py: 1.5,
               fontWeight: "bold",
               borderColor: "#8B4513",
-              color: "#8B4513",
+              color: "#da7127",
               "&:hover": {
-                bgcolor: "#8B4513",
+                bgcolor: "#da7127",
                 color: "#fff",
               },
             }}
@@ -100,7 +113,16 @@ const sectionImageStyle = {
           </Button>
         </Stack>
       </Box>
-<Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
+{/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
+<Divider
+  sx={{
+    my: { xs: 4, md: 5 },
+    borderColor: "rgba(139, 69, 19, 0.15)",
+    maxWidth: "85%",
+    mx: "auto",
+  }}
+/>
+
 
       {/* SECTION 1 – OVERVIEW */}
       <Grid
@@ -113,12 +135,13 @@ const sectionImageStyle = {
 >
   <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
-    <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C" textAlign="center">
+    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
       Modern Commerce Redefined
     </Typography>
-    <Typography color="text.secondary">
+    <Typography sx={{ color: "#F5F0EC" }}>
+
       The newly constructed shopping complex at Oba International Market,
-            developed by <strong>Unlimited Resources and Investment Limited</strong>,
+            developed by <strong>Unlimited Resources and Investment Limited</strong>, through a <strong>TRIPARTITE AGREEMENT</strong> with the <strong>Anambra State Government,</strong> and Burkham Nig. Ltd,
             stands as a modern architectural marvel and a major boost to commerce
             in Anambra State.
             <br /><br />
@@ -162,10 +185,11 @@ const sectionImageStyle = {
 
   <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
-    <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C" textAlign="center">
+    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
       Security, Comfort & Accessibility
     </Typography>
-    <Typography color="text.secondary">
+    <Typography sx={{ color: "#F5F0EC" }}>
+
       Each shop is thoughtfully constructed with <strong>personal toilets</strong>,
             ensuring hygiene and comfort for traders and visitors alike.
             <br /><br />
@@ -187,7 +211,7 @@ const sectionImageStyle = {
     variant="h5"
     fontWeight="bold"
     gutterBottom
-    color="#5C2D0C"
+    color="#da7127"
     textAlign="center"
   >
     World-Class Amenities
@@ -195,7 +219,7 @@ const sectionImageStyle = {
 
   <Typography
     textAlign="center"
-    color="text.secondary"
+    sx={{ color: "#F5F0EC" }}
     maxWidth="700px"
     mx="auto"
     mb={6}
@@ -207,7 +231,7 @@ const sectionImageStyle = {
   <Grid container spacing={4} alignItems="center">
     {/* ICON FEATURES */}
     <Grid item xs={12} md={6}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3 } >
         {[
           {
             icon: <DirectionsWalkIcon />,
@@ -272,7 +296,7 @@ const sectionImageStyle = {
                 <Typography fontWeight="bold" color="#5C2D0C">
                   {item.title}
                 </Typography>
-                <Typography color="text.secondary" fontSize={14}>
+                <Typography sx={{ color: "#F5F0EC" }} fontSize={14}>
                   {item.desc}
                 </Typography>
               </Box>
@@ -306,10 +330,10 @@ const sectionImageStyle = {
 <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} />
       {/* SECTION 4 – CONCLUSION */}
       <Box textAlign="center" px={{ xs: 2, md: 8 }} py={6}>
-        <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C">
+        <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127">
           A Vibrant Commercial Hub
         </Typography>
-        <Typography color="text.secondary" maxWidth="900px" mx="auto">
+        <Typography sx={{ color: "#F5F0EC" }} maxWidth="900px" mx="auto">
           This development is more than a cluster of shops—it is a vibrant
           commercial hub that reflects visionary planning, quality construction,
           and a strong commitment to economic growth.
@@ -323,10 +347,10 @@ const sectionImageStyle = {
 
       {/* FINAL CTA & PRICE TIERS */}
       <Box px={{ xs: 2, md: 8 }} py={8}>
-        <Typography variant="h5" fontWeight="bold" gutterBottom color="#5C2D0C" textAlign="center">
+        <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
           Ready to Own a Shop at Oba International Market?
         </Typography>
-        <Typography color="text.secondary" textAlign="center" mb={6}>
+        <Typography sx={{ color: "#F5F0EC" }} textAlign="center" mb={6}>
           Secure your space in one of Anambra State’s most modern commercial hubs.
         </Typography>
 
@@ -336,12 +360,14 @@ const sectionImageStyle = {
     variant="h4"
     fontWeight="bold"
     textAlign="center"
-    gutterBottom
+    gutterBottom color="#da7127"
+    // gutterBottom
+    
   >
     Shop Categories & Pricing
   </Typography>
 
-  <Typography textAlign="center" color="text.secondary" mb={6}>
+  <Typography textAlign="center" sx={{ color: "#F5F0EC" }} mb={6}>
     Choose a shop size that fits your business goals
   </Typography>
 
@@ -371,7 +397,9 @@ const sectionImageStyle = {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          backgroundColor: "#fff8f2",
+          backgroundColor: "#3A1E0F"
+,
+          // backgroundColor: "#fff8f2",
           transition: "all 0.3s ease",
 "&:hover": {
   transform: "translateY(-6px)",
@@ -384,14 +412,14 @@ const sectionImageStyle = {
         <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
           Standard Shop
         </Typography>
-        <Typography color="text.secondary" mt={1}>
+        <Typography sx={{ color: "#F5F0EC" }}mt={1}>
           Ideal for small-scale retail businesses
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
           ₦3.5M
         </Typography>
-        <Typography color="text.secondary">One-time payment</Typography>
-        <Typography color="text.secondary" mt={1}>
+        <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
+        <Typography sx={{ color: "#F5F0EC" }} mt={1}>
           Or ₦1.2M x 3 installments
         </Typography>
         <Button
@@ -427,7 +455,9 @@ const sectionImageStyle = {
           alignItems: "center",
           border: "2px solid #8B4513",
           position: "relative",
-          backgroundColor: "#fff8f2",
+          backgroundColor: "#3A1E0F",
+
+          // backgroundColor: "#fff8f2",
           transition: "all 0.3s ease",
 "&:hover": {
   transform: "translateY(-6px)",
@@ -458,14 +488,14 @@ const sectionImageStyle = {
         <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
           Premium Shop
         </Typography>
-        <Typography color="text.secondary" mt={1}>
+        <Typography sx={{ color: "#F5F0EC" }} mt={1}>
           High visibility & heavy foot traffic
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
           ₦5.5M
         </Typography>
-        <Typography color="text.secondary">One-time payment</Typography>
-        <Typography color="text.secondary" mt={1}>
+        <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
+        <Typography sx={{ color: "#F5F0EC" }} mt={1}>
           Or ₦2M x 3 installments
         </Typography>
         <Button
@@ -499,7 +529,8 @@ const sectionImageStyle = {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          backgroundColor: "#fff8f2",
+          backgroundColor: "#3A1E0F"
+,
           transition: "all 0.3s ease",
 "&:hover": {
   transform: "translateY(-6px)",
@@ -512,14 +543,14 @@ const sectionImageStyle = {
         <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#5C2D0C" }}>
           Executive Shop
         </Typography>
-        <Typography color="text.secondary" mt={1}>
+        <Typography sx={{ color: "#F5F0EC" }} mt={1}>
           Corner shops & flagship locations
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
           ₦8.5M
         </Typography>
-        <Typography color="text.secondary">One-time payment</Typography>
-        <Typography color="text.secondary" mt={1}>
+        <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
+        <Typography sx={{ color: "#F5F0EC" }} mt={1}>
           Or ₦3M x 3 installments
         </Typography>
         <Button
