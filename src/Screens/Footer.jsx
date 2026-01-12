@@ -9,7 +9,13 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        backgroundImage: 'url("/src/assets/plain-brown.jpg")',
+        backgroundImage: `
+  linear-gradient(
+    rgba(42, 20, 9, 0.85),
+    rgba(42, 20, 9, 0.85)
+  ),
+  url("/src/assets/dark-brown.jpg")
+`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -59,15 +65,42 @@ export default function Footer() {
             justifyContent={{ xs: "center", md: "flex-end" }}
             mt={1}
           >
-            <IconButton href="https://wa.me/2348000000000" target="_blank">
-              <WhatsAppIcon sx={{ color: "#25D366" }} fontSize="large" />
-            </IconButton>
+            <IconButton
+  href="https://wa.me/2348000000000"
+  target="_blank"
+  sx={{
+    transition: "all 0.3s ease",
+    "&:hover": {
+      transform: "translateY(-4px) scale(1.05)",
+      boxShadow: "0 0 18px rgba(37, 211, 102, 0.8)",
+    },
+  }}
+>
+  <WhatsAppIcon sx={{ color: "#25D366" }} fontSize="large" />
+</IconButton>
 
-            <IconButton href="https://facebook.com" target="_blank">
+
+            <IconButton href="https://facebook.com" target="_blank"
+  sx={{
+    transition: "all 0.3s ease",
+    "&:hover": {
+      transform: "translateY(-4px) scale(1.05)",
+      boxShadow: "0 0 18px rgba(24, 119, 242, 0.8)",
+
+    },
+  }}>
               <FacebookIcon sx={{ color: "#1877F2" }} fontSize="large" />
             </IconButton>
 
-            <IconButton href="https://instagram.com" target="_blank">
+            <IconButton href="https://instagram.com" target="_blank"
+  sx={{
+    transition: "all 0.3s ease",
+    "&:hover": {
+      transform: "translateY(-4px) scale(1.05)",
+      boxShadow: "0 0 18px rgba(228, 64, 95, 0.8)",
+
+    },
+  }}>
               <InstagramIcon sx={{ color: "#E4405F" }} fontSize="large" />
             </IconButton>
           </Stack>
