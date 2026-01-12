@@ -29,7 +29,7 @@ const sectionImageStyle = {
 };
 const pageBackgroundStyle = {
   minHeight: "100vh",
-  backgroundImage: 'url("/src/assets/dark-brown.jpg")',
+  backgroundImage: 'url("/images/dark-brown.jpg")',
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
@@ -55,7 +55,7 @@ const pageBackgroundStyle = {
         {/* Hero Image */}
        <Box
   component="img"
-  src="/src/assets/shop4.jpeg"
+  src="/Images/shop4.jpeg"
   alt="Oba Shopping Complex"
   sx={{
     width: "100%",
@@ -168,7 +168,7 @@ const pageBackgroundStyle = {
 
     <Box
       component="img"
-      src="/src/assets/shop2.jpeg"
+      src="/Images/shop2.jpeg"
       alt="Shop layout"
       sx={sectionImageStyle}
     />
