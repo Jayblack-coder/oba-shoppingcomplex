@@ -200,7 +200,7 @@ const pageBackgroundStyle = {
 
     <Box
       component="img"
-      src="/src/assets/shop4.jpeg"
+      src="/Images/shop4.jpeg"
       alt="Security"
       sx={sectionImageStyle}
     />
@@ -342,7 +342,7 @@ const pageBackgroundStyle = {
     <Grid item xs={12} md={6}>
       <Box
         component="img"
-        src="/src/assets/shop3.jpeg"
+        src="/Images/shop3.jpeg"
         alt="Amenities"
         sx={{
           width: "100%",
