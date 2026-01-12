@@ -3,28 +3,29 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { motion } from "framer-motion";
+
 
 export default function Footer() {
   return (
-    <Box
-      component="footer"
-      sx={{
-        backgroundImage: `
-  linear-gradient(
-    rgba(42, 20, 9, 0.85),
-    rgba(42, 20, 9, 0.85)
-  ),
-  url("/src/assets/dark-brown.jpg")
-`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        color: "#F5F0EC",
-        pt: 6,
-        pb: 4,
-        px: { xs: 2, md: 8 },
-      }}
-    >
+   <Box
+  component={motion.footer}
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
+  sx={{
+    backgroundImage: 'url("/src/assets/dark-brown.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    color: "#F5F0EC",
+    pt: 6,
+    pb: 4,
+    px: { xs: 2, md: 8 },
+  }}
+>
+
       <Divider sx={{ mb: 4, borderColor: "rgba(218,113,39,0.3)" }} />
 
       <Stack
