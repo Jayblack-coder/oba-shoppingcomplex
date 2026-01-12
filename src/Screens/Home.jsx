@@ -29,11 +29,11 @@ const sectionImageStyle = {
 };
 const pageBackgroundStyle = {
   minHeight: "100vh",
-  backgroundImage: 'url("/src/assets/plain-brown.jpg")',
+  backgroundImage: 'url("/src/assets/dark-brown.jpg")',
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
-  backgroundAttachment: { xs: "scroll", md: "fixed" },
+  backgroundAttachment: { xs: "fixed", md: "fixed" },
 };
 
 
@@ -605,3 +605,5 @@ const pageBackgroundStyle = {
     </Box>
   );
 }
+
+

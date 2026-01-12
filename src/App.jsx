@@ -6,6 +6,7 @@ import About from "./Screens/About";
 import Services from "./Screens/Services";
 import Gallery from "./Screens/Gallery";
 import Contact from "./Screens/Contact";
+import Footer from "./Screens/Footer";
 
 export default function App() {
   return (
@@ -18,6 +19,8 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </>
   );
 }
+

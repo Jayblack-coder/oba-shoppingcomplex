@@ -1,0 +1,84 @@
+import { Box, Typography, Stack, IconButton, Divider } from "@mui/material";
+import PhoneIcon from "@mui/icons-material/Phone";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+
+export default function Footer() {
+  return (
+    <Box
+      component="footer"
+      sx={{
+        backgroundColor: "#2A1409",
+        color: "#F5F0EC",
+        pt: 5,
+        pb: 3,
+        px: { xs: 2, md: 8 },
+      }}
+    >
+      <Divider sx={{ mb: 4, borderColor: "rgba(218,113,39,0.3)" }} />
+
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        spacing={4}
+        justifyContent="space-between"
+        alignItems={{ xs: "center", md: "flex-start" }}
+      >
+        {/* CONTACT */}
+        <Box textAlign={{ xs: "center", md: "left" }}>
+          <Typography variant="h6" fontWeight="bold" color="#da7127">
+            Oba International Market
+          </Typography>
+
+          <Stack
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            justifyContent={{ xs: "center", md: "flex-start" }}
+            mt={1}
+          >
+            <PhoneIcon sx={{ color: "#da7127" }} />
+            <Typography fontSize={14}>
+              +234 800 000 0000
+            </Typography>
+          </Stack>
+        </Box>
+
+        {/* SOCIALS */}
+        <Box textAlign={{ xs: "center", md: "right" }}>
+          <Typography variant="h6" fontWeight="bold" color="#da7127">
+            Connect With Us
+          </Typography>
+
+          <Stack
+            direction="row"
+            spacing={2}
+            justifyContent={{ xs: "center", md: "flex-end" }}
+            mt={1}
+          >
+            <IconButton href="https://wa.me/2348000000000" target="_blank">
+              <WhatsAppIcon sx={{ color: "#25D366" }} fontSize="large" />
+            </IconButton>
+
+            <IconButton href="https://facebook.com" target="_blank">
+              <FacebookIcon sx={{ color: "#1877F2" }} fontSize="large" />
+            </IconButton>
+
+            <IconButton href="https://instagram.com" target="_blank">
+              <InstagramIcon sx={{ color: "#E4405F" }} fontSize="large" />
+            </IconButton>
+          </Stack>
+        </Box>
+      </Stack>
+
+      {/* COPYRIGHT */}
+      <Typography
+        textAlign="center"
+        fontSize={13}
+        sx={{ mt: 4, color: "rgba(245,240,236,0.7)" }}
+      >
+        © 2026 Ejimographics. All Rights Reserved.
+      </Typography>
+    </Box>
+  );
+}
