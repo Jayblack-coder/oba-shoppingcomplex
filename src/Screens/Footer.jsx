@@ -15,14 +15,11 @@ export default function Footer() {
   transition={{ duration: 0.8, ease: "easeOut" }}
   viewport={{ once: true }}
   sx={{
-    backgroundImage: 'url("/src/assets/dark-brown.jpg")',
+    mt: "auto", 
+    backgroundImage: 'url("/src/assets/footer-bg.jpg")',
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    color: "#F5F0EC",
-    pt: 6,
-    pb: 4,
-    px: { xs: 2, md: 8 },
+    py: 4,
   }}
 >
 

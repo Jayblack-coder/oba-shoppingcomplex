@@ -15,21 +15,26 @@ import Agreement from "./Screens/Agreement";
 
 export default function App() {
   return (
-    <>
-      <Navbar />
+    <Box
+    sx={{
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+    }}
+  >
+    <Navbar />
+
+    {/* Page Content */}
+    <Box sx={{ flex: 1 }}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/agreement" element={<TripartiteAgreement />} />
         <Route path="/contact" element={<Contact />} />
-        <Route
-  path="/tripartite-agreement"
-  element={<Agreement />}
-/>
       </Routes>
-      <Footer />
-    </>
+    </Box>
+
+    <Footer />
+  </Box>
   );
 }
 

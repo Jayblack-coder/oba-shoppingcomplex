@@ -52,23 +52,30 @@ export default function TripartiteAgreement() {
 
   return (
     <Box
-      sx={{
-  minHeight: "100vh",
-  backgroundImage: 'url("/src/assets/dark-brown.jpg")',
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundAttachment: { xs: "fixed", md: "fixed" },
-}}
-    >
+  sx={{
+    pt: { xs: 12, md: 16 }, 
+    pb: { xs: 10, md: 14 }, 
+    backgroundImage: 'url("/src/assets/dark-brown.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+  }}
+>
+
+
       {/* TITLE */}
       <Typography
-        variant="h4"
-        fontWeight="bold"
-        textAlign="center"
-        mb={2}
-        sx={{ color: "#da7127" }}
-      >
+  variant="h4"
+  fontWeight="bold"
+  textAlign="center"
+  mb={2}
+  sx={{
+    color: "#da7127",
+    animation: "fadeDown 0.8s ease",
+  }}
+>
+
         Tripartite Agreement
       </Typography>
 
