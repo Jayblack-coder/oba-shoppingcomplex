@@ -8,7 +8,7 @@ import Gallery from "./Screens/Gallery";
 import Contact from "./Screens/Contact";
 import Footer from "./Screens/Footer";
 // import Test from "./Screens/Test";
-import TripartiteAgreement from "./Screens/TripartiteAgreement";
+import Agreement from "./Screens/Agreement";
 
 
 
@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route
   path="/tripartite-agreement"
-  element={<TripartiteAgreement />}
+  element={<Agreement />}
 />
       </Routes>
       <Footer />

@@ -1,16 +1,67 @@
-import { Box, Typography, Grid } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Modal,
+  IconButton,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { useState, useEffect } from "react";
+
+const images = [
+  "/src/assets/agreement1.jpg",
+  "/src/assets/agreement2.jpg",
+  "/src/assets/agreement3.jpg",
+  "/src/assets/agreement4.jpg",
+];
 
 export default function TripartiteAgreement() {
+  const [open, setOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleOpen = (index) => {
+    setCurrentIndex(index);
+    setOpen(true);
+  };
+
+  const handleClose = () => setOpen(false);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!open) return;
+      if (e.key === "ArrowRight") handleNext();
+      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "Escape") handleClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
+
   return (
     <Box
       sx={{
-        minHeight: "100vh",
-        px: { xs: 2, md: 8 },
-        py: { xs: 6, md: 10 },
-        backgroundColor: "#2B150A", // dark brown theme
-      }}
+  minHeight: "100vh",
+  backgroundImage: 'url("/src/assets/dark-brown.jpg")',
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundAttachment: { xs: "fixed", md: "fixed" },
+}}
     >
-      {/* PAGE TITLE */}
+      {/* TITLE */}
       <Typography
         variant="h4"
         fontWeight="bold"
@@ -28,39 +79,122 @@ export default function TripartiteAgreement() {
         mb={6}
         sx={{ color: "#F5F0EC" }}
       >
-        Official tripartite agreement between the Oba International Market
-        Shopping Complex developers, traders, and the Anambra State Government.
+        Official tripartite agreement between Unlimited Resources and Investment Ltd, Anambra State Govenment and Burkham Nig. Ltd.
       </Typography>
 
       {/* IMAGE GRID */}
       <Grid container spacing={4} justifyContent="center">
-        {[
-          "/src/assets/agreement1.jpg",
-          "/src/assets/agreement2.jpg",
-          "/src/assets/agreement3.jpg",
-          "/src/assets/agreement4.jpg",
-        ].map((img, index) => (
+        {images.map((img, index) => (
           <Grid item xs={12} sm={6} md={3} key={index}>
             <Box
               component="img"
               src={img}
-              alt={`Tripartite Agreement ${index + 1}`}
+              alt={`Agreement ${index + 1}`}
+              onClick={() => handleOpen(index)}
               sx={{
                 width: "100%",
                 height: 260,
                 objectFit: "cover",
                 borderRadius: 3,
                 boxShadow: 6,
-                transition: "all 0.4s ease",
+                cursor: "pointer",
+                transition: "all 0.35s ease",
                 "&:hover": {
-                  transform: "scale(1.04)",
-                  boxShadow: "0 0 25px rgba(218,113,39,0.6)",
+                  transform: "scale(1.05)",
+                  boxShadow: "0 0 30px rgba(218,113,39,0.6)",
                 },
               }}
             />
           </Grid>
         ))}
       </Grid>
+
+      {/* LIGHTBOX MODAL */}
+      <Modal open={open} onClose={handleClose}>
+        <Box
+          sx={{
+            position: "fixed",
+            inset: 0,
+            bgcolor: "rgba(0,0,0,0.92)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {/* CLOSE */}
+          <IconButton
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              top: 20,
+              right: 20,
+              color: "#fff",
+              bgcolor: "rgba(255,255,255,0.1)",
+              "&:hover": { bgcolor: "#da7127" },
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+
+          {/* PREVIOUS */}
+          <IconButton
+            onClick={handlePrev}
+            sx={{
+              position: "absolute",
+              left: { xs: 10, md: 40 },
+              color: "#fff",
+              bgcolor: "rgba(255,255,255,0.1)",
+              "&:hover": { bgcolor: "#da7127" },
+            }}
+          >
+            <ArrowBackIosNewIcon />
+          </IconButton>
+
+          {/* IMAGE */}
+          <Box
+            component="img"
+            src={images[currentIndex]}
+            alt="Agreement Full View"
+            sx={{
+              maxWidth: "95%",
+              maxHeight: "90vh",
+              objectFit: "contain",
+              borderRadius: 2,
+              animation: "zoomIn 0.4s ease",
+            }}
+          />
+
+          {/* NEXT */}
+          <IconButton
+            onClick={handleNext}
+            sx={{
+              position: "absolute",
+              right: { xs: 10, md: 40 },
+              color: "#fff",
+              bgcolor: "rgba(255,255,255,0.1)",
+              "&:hover": { bgcolor: "#da7127" },
+            }}
+          >
+            <ArrowForwardIosIcon />
+          </IconButton>
+
+          {/* ZOOM ANIMATION */}
+          <style>
+            {`
+              @keyframes zoomIn {
+                from {
+                  transform: scale(0.85);
+                  opacity: 0;
+                }
+                to {
+                  transform: scale(1);
+                  opacity: 1;
+                }
+              }
+            `}
+          </style>
+        </Box>
+      </Modal>
     </Box>
   );
 }
