@@ -29,7 +29,7 @@ const sectionImageStyle = {
 };
 const pageBackgroundStyle = {
   // minHeight: "100vh",
-  backgroundImage: 'url("/images/dark-brown.jpg")',
+  backgroundImage: 'url("/images/mahogany.jpg")',
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
