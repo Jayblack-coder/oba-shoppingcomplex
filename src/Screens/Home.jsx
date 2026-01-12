@@ -28,7 +28,7 @@ const sectionImageStyle = {
   },
 };
 const pageBackgroundStyle = {
-  minHeight: "100vh",
+  // minHeight: "100vh",
   backgroundImage: 'url("/images/dark-brown.jpg")',
   backgroundSize: "cover",
   backgroundPosition: "center",

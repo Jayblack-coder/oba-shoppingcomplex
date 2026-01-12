@@ -26,7 +26,7 @@ export default function App() {
     <Navbar />
 
     {/* Page Content */}
-    <Box sx={{ flex: 1 }}>
+    <Box component="main" sx={{ flexGrow: 1 }}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tripartite-agreement" element={<Agreement />} />
