@@ -9,6 +9,7 @@ import Contact from "./Screens/Contact";
 import Footer from "./Screens/Footer";
 // import Test from "./Screens/Test";
 import Agreement from "./Screens/Agreement";
+import { Box } from "@mui/material";
 
 
 
@@ -28,8 +29,12 @@ export default function App() {
     <Box sx={{ flex: 1 }}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/agreement" element={<TripartiteAgreement />} />
+        <Route path="/agreement" element={<Agreement />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/gallery" element={<Gallery />} />
+        {/* <Route path="/test" element={<Test />} /> */}
       </Routes>
     </Box>
 
