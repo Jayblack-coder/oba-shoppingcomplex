@@ -7,6 +7,7 @@ import Services from "./Screens/Services";
 import Gallery from "./Screens/Gallery";
 import Contact from "./Screens/Contact";
 import Footer from "./Screens/Footer";
+// import Test from "./Screens/Test";
 
 export default function App() {
   return (

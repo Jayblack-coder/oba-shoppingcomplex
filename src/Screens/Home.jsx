@@ -53,23 +53,25 @@ const pageBackgroundStyle = {
         </Typography>
 
         {/* Hero Image */}
-        <Box
-          component="img"
-          src="/src/assets/shop4.jpeg"
-          alt="Oba Shopping Complex"
-          sx={{
+       <Box
+  component="img"
+  src="/src/assets/shop4.jpeg"
+  alt="Oba Shopping Complex"
+  sx={{
     width: "100%",
     height: { xs: 220, md: 400 },
     objectFit: "cover",
     borderRadius: 3,
     boxShadow: 3,
     transition: "all 0.4s ease",
+    mt: 4, // <-- add this line for spacing
     "&:hover": {
       transform: "scale(1.03)",
       boxShadow: 6,
     },
   }}
-        />
+/>
+
 
         {/* HERO CTA BUTTONS */}
         <Stack
