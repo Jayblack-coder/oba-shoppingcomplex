@@ -29,7 +29,7 @@ export default function App() {
     <Box sx={{ flex: 1 }}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/agreement" element={<Agreement />} />
+        <Route path="/tripartite-agreement" element={<Agreement />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />

@@ -16,7 +16,7 @@ export default function Footer() {
   viewport={{ once: true }}
   sx={{
     mt: "auto", 
-    backgroundImage: 'url("/src/assets/footer-bg.jpg")',
+    backgroundImage: 'url("/src/assets/dark-brown.jpg")',
     backgroundSize: "cover",
     backgroundPosition: "center",
     py: 4,
