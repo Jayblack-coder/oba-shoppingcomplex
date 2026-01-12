@@ -144,7 +144,17 @@ const pageBackgroundStyle = {
     <Typography sx={{ color: "#F5F0EC" }}>
 
       The newly constructed shopping complex at Oba International Market,
-            developed by <strong>Unlimited Resources and Investment Limited</strong>, through a <strong>TRIPARTITE AGREEMENT</strong> with the <strong>Anambra State Government,</strong> and Burkham Nig. Ltd,
+            developed by <strong>Unlimited Resources and Investment Limited</strong>, through a <Box
+    component="span"
+    sx={{
+      color: "#da7127",
+      fontWeight: "bold",
+      cursor: "pointer",
+      textDecoration: "underline",
+      "&:hover": { color: "#ff8c3a" },
+    }}
+    onClick={() => navigate("/tripartite-agreement")}
+  ><strong>TRIPARTITE AGREEMENT</strong> with the <strong>Anambra State Government,</strong></Box> and Burkham Nig. Ltd,
             stands as a modern architectural marvel and a major boost to commerce
             in Anambra State.
             <br /><br />
