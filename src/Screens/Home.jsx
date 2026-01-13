@@ -10,7 +10,7 @@ import FireExtinguisherIcon from "@mui/icons-material/FireExtinguisher";
 import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import dark from "../assets/dark.jpg";
-
+import HomeImageSlider from "../Components/HomeImageSlider";
 
 
 
@@ -52,6 +52,8 @@ const pageBackgroundStyle = {
 
           A New Landmark of Trade and Comfort
         </Typography>
+        
+<HomeImageSlider />
 
         {/* Hero Image */}
        <Box
