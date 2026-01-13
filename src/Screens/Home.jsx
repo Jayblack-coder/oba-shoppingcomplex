@@ -36,6 +36,11 @@ const pageBackgroundStyle = {
   backgroundRepeat: "no-repeat",
   backgroundAttachment: { xs: "fixed", md: "fixed" },
 };
+const contentWrapper = {
+  maxWidth: "1400px",
+  mx: "auto",
+  px: { xs: 2, md: 8 },
+};
 
 
   return (
@@ -136,13 +141,14 @@ const pageBackgroundStyle = {
 
 
       {/* SECTION 1 – OVERVIEW */}
+      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
       <Grid
   container
   spacing={4}
   justifyContent="center"
   alignItems="center"
-  px={{ xs: 2, md: 8 }}
-  py={{ xs: 4, md: 5 }}
+  // px={{ xs: 2, md: 8 }}
+  // py={{ xs: 4, md: 5 }}
 >
 
   <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -179,11 +185,11 @@ const pageBackgroundStyle = {
       component="img"
       src="/Images/shop2.jpeg"
       alt="Shop layout"
-      sx={sectionImageStyle}
+      sx={{ ...sectionImageStyle, mx: "auto" }} 
     />
   </Grid>
 </Grid>
-
+</Box>
       {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
       <Divider
   sx={{
@@ -196,13 +202,14 @@ const pageBackgroundStyle = {
 
 
       {/* SECTION 2 – SECURITY & ACCESS */}
-      <Grid
+      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
+         <Grid
   container
   spacing={4}
   justifyContent="center"
   alignItems="center"
-  px={{ xs: 2, md: 8 }}
-  py={{ xs: 4, md: 5 }}
+  // px={{ xs: 2, md: 8 }}
+  // py={{ xs: 4, md: 5 }}
 >
 
   <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -233,6 +240,8 @@ const pageBackgroundStyle = {
     </Typography>
   </Grid>
 </Grid>
+      </Box>
+     
 
 {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
 <Divider
