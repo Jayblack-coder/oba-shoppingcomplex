@@ -36,6 +36,11 @@ const pageBackgroundStyle = {
   backgroundRepeat: "no-repeat",
   backgroundAttachment: { xs: "fixed", md: "fixed" },
 };
+const contentWrapper = {
+  maxWidth: "1400px",
+  mx: "auto",
+  px: { xs: 2, md: 6 },
+};
 
 
   return (
