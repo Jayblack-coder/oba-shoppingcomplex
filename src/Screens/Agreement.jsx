@@ -72,8 +72,9 @@ export default function TripartiteAgreement() {
   textAlign="center"
   mb={2}
   sx={{
-    color: "#da7127",
     animation: "fadeDown 0.8s ease",
+     color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)"
   }}
 >
 
