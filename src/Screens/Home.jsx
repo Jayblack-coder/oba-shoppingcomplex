@@ -251,6 +251,7 @@ const pageBackgroundStyle = {
 
 
       {/* SECTION 3 – AMENITIES */}
+      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
 <Box px={{ xs: 2, md: 8 }} py={{ xs: 4, md: 5 }} justifyContent="center">
   <Typography
     variant="h5"
@@ -372,6 +373,7 @@ const pageBackgroundStyle = {
     </Grid>
   </Grid>
 </Box>
+</Box>
 {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
 <Divider
   sx={{
@@ -383,6 +385,7 @@ const pageBackgroundStyle = {
 />
 
       {/* SECTION 4 – CONCLUSION */}
+      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
       <Box
   textAlign="center"
   px={{ xs: 2, md: 8 }}
@@ -403,7 +406,7 @@ const pageBackgroundStyle = {
           across the region.
         </Typography>
       </Box>
-
+</Box>
       {/* FINAL CTA & PRICE TIERS */}
       <Box px={{ xs: 2, md: 8 }} py={{ xs: 5, md: 6 }}>
 
