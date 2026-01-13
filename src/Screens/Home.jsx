@@ -39,7 +39,7 @@ const pageBackgroundStyle = {
 
 
   return (
-    <Box sx={{...pageBackgroundStyle, width: "100%"}}>
+    <Box sx={pageBackgroundStyle}>
 
       {/* HERO SECTION */}
       {/* <Box sx={{ px: { xs: 2, md: 8 }, py: 10, textAlign: "center" }}> */}
@@ -65,7 +65,7 @@ const pageBackgroundStyle = {
     borderRadius: 3,
     boxShadow: 3,
     transition: "all 0.4s ease",
-    mt: 4, 
+    mt: 4, // <-- add this line for spacing
     "&:hover": {
       transform: "scale(1.03)",
       boxShadow: 6,
@@ -329,7 +329,7 @@ const pageBackgroundStyle = {
                 <Typography fontWeight="bold" color="#5C2D0C">
                   {item.title}
                 </Typography>
-                <Typography sx={{ color: "#F5F0EC" }} fontSize={14}>
+                <Typography sx={{ color: "#5C2D0C" }} fontSize={14}>
                   {item.desc}
                 </Typography>
               </Box>
@@ -617,6 +617,6 @@ const pageBackgroundStyle = {
       </Box>
     </Box>
   );
-}
-
+} 
+ 
 
