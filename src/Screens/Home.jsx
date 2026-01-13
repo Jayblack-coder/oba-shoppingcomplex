@@ -259,7 +259,7 @@ const contentWrapper = {
 
 
       {/* SECTION 3 – AMENITIES */}
-      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
+      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }} justifyContent="center" alignItems="center">
 {/* <Box px={{ xs: 2, md: 8 }} py={{ xs: 4, md: 5 }} justifyContent="center"> */}
   <Typography
     variant="h5"
