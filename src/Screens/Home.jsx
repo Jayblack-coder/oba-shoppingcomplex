@@ -684,7 +684,7 @@ const imageFromLeftVariant = {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          border: "2px solid #8B4513",
+          border: "2px solid #D4AF37",
           position: "relative",
           backgroundColor: "#3A1E0F",
 
