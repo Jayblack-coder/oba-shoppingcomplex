@@ -38,7 +38,7 @@ export default function Navbar() {
           bgcolor: "#5C2D0C", // dark brown background
           color: "#fff8f2", // soft white text
           boxShadow: "0px 2px 10px rgba(0,0,0,0.1)",
-          width: "100vw",
+          width: "100%",
         }}
       >
         <Toolbar>
