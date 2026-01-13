@@ -12,10 +12,10 @@ import { useState, useEffect } from "react";
 import dark from "../assets/dark.jpg"
 
 const images = [
-  "/public/Images/agreement1.jpg",
-  "/public/Images/agreement2.jpg",
-  "/public/Images/agreement3.jpg",
-  "/public/Images/agreement4.jpg",
+  "/Images/agreement1.jpg",
+  "/Images/agreement2.jpg",
+  "/Images/agreement3.jpg",
+  "/Images/agreement4.jpg",
 ];
 
 export default function TripartiteAgreement() {
