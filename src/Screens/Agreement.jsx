@@ -9,12 +9,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useState, useEffect } from "react";
+import dark from "../assets/dark.jpg"
 
 const images = [
-  "/src/assets/agreement1.jpg",
-  "/src/assets/agreement2.jpg",
-  "/src/assets/agreement3.jpg",
-  "/src/assets/agreement4.jpg",
+  "/public/Images/agreement1.jpg",
+  "/public/Images/agreement2.jpg",
+  "/public/Images/agreement3.jpg",
+  "/public/Images/agreement4.jpg",
 ];
 
 export default function TripartiteAgreement() {
@@ -55,7 +56,7 @@ export default function TripartiteAgreement() {
   sx={{
     pt: { xs: 12, md: 16 }, 
     pb: { xs: 10, md: 14 }, 
-    backgroundImage: 'url("/src/assets/dark-brown.jpg")',
+    backgroundImage: `url(${dark})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
