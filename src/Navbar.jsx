@@ -45,7 +45,8 @@ export default function Navbar() {
           {/* Brand / Logo */}
           <Typography
             variant="h6"
-            sx={{ flexGrow: 1, cursor: "pointer", fontWeight: 700 }}
+            sx={{ flexGrow: 1, cursor: "pointer", fontWeight: 700, color: "#D4AF37",
+    textShadow: "0 0 14px rgba(212,175,55,0.4)" }}
             onClick={() => navigate("/")}
           >
             Oba Shopping Complex

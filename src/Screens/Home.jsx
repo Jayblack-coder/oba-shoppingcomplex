@@ -30,7 +30,7 @@ const sectionImageStyle = {
   },
 };
 const pageBackgroundStyle = {
-  minHeight: "100vh",
+ 
   backgroundImage: `url(${dark})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -96,6 +96,8 @@ const imageFromLeftVariant = {
   },
 };
 
+// const luxuryGold = "#D4AF37"; // classic sharp gold
+
 
   return (
     <Box
@@ -128,7 +130,12 @@ const imageFromLeftVariant = {
     variant="h3"
     fontWeight="bold"
     gutterBottom
-    color="#da7127"
+    // color="#da7127"
+     sx={{
+  color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
+}}
+
   >
     Oba International Market Shopping Complex
   </Typography>
@@ -252,7 +259,11 @@ const imageFromLeftVariant = {
   }}
 >
 
-    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
+    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center" sx={{
+  color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
+}}
+> 
       Modern Commerce Redefined
     </Typography>
     <Typography sx={{ color: "#F5F0EC" }}>
