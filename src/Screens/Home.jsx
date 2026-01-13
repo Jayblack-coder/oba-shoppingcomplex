@@ -186,7 +186,7 @@ const imageFromLeftVariant = {
       variant="contained"
       size="large"
       sx={{
-        bgcolor: "#da7127",
+        bgcolor: "#D4AF37",
         px: 4,
         py: 1.5,
         fontWeight: "bold",
@@ -211,8 +211,8 @@ const imageFromLeftVariant = {
         px: 4,
         py: 1.5,
         fontWeight: "bold",
-        borderColor: "#8B4513",
-        color: "#da7127",
+        borderColor:"#D4AF37",
+        color: "#D4AF37",
       }}
       onClick={() => navigate("/contact")}
     >
@@ -639,8 +639,8 @@ const imageFromLeftVariant = {
 
         }}
       >
-        <StorefrontIcon sx={{ fontSize: 50, color: "#8B4513" }} />
-        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#da7127" }}>
+        <StorefrontIcon sx={{ fontSize: 50, color: "#D4AF37" }} />
+        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#D4AF37"}}>
           Standard Shop
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}mt={1}>
@@ -656,7 +656,7 @@ const imageFromLeftVariant = {
         <Button
           variant="contained"
           fullWidth
-          sx={{ mt: 4, bgcolor: "#8B4513", "&:hover": { bgcolor: "#5C2D0C" } }}
+          sx={{ mt: 4, bgcolor: "#D4AF37", "&:hover": { bgcolor: "#5C2D0C" } }}
           onClick={() => navigate("/contact")}
         >
           Buy Standard Shop
@@ -703,7 +703,7 @@ const imageFromLeftVariant = {
             top: -14,
             left: "50%",
             transform: "translateX(-50%)",
-            bgcolor: "#8B4513",
+            bgcolor: "#D4AF37",
             color: "white",
             px: 3,
             py: 0.5,
@@ -715,8 +715,8 @@ const imageFromLeftVariant = {
           MOST POPULAR
         </Box>
 
-        <StarIcon sx={{ fontSize: 50, color: "#8B4513" }} />
-        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#da7127" }}>
+        <StarIcon sx={{ fontSize: 50, color: "#D4AF37" }} />
+        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#D4AF37"}}>
           Premium Shop
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
@@ -732,7 +732,7 @@ const imageFromLeftVariant = {
         <Button
           variant="contained"
           fullWidth
-          sx={{ mt: 4, bgcolor: "#8B4513", "&:hover": { bgcolor: "#5C2D0C" } }}
+          sx={{ mt: 4, bgcolor: "#D4AF37", "&:hover": { bgcolor: "#5C2D0C" } }}
           onClick={() => navigate("/contact")}
         >
           Buy Premium Shop
@@ -770,8 +770,8 @@ const imageFromLeftVariant = {
 
         }}
       >
-        <BusinessCenterIcon sx={{ fontSize: 50, color: "#8B4513" }} />
-        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#da7127" }}>
+        <BusinessCenterIcon sx={{ fontSize: 50, color: "#D4AF37" }} />
+        <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#D4AF37" }}>
           Executive Shop
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
@@ -787,7 +787,7 @@ const imageFromLeftVariant = {
         <Button
           variant="contained"
           fullWidth
-          sx={{ mt: 4, bgcolor: "#8B4513", "&:hover": { bgcolor: "#5C2D0C" } }}
+          sx={{ mt: 4, bgcolor: "#D4AF37", "&:hover": { bgcolor: "#5C2D0C" } }}
           onClick={() => navigate("/contact")}
         >
           Buy Executive Shop

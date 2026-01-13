@@ -35,7 +35,10 @@ export default function Footer() {
       >
         {/* CONTACT */}
         <Box textAlign={{ xs: "center", md: "left" }}>
-          <Typography variant="h6" fontWeight="bold" color="#da7127">
+          <Typography variant="h6" fontWeight="bold"  sx={{
+  color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
+}}>
             Oba International Market
           </Typography>
 
@@ -46,7 +49,7 @@ export default function Footer() {
             justifyContent={{ xs: "center", md: "flex-start" }}
             mt={1}
           >
-            <PhoneIcon sx={{ color: "#da7127" }} />
+            <PhoneIcon sx={{ color: "#D4AF37" }} />
             <Typography fontSize={14} color= "rgba(245,240,236,0.7)">
               +234 800 000 0000
             </Typography>
@@ -55,7 +58,10 @@ export default function Footer() {
 
         {/* SOCIALS */}
         <Box textAlign={{ xs: "center", md: "right" }}>
-          <Typography variant="h6" fontWeight="bold" color="#da7127">
+          <Typography variant="h6" fontWeight="bold" sx={{
+  color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
+}}>
             Connect With Us
           </Typography>
 
