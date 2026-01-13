@@ -22,12 +22,15 @@ const sectionImageStyle = {
   objectFit: "cover",
   borderRadius: 3,
   boxShadow: 3,
+  display: "block",
+  mx: "auto",            // ✅ CENTER IMAGE
   transition: "all 0.4s ease",
   "&:hover": {
     transform: "scale(1.03)",
     boxShadow: 6,
   },
 };
+
 const pageBackgroundStyle = {
   // minHeight: "100vh",
   backgroundImage: `url(${dark})`,
@@ -156,9 +159,20 @@ const contentWrapper = {
   // py={{ xs: 4, md: 5 }}
 >
 
-  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+ <Grid
+  item
+  xs={12}
+  md={6}
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",     // ✅ center horizontally
+    textAlign: "center",      // ✅ center text
+  }}
+>
 
-    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
+
+    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" >
       Modern Commerce Redefined
     </Typography>
     <Typography sx={{ color: "#F5F0EC" }}>
@@ -227,9 +241,20 @@ const contentWrapper = {
     />
   </Grid>
 
-  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+  <Grid
+  item
+  xs={12}
+  md={6}
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",     // ✅ center horizontally
+    textAlign: "center",      // ✅ center text
+  }}
+>
 
-    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
+
+    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" >
       Security, Comfort & Accessibility
     </Typography>
     <Typography sx={{ color: "#F5F0EC" }}>
