@@ -54,9 +54,10 @@ const contentWrapper = {
 
 
       {/* HERO SECTION */}
-      <Box sx={{ px: { xs: 2, md: 8 }, py: 10, textAlign: "center" }} justifyContent="center"
-  alignItems="center"> 
+      
       <Box sx={{ py: { xs: 6, md: 8 } }}>
+        <Box sx={{ px: { xs: 2, md: 8 },  textAlign: "center" }} justifyContent="center"
+  alignItems="center"> 
       {/* <Box sx={contentWrapper} py={{ xs: 6, md: 8 }}  textAlign="center" justifyContent="center"
   alignItems="center"> */}
 
