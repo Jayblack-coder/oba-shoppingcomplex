@@ -51,7 +51,7 @@ const pageBackgroundStyle = {
       {/* HERO SECTION */}
       {/* <Box sx={{ px: { xs: 2, md: 8 }, py: 10, textAlign: "center" }}> */}
       <Box sx={{ py: { xs: 6, md: 8 } }}>
-      <Box sx={{ maxWidth: "1400px", mx: "auto", px: { xs: 2, md: 6 } }}  textAlign="center" >
+      <Box sx={{ maxWidth: "1400px", mx: "auto", px: { xs: 2, md: 6 } }}  textAlign="center" justifyContent="center" >
 
 
         <Typography variant="h3" fontWeight="bold" gutterBottom color="#da7127">
