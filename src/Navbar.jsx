@@ -59,7 +59,7 @@ export default function Navbar() {
                 key={item.label}
                 onClick={() => navigate(item.path)}
                 sx={{
-                  color: "#fff8f2",
+                  color: "#D4AF37",
                   fontWeight: 600,
                   "&:hover": {
                     bgcolor: "#8B4513", // lighter brown hover
