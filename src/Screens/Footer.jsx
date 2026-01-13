@@ -21,7 +21,7 @@ export default function Footer() {
     backgroundSize: "cover",
     backgroundPosition: "center",
     py: 4,
-    width: "100vw"
+    width: "100%"
   }}
 >
 
