@@ -373,7 +373,10 @@ const imageFromLeftVariant = {
     justifyContent: "center",
   }}
 >
-  <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
+  <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center" sx={{
+  color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
+}}>
     Security, Comfort & Accessibility
   </Typography>
     <Typography sx={{ color: "#F5F0EC" }}>
@@ -410,8 +413,12 @@ const imageFromLeftVariant = {
     variant="h5"
     fontWeight="bold"
     gutterBottom
-    color="#da7127"
+    // color="#da7127"
     textAlign="center"
+    sx={{
+  color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
+}}
   >
     World-Class Amenities
   </Typography>
@@ -543,7 +550,10 @@ const imageFromLeftVariant = {
   py={{ xs: 4, md: 5 }}
 >
 
-        <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127">
+        <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" sx={{
+  color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
+}}>
           A Vibrant Commercial Hub
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }} maxWidth="900px" mx="auto">
@@ -561,7 +571,10 @@ const imageFromLeftVariant = {
       {/* FINAL CTA & PRICE TIERS */}
       <Box px={{ xs: 2, md: 8 }} py={{ xs: 5, md: 6 }}>
 
-        <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
+        <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center" sx={{
+  color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
+}}>
           Ready to Own a Shop at Oba International Market?
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }} textAlign="center" mb={6}>
@@ -574,7 +587,11 @@ const imageFromLeftVariant = {
     variant="h4"
     fontWeight="bold"
     textAlign="center"
-    gutterBottom color="#da7127"
+    // gutterBottom color="#da7127"
+    sx={{
+  color: "#D4AF37",
+  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
+}}
     // gutterBottom
     
   >
