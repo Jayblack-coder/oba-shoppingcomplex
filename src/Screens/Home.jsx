@@ -408,6 +408,7 @@ const pageBackgroundStyle = {
       </Box>
 </Box>
       {/* FINAL CTA & PRICE TIERS */}
+      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
       <Box px={{ xs: 2, md: 8 }} py={{ xs: 5, md: 6 }}>
 
         <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
@@ -630,6 +631,7 @@ const pageBackgroundStyle = {
 </Box>
 
       </Box>
+    </Box>
     </Box>
   );
 }
