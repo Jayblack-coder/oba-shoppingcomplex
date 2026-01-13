@@ -39,7 +39,15 @@ const pageBackgroundStyle = {
 
 
   return (
-    <Box sx={pageBackgroundStyle}>
+    <Box
+  sx={{
+    ...pageBackgroundStyle,
+    width: "100%",
+    minHeight: "100vh",
+    overflowX: "hidden",
+  }}
+>
+
 
       {/* HERO SECTION */}
       {/* <Box sx={{ px: { xs: 2, md: 8 }, py: 10, textAlign: "center" }}> */}
