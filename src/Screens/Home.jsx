@@ -10,6 +10,7 @@ import FireExtinguisherIcon from "@mui/icons-material/FireExtinguisher";
 import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import dark from "../assets/dark.jpg";
+import { motion } from "framer-motion";
 
 
 
@@ -42,6 +43,34 @@ const contentWrapper = {
   px: { xs: 2, md: 8 },
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1, ease: "easeOut" },
+  },
+};
+
 
   return (
     <Box
@@ -56,79 +85,110 @@ const contentWrapper = {
 
       {/* HERO SECTION */}
       {/* <Box sx={{ px: { xs: 2, md: 8 }, py: 10, textAlign: "center" }}> */}
-      <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 6, md: 8 }, textAlign: "center" }}>
-
-        <Typography variant="h3" fontWeight="bold" gutterBottom color="#da7127">
-          Oba International Market Shopping Complex
-        </Typography>
-        <Typography sx={{ color: "#F5F0EC" }}>
-
-          A New Landmark of Trade and Comfort
-        </Typography>
-
-        {/* Hero Image */}
-       <Box
-  component="img"
-  src="/Images/shop4.jpeg"
-  alt="Oba Shopping Complex"
+      <Box
+  component={motion.div}
+  variants={containerVariants}
+  initial="hidden"
+  animate="visible"
   sx={{
-    width: "100%",
-    height: { xs: 220, md: 400 },
-    objectFit: "cover",
-    borderRadius: 3,
-    boxShadow: 3,
-    transition: "all 0.4s ease",
-    mt: 4, // <-- add this line for spacing
-    "&:hover": {
-      transform: "scale(1.03)",
-      boxShadow: 6,
-    },
+    px: { xs: 2, md: 8 },
+    py: { xs: 6, md: 8 },
+    textAlign: "center",
   }}
-/>
+>
+  {/* TITLE */}
+  <Typography
+    component={motion.h1}
+    variants={itemVariants}
+    variant="h3"
+    fontWeight="bold"
+    gutterBottom
+    color="#da7127"
+  >
+    Oba International Market Shopping Complex
+  </Typography>
 
+  {/* SUBTITLE */}
+  <Typography
+    component={motion.p}
+    variants={itemVariants}
+    sx={{ color: "#F5F0EC", maxWidth: 700, mx: "auto" }}
+  >
+    A New Landmark of Trade and Comfort
+  </Typography>
 
-        {/* HERO CTA BUTTONS */}
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={2}
-          justifyContent="center"
-          sx={{ mt: 4 }}
-        >
-          <Button
-            variant="contained"
-            size="large"
-            sx={{
-              bgcolor: "#da7127",
-              px: 4,
-              py: 1.5,
-              fontWeight: "bold",
-              "&:hover": { bgcolor: "#5C2D0C" },
-            }}
-            onClick={() => navigate("/contact")}
-          >
-            Buy a Shop
-          </Button>
+  {/* HERO IMAGE */}
+  <Box
+    component={motion.img}
+    variants={imageVariants}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.98 }}
+    src="/Images/shop4.jpeg"
+    alt="Oba Shopping Complex"
+    sx={{
+      width: "100%",
+      height: { xs: 220, md: 400 },
+      objectFit: "cover",
+      borderRadius: 3,
+      boxShadow: 6,
+      mt: 5,
+    }}
+  />
 
-          <Button
-            variant="outlined"
-            size="large"
-            sx={{
-              px: 4,
-              py: 1.5,
-              fontWeight: "bold",
-              borderColor: "#8B4513",
-              color: "#da7127",
-              "&:hover": {
-                bgcolor: "#da7127",
-                color: "#fff",
-              },
-            }}
-            onClick={() => navigate("/contact")}
-          >
-            Contact Us
-          </Button>
-        </Stack>
-      </Box>
+  {/* CTA BUTTONS */}
+  <Stack
+    component={motion.div}
+    variants={itemVariants}
+    direction={{ xs: "column", sm: "row" }}
+    spacing={2}
+    justifyContent="center"
+    sx={{ mt: 5 }}
+  >
+    <Button
+      component={motion.button}
+      whileHover={{
+        scale: 1.08,
+        boxShadow: "0px 0px 25px rgba(218,113,39,0.8)",
+      }}
+      whileTap={{ scale: 0.95 }}
+      variant="contained"
+      size="large"
+      sx={{
+        bgcolor: "#da7127",
+        px: 4,
+        py: 1.5,
+        fontWeight: "bold",
+        "&:hover": { bgcolor: "#5C2D0C" },
+      }}
+      onClick={() => navigate("/contact")}
+    >
+      Buy a Shop
+    </Button>
+
+    <Button
+      component={motion.button}
+      whileHover={{
+        scale: 1.08,
+        backgroundColor: "#da7127",
+        color: "#fff",
+      }}
+      whileTap={{ scale: 0.95 }}
+      variant="outlined"
+      size="large"
+      sx={{
+        px: 4,
+        py: 1.5,
+        fontWeight: "bold",
+        borderColor: "#8B4513",
+        color: "#da7127",
+      }}
+      onClick={() => navigate("/contact")}
+    >
+      Contact Us
+    </Button>
+  </Stack>
+</Box>
+
 {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
 <Divider
   sx={{
