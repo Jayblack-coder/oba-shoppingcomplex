@@ -22,15 +22,12 @@ const sectionImageStyle = {
   objectFit: "cover",
   borderRadius: 3,
   boxShadow: 3,
-  display: "block",
-  mx: "auto",            // ✅ CENTER IMAGE
   transition: "all 0.4s ease",
   "&:hover": {
     transform: "scale(1.03)",
     boxShadow: 6,
   },
 };
-
 const pageBackgroundStyle = {
   // minHeight: "100vh",
   backgroundImage: `url(${dark})`,
@@ -39,31 +36,14 @@ const pageBackgroundStyle = {
   backgroundRepeat: "no-repeat",
   backgroundAttachment: { xs: "fixed", md: "fixed" },
 };
-const contentWrapper = {
-  maxWidth: "1400px",
-  mx: "auto",
-  px: { xs: 2, md: 6 },
-};
 
 
   return (
-    <Box
-  sx={{
-    ...pageBackgroundStyle,
-    width: "100vw",
-    overflowX: "hidden",
-  }}
->
-
+    <Box sx={pageBackgroundStyle}>
 
       {/* HERO SECTION */}
-      
-      {/* <Box sx={{ py: { xs: 6, md: 8 } }}>
-        <Box sx={{ px: { xs: 2, md: 8 },  textAlign: "center" }} justifyContent="center"
-  alignItems="center">  */}
-      <Box sx={contentWrapper} py={{ xs: 6, md: 8 }}  textAlign="center" justifyContent="center"
-  alignItems="center">
-
+      {/* <Box sx={{ px: { xs: 2, md: 8 }, py: 10, textAlign: "center" }}> */}
+      <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 6, md: 8 }, textAlign: "center" }}>
 
         <Typography variant="h3" fontWeight="bold" gutterBottom color="#da7127">
           Oba International Market Shopping Complex
@@ -85,7 +65,7 @@ const contentWrapper = {
     borderRadius: 3,
     boxShadow: 3,
     transition: "all 0.4s ease",
-    mt: 4, // <-- add this line for spacing
+    mt: 4, 
     "&:hover": {
       transform: "scale(1.03)",
       boxShadow: 6,
@@ -136,7 +116,6 @@ const contentWrapper = {
           </Button>
         </Stack>
       </Box>
-      {/* </Box> */}
 {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
 <Divider
   sx={{
@@ -149,30 +128,18 @@ const contentWrapper = {
 
 
       {/* SECTION 1 – OVERVIEW */}
-      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
       <Grid
   container
   spacing={4}
   justifyContent="center"
   alignItems="center"
-  // px={{ xs: 2, md: 8 }}
-  // py={{ xs: 4, md: 5 }}
+  px={{ xs: 2, md: 8 }}
+  py={{ xs: 4, md: 5 }}
 >
 
- <Grid
-  item
-  xs={12}
-  md={6}
-  sx={{
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",     // ✅ center horizontally
-    textAlign: "center",      // ✅ center text
-  }}
->
+  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
-
-    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" >
+    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
       Modern Commerce Redefined
     </Typography>
     <Typography sx={{ color: "#F5F0EC" }}>
@@ -208,7 +175,7 @@ const contentWrapper = {
     />
   </Grid>
 </Grid>
-</Box>
+
       {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
       <Divider
   sx={{
@@ -221,14 +188,13 @@ const contentWrapper = {
 
 
       {/* SECTION 2 – SECURITY & ACCESS */}
-      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
       <Grid
   container
   spacing={4}
   justifyContent="center"
   alignItems="center"
-  // px={{ xs: 2, md: 8 }}
-  // py={{ xs: 4, md: 5 }}
+  px={{ xs: 2, md: 8 }}
+  py={{ xs: 4, md: 5 }}
 >
 
   <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -241,20 +207,9 @@ const contentWrapper = {
     />
   </Grid>
 
-  <Grid
-  item
-  xs={12}
-  md={6}
-  sx={{
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",     // ✅ center horizontally
-    textAlign: "center",      // ✅ center text
-  }}
->
+  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
-
-    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" >
+    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
       Security, Comfort & Accessibility
     </Typography>
     <Typography sx={{ color: "#F5F0EC" }}>
@@ -270,7 +225,7 @@ const contentWrapper = {
     </Typography>
   </Grid>
 </Grid>
-</Box>
+
 {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
 <Divider
   sx={{
@@ -284,8 +239,7 @@ const contentWrapper = {
 
 
       {/* SECTION 3 – AMENITIES */}
-      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }} justifyContent="center" alignItems="center">
-{/* <Box px={{ xs: 2, md: 8 }} py={{ xs: 4, md: 5 }} justifyContent="center"> */}
+<Box px={{ xs: 2, md: 8 }} py={{ xs: 4, md: 5 }} justifyContent="center">
   <Typography
     variant="h5"
     fontWeight="bold"
@@ -406,7 +360,6 @@ const contentWrapper = {
     </Grid>
   </Grid>
 </Box>
-{/* </Box> */}
 {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
 <Divider
   sx={{
@@ -418,11 +371,10 @@ const contentWrapper = {
 />
 
       {/* SECTION 4 – CONCLUSION */}
-      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
       <Box
   textAlign="center"
-  // px={{ xs: 2, md: 8 }}
-  // py={{ xs: 4, md: 5 }}
+  px={{ xs: 2, md: 8 }}
+  py={{ xs: 4, md: 5 }}
 >
 
         <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127">
@@ -439,10 +391,9 @@ const contentWrapper = {
           across the region.
         </Typography>
       </Box>
-</Box>
+
       {/* FINAL CTA & PRICE TIERS */}
-      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
-      {/* <Box px={{ xs: 2, md: 8 }} py={{ xs: 5, md: 6 }}> */}
+      <Box px={{ xs: 2, md: 8 }} py={{ xs: 5, md: 6 }}>
 
         <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
           Ready to Own a Shop at Oba International Market?
@@ -665,7 +616,6 @@ const contentWrapper = {
 
       </Box>
     </Box>
-    // </Box>
   );
 }
 
