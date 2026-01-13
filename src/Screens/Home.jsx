@@ -70,6 +70,31 @@ const imageVariants = {
     transition: { duration: 1, ease: "easeOut" },
   },
 };
+ const textVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const imageFromRightVariant = {
+  hidden: { opacity: 0, x: 120 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1, ease: "easeOut" },
+  },
+};
+const imageFromLeftVariant = {
+  hidden: { opacity: 0, x: -120 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1, ease: "easeOut" },
+  },
+};
 
 
   return (
@@ -211,7 +236,21 @@ const imageVariants = {
   // py={{ xs: 4, md: 5 }}
 >
 
-  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+  <Grid
+  item
+  xs={12}
+  md={6}
+  component={motion.div}
+  variants={textVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.3 }}
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  }}
+>
 
     <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
       Modern Commerce Redefined
@@ -239,15 +278,29 @@ const imageVariants = {
     </Typography>
   </Grid>
 
-  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+  <Grid
+  item
+  xs={12}
+  md={6}
+  component={motion.div}
+  variants={imageFromRightVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.3 }}
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  }}
+>
+  <Box
+    component="img"
+    src="/Images/shop2.jpeg"
+    alt="Shop layout"
+    sx={{ ...sectionImageStyle, mx: "auto" }}
+  />
+</Grid>
 
-    <Box
-      component="img"
-      src="/Images/shop2.jpeg"
-      alt="Shop layout"
-      sx={{ ...sectionImageStyle, mx: "auto" }} 
-    />
-  </Grid>
 </Grid>
 </Box>
       {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
@@ -272,21 +325,46 @@ const imageVariants = {
   // py={{ xs: 4, md: 5 }}
 >
 
-  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+  <Grid
+  item
+  xs={12}
+  md={6}
+  component={motion.div}
+  variants={imageFromLeftVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.3 }}
+  sx={{
+    display: "flex",
+    justifyContent: "center",
+  }}
+>
+  <Box
+    component="img"
+    src="/Images/shop4.jpeg"
+    alt="Security"
+    sx={sectionImageStyle}
+  />
+</Grid>
 
-    <Box
-      component="img"
-      src="/Images/shop4.jpeg"
-      alt="Security"
-      sx={sectionImageStyle}
-    />
-  </Grid>
-
-  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-
-    <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
-      Security, Comfort & Accessibility
-    </Typography>
+  <Grid
+  item
+  xs={12}
+  md={6}
+  component={motion.div}
+  variants={textVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.3 }}
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  }}
+>
+  <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
+    Security, Comfort & Accessibility
+  </Typography>
     <Typography sx={{ color: "#F5F0EC" }}>
 
       Each shop is thoughtfully constructed with <strong>personal toilets</strong>,
