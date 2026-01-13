@@ -30,7 +30,7 @@ const sectionImageStyle = {
   },
 };
 const pageBackgroundStyle = {
-  // minHeight: "100vh",
+  minHeight: "100vh",
   backgroundImage: `url(${dark})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
