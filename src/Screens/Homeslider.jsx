@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const images = [
-  "/src/assets/shop4.jpg",
-  "/src/assets/shop2.jpg",
-  "/src/assets/shop3.jpg",
+  "/Images/shop4.jpeg",
+  "/Images/shop2.jpeg",
+  "/Images/shop3.jpeg",
 ];
 
 const variants = {
