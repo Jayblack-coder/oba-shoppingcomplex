@@ -153,7 +153,7 @@ const contentWrapper = {
   py={{ xs: 4, md: 5 }}
 >
 
-  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+  <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 
     <Typography variant="h5" fontWeight="bold" gutterBottom color="#da7127" textAlign="center">
       Modern Commerce Redefined
