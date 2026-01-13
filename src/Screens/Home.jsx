@@ -96,34 +96,6 @@ const imageFromLeftVariant = {
   },
 };
 
-// Container stagger
-const priceContainerVariant = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.25,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-// Individual card animation
-const priceCardVariant = {
-  hidden: {
-    opacity: 0,
-    y: 60,
-    scale: 0.95,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
 
   return (
     <Box
@@ -603,32 +575,20 @@ const priceCardVariant = {
   </Typography>
 
   <Grid
-  container
-  spacing={4}
-  justifyContent="center"
-  alignItems="stretch"
-  component={motion.div}
-  variants={priceContainerVariant}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.3 }}
->
-
+    container
+    spacing={4}
+    justifyContent="center"
+    alignItems="stretch" // ensures cards take equal height
+  >
     {/* STANDARD SHOP */}
     <Grid
-  item
-  xs={12}
-  sm={6}
-  md={4}
-  component={motion.div}
-  variants={priceCardVariant}
-  whileHover={{
-    scale: 1.05,
-    y: -10,
-  }}
-  transition={{ type: "spring", stiffness: 200 }}
->
-
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      display="flex"
+      justifyContent="center"
+    >
       <Box
         sx={{
           p: 4,
@@ -678,35 +638,37 @@ const priceCardVariant = {
 
     {/* PREMIUM SHOP */}
     <Grid
-  item
-  xs={12}
-  sm={6}
-  md={4}
-  component={motion.div}
-  variants={priceCardVariant}
-  whileHover={{
-    scale: 1.08,
-    y: -14,
-  }}
-  transition={{ type: "spring", stiffness: 180 }}
->
-
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      display="flex"
+      justifyContent="center"
+    >
       <Box
-  component={motion.div}
-  animate={{
-    boxShadow: [
-      "0 0 0px rgba(218,113,39,0.0)",
-      "0 0 30px rgba(218,113,39,0.4)",
-      "0 0 0px rgba(218,113,39,0.0)",
-    ],
-  }}
-  transition={{
-    duration: 3,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
->
+        sx={{
+          p: 4,
+          borderRadius: 3,
+          boxShadow: 6,
+          textAlign: "center",
+          width: "100%",
+          maxWidth: 320,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          border: "2px solid #8B4513",
+          position: "relative",
+          backgroundColor: "#3A1E0F",
 
+          // backgroundColor: "#fff8f2",
+          transition: "all 0.3s ease",
+"&:hover": {
+  transform: "translateY(-6px)",
+  boxShadow: 8,
+},
+
+        }}
+      >
         <Box
           sx={{
             position: "absolute",
@@ -752,19 +714,13 @@ const priceCardVariant = {
 
     {/* EXECUTIVE SHOP */}
     <Grid
-  item
-  xs={12}
-  sm={6}
-  md={4}
-  component={motion.div}
-  variants={priceCardVariant}
-  whileHover={{
-    scale: 1.05,
-    y: -10,
-  }}
-  transition={{ type: "spring", stiffness: 200 }}
->
-
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      display="flex"
+      justifyContent="center"
+    >
       <Box
         sx={{
           p: 4,
