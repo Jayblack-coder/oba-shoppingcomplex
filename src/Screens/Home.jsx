@@ -51,7 +51,7 @@ const pageBackgroundStyle = {
       {/* HERO SECTION */}
       {/* <Box sx={{ px: { xs: 2, md: 8 }, py: 10, textAlign: "center" }}> */}
       <Box sx={{ py: { xs: 6, md: 8 } }}>
-      <Box sx={{ maxWidth: "1400px", mx: "auto", px: { xs: 2, md: 6 } }}  textAlign="center" justifyContent="center" >
+      <Box sx={{ maxWidth: "1400px", mx: "auto", px: { xs: 2, md: 6 } }}  textAlign="center">
 
 
         <Typography variant="h3" fontWeight="bold" gutterBottom color="#da7127">
@@ -138,6 +138,7 @@ const pageBackgroundStyle = {
 
 
       {/* SECTION 1 – OVERVIEW */}
+      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
       <Grid
   container
   spacing={4}
@@ -185,7 +186,7 @@ const pageBackgroundStyle = {
     />
   </Grid>
 </Grid>
-
+</Box>
       {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
       <Divider
   sx={{
@@ -198,6 +199,7 @@ const pageBackgroundStyle = {
 
 
       {/* SECTION 2 – SECURITY & ACCESS */}
+      <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
       <Grid
   container
   spacing={4}
@@ -235,7 +237,7 @@ const pageBackgroundStyle = {
     </Typography>
   </Grid>
 </Grid>
-
+</Box>
 {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
 <Divider
   sx={{
