@@ -55,11 +55,11 @@ const contentWrapper = {
 
       {/* HERO SECTION */}
       
-      <Box sx={{ py: { xs: 6, md: 8 } }}>
+      {/* <Box sx={{ py: { xs: 6, md: 8 } }}>
         <Box sx={{ px: { xs: 2, md: 8 },  textAlign: "center" }} justifyContent="center"
-  alignItems="center"> 
-      {/* <Box sx={contentWrapper} py={{ xs: 6, md: 8 }}  textAlign="center" justifyContent="center"
-  alignItems="center"> */}
+  alignItems="center">  */}
+      <Box sx={contentWrapper} py={{ xs: 6, md: 8 }}  textAlign="center" justifyContent="center"
+  alignItems="center">
 
 
         <Typography variant="h3" fontWeight="bold" gutterBottom color="#da7127">
@@ -133,7 +133,7 @@ const contentWrapper = {
           </Button>
         </Stack>
       </Box>
-      </Box>
+      {/* </Box> */}
 {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
 <Divider
   sx={{
