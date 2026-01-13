@@ -74,7 +74,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Icon */}
           <IconButton
-            sx={{ display: { xs: "block", md: "none" }, color: "#fff8f2" }}
+            sx={{ display: { xs: "block", md: "none" }, color: "#D4AF37" }}
             onClick={() => setOpen(true)}
           >
             <MenuIcon />
@@ -97,7 +97,7 @@ export default function Navbar() {
               >
                 <ListItemText
                   primary={item.label}
-                  sx={{ color: "#fff8f2", fontWeight: 600 }}
+                  sx={{ color: "#D4AF37", fontWeight: 600 }}
                 />
               </ListItem>
             ))}
