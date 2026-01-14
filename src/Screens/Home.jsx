@@ -310,7 +310,7 @@ const slideInVariant = {
     {[
   {
     icon: <StorefrontIcon />,
-    title: "1,250 Lock-Up Shops Now Selling",
+    title: "1,125 Lock-Up Shops Now Selling",
     desc: "A limited collection of well-designed lock-up shops available for immediate purchase within the complex.",
   },
   {
