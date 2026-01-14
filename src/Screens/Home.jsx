@@ -11,6 +11,13 @@ import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import dark from "../assets/dark.jpg";
 import { motion } from "framer-motion";
+import VerifiedIcon from "@mui/icons-material/Verified";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import GavelIcon from "@mui/icons-material/Gavel";
+import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import PaymentsIcon from "@mui/icons-material/Payments";
+
 
 
 
@@ -95,6 +102,24 @@ const imageFromLeftVariant = {
     transition: { duration: 1, ease: "easeOut" },
   },
 };
+
+const investmentContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const investmentItem = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 
 // const luxuryGold = "#D4AF37"; // classic sharp gold
 
@@ -231,6 +256,132 @@ const imageFromLeftVariant = {
   }}
 />
 
+{/* WHY THIS IS THE PERFECT INVESTMENT */}
+<Box px={{ xs: 2, md: 8 }} py={{ xs: 6, md: 8 }}>
+  <Typography
+    variant="h4"
+    textAlign="center"
+    fontWeight="bold"
+    sx={{
+      color: "#D4AF37",
+      textShadow: "0 0 14px rgba(212,175,55,0.35)",
+      mb: 1,
+    }}
+  >
+    Why This Is the Perfect Investment
+  </Typography>
+
+  <Typography
+    textAlign="center"
+    sx={{ color: "#F5F0EC" }}
+    maxWidth="700px"
+    mx="auto"
+    mb={6}
+  >
+    A rare opportunity designed for security, growth, and long-term wealth creation.
+  </Typography>
+
+  <Grid
+    container
+    spacing={4}
+    justifyContent="center"
+    component={motion.div}
+    variants={investmentContainer}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.3 }}
+  >
+    {[
+      {
+        icon: <VerifiedIcon />,
+        title: "Premium Location",
+        desc: "Strategically positioned within Oba International Market for maximum visibility and foot traffic.",
+      },
+      {
+        icon: <TrendingUpIcon />,
+        title: "Massive Future Value",
+        desc: "Designed to appreciate significantly as demand and commercial activity increase.",
+      },
+      {
+        icon: <GavelIcon />,
+        title: "Government Recognised & Documented",
+        desc: "Fully backed by government approval with proper documentation in place.",
+      },
+      {
+        icon: <AssignmentTurnedInIcon />,
+        title: "Immediate Title Transfer",
+        desc: "Buyers receive title documentation promptly upon completion of payment.",
+      },
+      {
+        icon: <MonetizationOnIcon />,
+        title: "Guaranteed Returns",
+        desc: "A solid investment structured to deliver consistent long-term value.",
+      },
+      {
+        icon: <PaymentsIcon />,
+        title: "Matured Leasing & Flexible Payment",
+        desc: "Investor-friendly pricing with convenient and structured payment options.",
+      },
+    ].map((item, index) => (
+      <Grid
+        item
+        xs={12}
+        sm={6}
+        md={4}
+        key={index}
+        component={motion.div}
+        variants={investmentItem}
+        whileHover={{ y: -8, scale: 1.04 }}
+        transition={{ type: "spring", stiffness: 200 }}
+        display="flex"
+        justifyContent="center"
+      >
+        <Box
+          sx={{
+            p: 4,
+            maxWidth: 340,
+            width: "100%",
+            borderRadius: 3,
+            backgroundColor: "#3A1E0F",
+            boxShadow: 4,
+            textAlign: "center",
+            transition: "all 0.3s ease",
+          }}
+        >
+          <Box
+            sx={{
+              color: "#D4AF37",
+              fontSize: 42,
+              mb: 2,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            {item.icon}
+          </Box>
+
+          <Typography fontWeight="bold" mb={1} sx={{ color: "#D4AF37" }}>
+            {item.title}
+          </Typography>
+
+          <Typography sx={{ color: "#F5F0EC", fontSize: 14 }}>
+            {item.desc}
+          </Typography>
+        </Box>
+      </Grid>
+    ))}
+  </Grid>
+</Box>
+
+{/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
+<Divider
+  sx={{
+    my: { xs: 4, md: 5 },
+    borderColor: "rgba(139, 69, 19, 0.15)",
+    maxWidth: "85%",
+    mx: "auto",
+  }}
+/>
 
       {/* SECTION 1 – OVERVIEW */}
       <Box sx={contentWrapper} py={{ xs: 4, md: 5 }}>
