@@ -166,29 +166,55 @@ const slideInVariant = {
 >
   {/* TITLE */}
   <Typography
-    component={motion.h1}
-    variants={itemVariants}
-    variant="h3"
-    fontWeight="bold"
-    gutterBottom
-    // color="#da7127"
-     sx={{
-  color: "#D4AF37",
-  textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
-}}
+  component="h1"
+  fontWeight="bold"
+  textAlign="center"
+  gutterBottom
+  sx={{
+    color: "#D4AF37",
+    textShadow: "0 0 16px rgba(212,175,55,0.45)",
+    letterSpacing: "1px",
+    fontSize: {
+      xs: "2.1rem",   // mobile
+      sm: "2.6rem",   // tablet
+      md: "3rem",     // desktop
+    },
+  }}
+>
+  Sweet Asouzu Plaza
+</Typography>
 
-  >
-    Oba International Market Shopping Complex
-  </Typography>
 
-  {/* SUBTITLE */}
-  <Typography
-    component={motion.p}
-    variants={itemVariants}
-    sx={{ color: "#F5F0EC", maxWidth: 700, mx: "auto" }}
-  >
-    A New Landmark of Trade and Comfort
-  </Typography>
+<Typography
+  component="h2"
+  textAlign="center"
+  sx={{
+    color: "#F5F0EC",
+    letterSpacing: "0.5px",
+    fontSize: {
+      xs: "1.05rem",
+      sm: "1.2rem",
+      md: "1.35rem",
+    },
+    mb: 2,
+  }}
+>
+  at Anambra State International Market, Oba
+</Typography>
+
+
+<Box
+  sx={{
+    width: 80,
+    height: 3,
+    bgcolor: "#D4AF37",
+    mx: "auto",
+    mb: 3,
+    borderRadius: 2,
+    boxShadow: "0 0 12px rgba(212,175,55,0.5)",
+  }}
+/>
+
 
   {/* HERO IMAGE */}
   <Box

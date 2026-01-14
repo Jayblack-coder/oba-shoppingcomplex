@@ -49,7 +49,7 @@ export default function Navbar() {
     textShadow: "0 0 14px rgba(212,175,55,0.4)" }}
             onClick={() => navigate("/")}
           >
-            Oba Shopping Complex
+            Sweet Asouzu Shopping Plaza
           </Typography>
 
           {/* Desktop Menu */}
