@@ -964,7 +964,7 @@ const slideInVariant = {
           Corner shops & flagship locations
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
-          ₦8.5M
+          ₦8M
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
