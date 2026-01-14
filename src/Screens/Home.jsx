@@ -120,6 +120,22 @@ const investmentItem = {
   },
 };
 
+const slideInVariant = {
+  hidden: (direction) => ({
+    opacity: 0,
+    x: direction === "left" ? -60 : 60,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+
 
 // const luxuryGold = "#D4AF37"; // classic sharp gold
 
@@ -590,76 +606,89 @@ const investmentItem = {
     <Grid item xs={12} md={6}>
       <Grid container spacing={3 } >
         {[
-          {
-            icon: <DirectionsWalkIcon />,
-            title: "Wide Walkways",
-            desc: "Spacious paved walkways for easy and safe movement",
-          },
-          {
-            icon: <SecurityIcon />,
-            title: "24/7 Security",
-            desc: "Professional surveillance and patrol services",
-          },
-          {
-            icon: <FireExtinguisherIcon />,
-            title: "Fire Safety Systems",
-            desc: "Installed fire alarms and emergency exits",
-          },
-          {
-            icon: <WaterDropIcon />,
-            title: "Clean Water Supply",
-            desc: "Reliable water access for sanitation and hygiene",
-          },
-          {
-            icon: <LocalParkingIcon />,
-            title: "Ample Parking",
-            desc: "Well-organized parking for traders and visitors",
-          },
-          {
-            icon: <LocalShippingIcon />,
-            title: "Loading Zones",
-            desc: "Designated areas for smooth loading & offloading",
-          },
-        ].map((item, index) => (
-          <Grid item xs={12} sm={6} md={6} key={index}>
+  {
+    icon: <DirectionsWalkIcon />,
+    title: "Wide Walkways",
+    desc: "Spacious paved walkways for easy and safe movement",
+  },
+  {
+    icon: <SecurityIcon />,
+    title: "24/7 Security",
+    desc: "Professional surveillance and patrol services",
+  },
+  {
+    icon: <FireExtinguisherIcon />,
+    title: "Fire Safety Systems",
+    desc: "Installed fire alarms and emergency exits",
+  },
+  {
+    icon: <WaterDropIcon />,
+    title: "Clean Water Supply",
+    desc: "Reliable water access for sanitation and hygiene",
+  },
+  {
+    icon: <LocalParkingIcon />,
+    title: "Ample Parking",
+    desc: "Well-organized parking for traders and visitors",
+  },
+  {
+    icon: <LocalShippingIcon />,
+    title: "Loading Zones",
+    desc: "Designated areas for smooth loading & offloading",
+  },
+].map((item, index) => (
+  <Grid
+    item
+    xs={12}
+    sm={6}
+    md={6}
+    key={index}
+    component={motion.div}
+    custom={index % 2 === 0 ? "left" : "right"}
+    variants={slideInVariant}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.3 }}
+  >
+    <Box
+      sx={{
+        display: "flex",
+        gap: 2,
+        p: 3,
+        borderRadius: 3,
+        bgcolor: "#fff8f2",
+        boxShadow: 2,
+        transition: "all 0.3s ease",
+        "&:hover": {
+          transform: "translateY(-5px)",
+          boxShadow: 6,
+        },
+      }}
+    >
+      <Box
+        sx={{
+          color: "#8B4513",
+          fontSize: 36,
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        {item.icon}
+      </Box>
 
-            <Box
-              sx={{
-                display: "flex",
-                gap: 2,
-                p: 3,
-                borderRadius: 3,
-                bgcolor: "#fff8f2",
-                boxShadow: 2,
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-5px)",
-                  boxShadow: 6,
-                },
-              }}
-            >
-              <Box
-                sx={{
-                  color: "#8B4513",
-                  fontSize: 36,
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                {item.icon}
-              </Box>
+      <Box>
+        <Typography fontWeight="bold" color="#5C2D0C">
+          {item.title}
+        </Typography>
+        <Typography sx={{ color: "#5C2D0C" }} fontSize={14}>
+          {item.desc}
+        </Typography>
+      </Box>
+    </Box>
+  </Grid>
+))}
 
-              <Box>
-                <Typography fontWeight="bold" color="#5C2D0C">
-                  {item.title}
-                </Typography>
-                <Typography sx={{ color: "#5C2D0C" }} fontSize={14}>
-                  {item.desc}
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-        ))}
+
       </Grid>
     </Grid>
 
