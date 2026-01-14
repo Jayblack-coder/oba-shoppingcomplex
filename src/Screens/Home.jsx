@@ -308,37 +308,43 @@ const slideInVariant = {
     viewport={{ once: false, amount: 0.3 }}
   >
     {[
-      {
-        icon: <VerifiedIcon />,
-        title: "Premium Location",
-        desc: "Strategically positioned within Oba International Market for maximum visibility and foot traffic.",
-      },
-      {
-        icon: <TrendingUpIcon />,
-        title: "Massive Future Value",
-        desc: "Designed to appreciate significantly as demand and commercial activity increase.",
-      },
-      {
-        icon: <GavelIcon />,
-        title: "Government Recognised & Documented",
-        desc: "Fully backed by government approval with proper documentation in place.",
-      },
-      {
-        icon: <AssignmentTurnedInIcon />,
-        title: "Immediate Title Transfer",
-        desc: "Buyers receive title documentation promptly upon completion of payment.",
-      },
-      {
-        icon: <MonetizationOnIcon />,
-        title: "Guaranteed Returns",
-        desc: "A solid investment structured to deliver consistent long-term value.",
-      },
-      {
-        icon: <PaymentsIcon />,
-        title: "Matured Leasing & Flexible Payment",
-        desc: "Investor-friendly pricing with convenient and structured payment options.",
-      },
-    ].map((item, index) => (
+  {
+    icon: <StorefrontIcon />,
+    title: "1,250 Lock-Up Shops Now Selling",
+    desc: "A limited collection of well-designed lock-up shops available for immediate purchase within the complex.",
+  },
+  {
+    icon: <VerifiedIcon />,
+    title: "Premium Location",
+    desc: "Strategically positioned within Oba International Market for maximum visibility and foot traffic.",
+  },
+  {
+    icon: <TrendingUpIcon />,
+    title: "Massive Future Value",
+    desc: "Designed to appreciate significantly as demand and commercial activity increase.",
+  },
+  {
+    icon: <GavelIcon />,
+    title: "Government Recognised & Documented",
+    desc: "Fully backed by government approval with proper documentation in place.",
+  },
+  {
+    icon: <AssignmentTurnedInIcon />,
+    title: "Immediate Title Transfer",
+    desc: "Buyers receive title documentation promptly upon completion of payment.",
+  },
+  {
+    icon: <MonetizationOnIcon />,
+    title: "Guaranteed Returns",
+    desc: "A solid investment structured to deliver consistent long-term value.",
+  },
+  {
+    icon: <PaymentsIcon />,
+    title: "Matured Leasing & Flexible Payment",
+    desc: "Investor-friendly pricing with convenient and structured payment options.",
+  },
+]
+.map((item, index) => (
       <Grid
         item
         xs={12}
