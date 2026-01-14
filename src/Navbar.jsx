@@ -49,7 +49,7 @@ export default function Navbar() {
     textShadow: "0 0 14px rgba(212,175,55,0.4)" }}
             onClick={() => navigate("/")}
           >
-            Sweet Asouzu Shopping Plaza
+            Sweet Asouzu Complex
           </Typography>
 
           {/* Desktop Menu */}
