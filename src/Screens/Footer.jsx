@@ -39,7 +39,7 @@ export default function Footer() {
   color: "#D4AF37",
   textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
 }}>
-            Oba International Market
+            Sweet Asouzu Plaza
           </Typography>
 
           <Stack
