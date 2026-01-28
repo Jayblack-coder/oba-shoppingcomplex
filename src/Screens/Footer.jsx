@@ -24,6 +24,14 @@ export default function Footer() {
     width: "100%"
   }}
 >
+  {/* ✅ CENTERED CONTENT WRAPPER */}
+  <Box
+    sx={{
+      maxWidth: "1200px",
+      mx: "auto",
+      px: { xs: 2, sm: 3, md: 4 },
+    }}
+  >
 
       <Divider sx={{ mb: 4, borderColor: "rgba(218,113,39,0.3)" }} />
 
@@ -119,8 +127,9 @@ export default function Footer() {
         fontSize={13}
         sx={{ mt: 4, color: "rgba(245,240,236,0.7)" }}
       >
-        © 2026 Ejimographics. All Rights Reserved.
+        © 2026 Ejimo : All Rights Reserved; 08102575097.
       </Typography>
+    </Box>
     </Box>
   );
 }
