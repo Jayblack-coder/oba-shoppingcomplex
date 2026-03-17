@@ -489,7 +489,7 @@ const slideInVariant = {
   target="_blank"
   rel="noopener"
   sx={{
-    color: "#D4AF37",
+    color: "#da7127",
     fontWeight: "bold",
     textDecoration: "underline",
     textDecorationColor: "rgba(212,175,55,0.6)",
