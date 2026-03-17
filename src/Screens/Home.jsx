@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Button, Stack,Divider } from "@mui/material";
+import { Box, Typography, Grid, Button, Stack,Divider, Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import StarIcon from "@mui/icons-material/Star";
@@ -484,7 +484,7 @@ const slideInVariant = {
             <br /><br />
             This expansive facility comprises <strong>1,250 well-designed shops</strong>,
             purpose-built to support thriving businesses and elevate the trading
-            experience for both sellers and customers.
+            experience for both sellers and customers. This was confirmed by a <Link href='https://www.facebook.com/share/v/18BahxHxmP/'>recent visit of the Governor</Link>  to the site.
     </Typography>
   </Grid>
 
