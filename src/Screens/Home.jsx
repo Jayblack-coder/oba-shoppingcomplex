@@ -484,7 +484,25 @@ const slideInVariant = {
             <br /><br />
             This expansive facility comprises <strong>1,250 well-designed shops</strong>,
             purpose-built to support thriving businesses and elevate the trading
-            experience for both sellers and customers. This was confirmed by a <Link href='https://www.facebook.com/share/v/18BahxHxmP/'>recent visit of the Governor</Link>  to the site.
+            experience for both sellers and customers. This was confirmed by a <Link
+  href="https://www.facebook.com/share/v/18BahxHxmP/"
+  target="_blank"
+  rel="noopener"
+  sx={{
+    color: "#D4AF37",
+    fontWeight: "bold",
+    textDecoration: "underline",
+    textDecorationColor: "rgba(212,175,55,0.6)",
+    transition: "all 0.3s ease",
+    "&:hover": {
+      color: "#FFD700",
+      textDecorationColor: "#FFD700",
+      textShadow: "0 0 8px rgba(255,215,0,0.6)",
+    },
+  }}
+>
+  recent visit of the Governor
+</Link>  to the site.
     </Typography>
   </Grid>
 
