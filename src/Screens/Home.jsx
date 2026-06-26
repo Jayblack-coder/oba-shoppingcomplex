@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Button, Stack,Divider, Link } from "@mui/material";
+import { Box, Typography, Grid, Button, Stack,Divider, Link,  Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import StarIcon from "@mui/icons-material/Star";
@@ -18,13 +18,24 @@ import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import PaymentsIcon from "@mui/icons-material/Payments";
 
-
+import { useState } from "react";
 
 
 
 export default function Home() {
   const navigate = useNavigate();
-const sectionImageStyle = {
+const [anchorEl, setAnchorEl] = useState(null);
+
+const open = Boolean(anchorEl);
+
+const handleMenuOpen = (event) => {
+  setAnchorEl(event.currentTarget);
+};
+
+const handleMenuClose = () => {
+  setAnchorEl(null);
+};
+  const sectionImageStyle = {
   width: "100%",
   height: { xs: 220, md: 400 },
   objectFit: "cover",
@@ -102,6 +113,7 @@ const imageFromLeftVariant = {
     transition: { duration: 1, ease: "easeOut" },
   },
 };
+
 
 const investmentContainer = {
   hidden: { opacity: 0 },
@@ -243,7 +255,7 @@ const slideInVariant = {
     justifyContent="center"
     sx={{ mt: 5 }}
   >
-    <Button
+    {/* <Button
       component={motion.button}
       whileHover={{
         scale: 1.08,
@@ -262,7 +274,56 @@ const slideInVariant = {
       onClick={() => navigate("/contact")}
     >
       Buy a Shop
-    </Button>
+    </Button> */}
+    <Button
+  variant="contained"
+  size="large"
+  onClick={handleMenuOpen}
+  sx={{
+    bgcolor: "#D4AF37",
+    px: 4,
+    py: 1.5,
+    fontWeight: "bold",
+    "&:hover": {
+      bgcolor: "#5C2D0C",
+    },
+  }}
+>
+  Buy a Shop
+</Button>
+
+<Menu
+  anchorEl={anchorEl}
+  open={open}
+  onClose={handleMenuClose}
+>
+  <MenuItem
+    onClick={() => {
+      navigate("/shops/Standard");
+      handleMenuClose();
+    }}
+  >
+    Standard Shops
+  </MenuItem>
+
+  <MenuItem
+    onClick={() => {
+      navigate("/shops/Premium");
+      handleMenuClose();
+    }}
+  >
+    Premium Shops
+  </MenuItem>
+
+  <MenuItem
+    onClick={() => {
+      navigate("/shops/Executive");
+      handleMenuClose();
+    }}
+  >
+    Executive Shops
+  </MenuItem>
+</Menu>
 
     <Button
       component={motion.button}

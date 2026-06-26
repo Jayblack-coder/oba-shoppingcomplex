@@ -10,6 +10,7 @@ import Footer from "./Screens/Footer";
 // import Test from "./Screens/Test";
 import Agreement from "./Screens/Agreement";
 import { Box } from "@mui/material";
+import Shops from "./Screens/Shops";
 
 
 
@@ -34,6 +35,10 @@ export default function App() {
         <Route path="/about" element={<Home />} />
         <Route path="/services" element={<Home />} />
         <Route path="/gallery" element={<Home />} />
+        <Route
+    path="/shops/:type"
+    element={<Shops />}
+/>
         {/* <Route path="/test" element={<Test />} /> */}
       </Routes>
     </Box>
