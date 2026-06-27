@@ -12,6 +12,7 @@ import {
   Chip,
   CircularProgress,
 } from "@mui/material";
+import CategorySelector from "./Market/CategorySelector";
 
 export default function Shops() {
   const { type } = useParams();
@@ -19,11 +20,13 @@ export default function Shops() {
   const navigate = useNavigate();
 
   const [shops, setShops] = useState([]);
+  const [shopType, setShopType] = useState("Standard");
   const [loading, setLoading] = useState(true);
 const [wing, setWing] = useState("A");
 
+
 const [block, setBlock] = useState(
-  type === "Standard"
+  shopType === "Standard"
     ? 1
     : type === "Premium"
     ? 3
@@ -48,7 +51,7 @@ const [navigation, setNavigation] = useState({});
 
 useEffect(() => {
   fetchShops();
-}, [type, wing, block]);
+}, [shopType, wing, block]);
 
   async function fetchShops() {
 
@@ -57,13 +60,13 @@ useEffect(() => {
   try {
 
     const shopRes = await axios.get(
-      `http://localhost:5000/api/shops/layout/${type}/${wing}/${block}`
-    );
+  `http://localhost:5000/api/shops/layout/${shopType}/${wing}/${block}`
+);
 
     setShops(shopRes.data.shops);
 
     const navRes = await axios.get(
-      `http://localhost:5000/api/shops/navigation/${type}/${wing}/${block}`
+      `http://localhost:5000/api/shops/navigation/${shopType}/${wing}/${block}`
     );
 
     setNavigation(navRes.data);
@@ -101,12 +104,19 @@ useEffect(() => {
         p: 4,
       }}
     >
-      <Typography
+      <CategorySelector
+  shopType={shopType}
+  setShopType={setShopType}
+  setWing={setWing}
+  setBlock={setBlock}
+/>
+     <Typography
   variant="h3"
   fontWeight="bold"
   textAlign="center"
+  mb={5}
 >
-  {type} Shops
+  {shopType} Shops
 </Typography>
 
 <Typography

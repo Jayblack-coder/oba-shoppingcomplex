@@ -11,6 +11,7 @@ import Footer from "./Screens/Footer";
 import Agreement from "./Screens/Agreement";
 import { Box } from "@mui/material";
 import Shops from "./Screens/Shops";
+import ShopDetails from "./Screens/ShopDetails";
 
 
 
@@ -40,7 +41,12 @@ export default function App() {
     element={<Shops />}
 />
         {/* <Route path="/test" element={<Test />} /> */}
+        <Route
+    path="/shop/:shopCode"
+    element={<ShopDetails />}
+/>
       </Routes>
+      
     </Box>
 
     <Footer />
