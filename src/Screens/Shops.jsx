@@ -20,24 +20,65 @@ export default function Shops() {
 
   const [shops, setShops] = useState([]);
   const [loading, setLoading] = useState(true);
+const [wing, setWing] = useState("A");
 
-  useEffect(() => {
-    fetchShops();
-  }, [type]);
+const [block, setBlock] = useState(
+  type === "Standard"
+    ? 1
+    : type === "Premium"
+    ? 3
+    : 5
+);
+
+const [navigation, setNavigation] = useState({});
+
+ useEffect(() => {
+
+  setWing("A");
+
+  if (type === "Standard") {
+    setBlock(1);
+  } else if (type === "Premium") {
+    setBlock(3);
+  } else {
+    setBlock(5);
+  }
+
+}, [type]);
+
+useEffect(() => {
+  fetchShops();
+}, [type, wing, block]);
 
   async function fetchShops() {
-    try {
-      const res = await axios.get(
-        `http://localhost:5000/api/shops/category/${type}`
-      );
 
-      setShops(res.data.shops);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setLoading(false);
-    }
+  setLoading(true);
+
+  try {
+
+    const shopRes = await axios.get(
+      `http://localhost:5000/api/shops/layout/${type}/${wing}/${block}`
+    );
+
+    setShops(shopRes.data.shops);
+
+    const navRes = await axios.get(
+      `http://localhost:5000/api/shops/navigation/${type}/${wing}/${block}`
+    );
+
+    setNavigation(navRes.data);
+
+  } catch (err) {
+
+    console.log(err);
+
+  } finally {
+
+    setLoading(false);
+
   }
+
+}
 
   if (loading)
     return (
@@ -61,13 +102,20 @@ export default function Shops() {
       }}
     >
       <Typography
-        variant="h3"
-        fontWeight="bold"
-        textAlign="center"
-        mb={5}
-      >
-        {type} Shops
-      </Typography>
+  variant="h3"
+  fontWeight="bold"
+  textAlign="center"
+>
+  {type} Shops
+</Typography>
+
+<Typography
+  textAlign="center"
+  color="text.secondary"
+  mb={5}
+>
+  Wing {wing} • Block {block}
+</Typography>
 
       <Grid container spacing={4}>
         {shops.map((shop) => (
@@ -170,6 +218,41 @@ export default function Shops() {
           </Grid>
         ))}
       </Grid>
+      <Box
+  display="flex"
+  justifyContent="space-between"
+  mt={5}
+>
+
+  <Button
+    variant="outlined"
+    disabled={!navigation.previous}
+    onClick={() => {
+
+      setWing(navigation.previous.wing);
+
+      setBlock(navigation.previous.block);
+
+    }}
+  >
+    ← Previous Block
+  </Button>
+
+  <Button
+    variant="contained"
+    disabled={!navigation.next}
+    onClick={() => {
+
+      setWing(navigation.next.wing);
+
+      setBlock(navigation.next.block);
+
+    }}
+  >
+    Next Block →
+  </Button>
+
+</Box>
     </Box>
   );
 }
