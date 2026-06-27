@@ -36,10 +36,11 @@ export default function App() {
         <Route path="/about" element={<Home />} />
         <Route path="/services" element={<Home />} />
         <Route path="/gallery" element={<Home />} />
-        <Route
+      <Route
     path="/shops/:type"
     element={<Shops />}
 />
+
         {/* <Route path="/test" element={<Test />} /> */}
         <Route
     path="/shop/:shopCode"
