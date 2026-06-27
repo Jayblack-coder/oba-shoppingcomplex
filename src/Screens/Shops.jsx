@@ -251,13 +251,18 @@ useEffect(() => {
                   Area: {shop.area} sqm
                 </Typography>
 
-                <Typography
+                {/* <Typography
                   fontWeight="bold"
                   mt={1}
                 >
                   ₦{shop.price.toLocaleString()}
-                </Typography>
+                </Typography> */}
 
+{shop.price && (
+  <Typography fontWeight="bold">
+    ₦{shop.price.toLocaleString()}
+  </Typography>
+)}
                 <Chip
                   label={shop.status}
                   color={

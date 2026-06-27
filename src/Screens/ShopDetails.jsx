@@ -128,27 +128,17 @@ export default function ShopDetails() {
             label={shop.status}
           />
 
-          <Typography
-            mt={3}
-            variant="h5"
-            color="#D4AF37"
-            fontWeight="bold"
-          >
-            ₦{shop.price.toLocaleString()}
-          </Typography>
+          {shop.price && (
+  <Typography fontWeight="bold">
+    ₦{shop.price.toLocaleString()}
+  </Typography>
+)}
 
-          <Typography mt={1}>
-            Installment Price:
-          </Typography>
-
-          <Typography
-            variant="h6"
-            fontWeight="bold"
-          >
-            ₦
-            {shop.installmentPrice.toLocaleString()}
-          </Typography>
-
+{shop.installmentPrice && (
+  <Typography>
+    Installment: ₦{shop.installmentPrice.toLocaleString()}
+  </Typography>
+)}
           <Divider sx={{ my: 4 }} />
 
           <Typography variant="h6">
