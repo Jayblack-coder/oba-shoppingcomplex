@@ -11,8 +11,12 @@ import {
   Button,
   Chip,
   CircularProgress,
+  TextField,
+  InputAdornment,
+  IconButton,
 } from "@mui/material";
 import CategorySelector from "./Market/CategorySelector";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Shops() {
   const { type } = useParams();
@@ -23,8 +27,26 @@ export default function Shops() {
   const [shopType, setShopType] = useState("Standard");
   const [loading, setLoading] = useState(true);
 const [wing, setWing] = useState("A");
+const [keyword, setKeyword] = useState("");
 
+const searchShop = async () => {
+  if (!keyword.trim()) return;
 
+  try {
+    const res = await axios.get(
+      `http://localhost:5000/api/shops/search?keyword=${keyword}`
+    );
+
+    if (res.data.count === 1) {
+      navigate(`/shop/${res.data.shops[0].shopCode}`);
+    } else {
+      setShops(res.data.shops);
+    }
+  } catch (err) {
+    console.log(err);
+    alert("Shop not found");
+  }
+};
 const [block, setBlock] = useState(
   shopType === "Standard"
     ? 1
@@ -118,7 +140,44 @@ useEffect(() => {
 >
   {shopType} Shops
 </Typography>
+<Box
+  sx={{
+    display: "flex",
+    justifyContent: "center",
+    mb: 4,
+  }}
+>
+  <TextField
+    value={keyword}
+    onChange={(e) => setKeyword(e.target.value)}
+    placeholder="Search Shop Code (e.g. SAP-A1-F01)"
+    sx={{ width: 420 }}
+    InputProps={{
+      startAdornment: (
+        <InputAdornment position="start">
+          <SearchIcon />
+        </InputAdornment>
+      ),
+    }}
+  />
 
+  <IconButton
+    color="primary"
+    onClick={searchShop}
+  >
+    <SearchIcon />
+  </IconButton>
+</Box>
+
+<TextField
+    value={keyword}
+    onChange={(e) => setKeyword(e.target.value)}
+    onKeyDown={(e) => {
+        if (e.key === "Enter") {
+            searchShop();
+        }
+    }}
+/>
 <Typography
   textAlign="center"
   color="text.secondary"
