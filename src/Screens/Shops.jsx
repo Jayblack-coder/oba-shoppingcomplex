@@ -221,7 +221,7 @@ useEffect(() => {
         justifyContent: "center",
       }}
     >
-            <Card
+            {/* <Card
         sx={{
           width: "100%",
           maxWidth: 330,
@@ -234,7 +234,24 @@ useEffect(() => {
             boxShadow: 8,
           },
         }}
-      >
+      > */}
+      <Card
+  sx={{
+    width: {
+      xs: "95%",
+      sm: "100%",
+    },
+    maxWidth: 330,
+    borderRadius: 3,
+    display: "flex",
+    flexDirection: "column",
+    transition: ".3s",
+    "&:hover": {
+      transform: "translateY(-5px)",
+      boxShadow: 8,
+    },
+  }}
+>
               <Box
                 component="img"
                 src={
