@@ -148,32 +148,45 @@ useEffect(() => {
   sx={{
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
     mb: 4,
+    px: 2,
   }}
 >
   <TextField
     value={keyword}
     onChange={(e) => setKeyword(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        searchShop();
+      }
+    }}
     placeholder="Search Shop Code (e.g. SAP-A1-F01)"
-    sx={{ width: 420 }}
+    sx={{
+      width: {
+        xs: "100%",
+        sm: 420,
+      },
+      maxWidth: 420,
+    }}
     InputProps={{
-      startAdornment: (
-        <InputAdornment position="start">
-          <SearchIcon />
+      // startAdornment: (
+      //   <InputAdornment position="start">
+      //     <SearchIcon />
+      //   </InputAdornment>
+      // ),
+      endAdornment: (
+        <InputAdornment position="end">
+          <IconButton color="primary" onClick={searchShop}>
+            <SearchIcon />
+          </IconButton>
         </InputAdornment>
       ),
     }}
   />
-
-  <IconButton
-    color="primary"
-    onClick={searchShop}
-  >
-    <SearchIcon />
-  </IconButton>
 </Box>
 
-<TextField
+{/* <TextField
     value={keyword}
     onChange={(e) => setKeyword(e.target.value)}
     onKeyDown={(e) => {
@@ -188,32 +201,40 @@ useEffect(() => {
   mb={5}
 >
   Wing {wing} • Block {block}
-</Typography>
+</Typography> */}
 
-      <Grid container spacing={4}>
+      <Grid
+  container
+  spacing={4}
+  justifyContent="center"
+>
         {shops.map((shop) => (
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            lg={3}
-            key={shop._id}
-          >
+           <Grid
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      lg={3}
+      key={shop._id}
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
             <Card
-              sx={{
-                borderRadius: 3,
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                transition: ".3s",
-
-                "&:hover": {
-                  transform: "translateY(-5px)",
-                  boxShadow: 8,
-                },
-              }}
-            >
+        sx={{
+          width: "100%",
+          maxWidth: 330,
+          borderRadius: 3,
+          display: "flex",
+          flexDirection: "column",
+          transition: ".3s",
+          "&:hover": {
+            transform: "translateY(-5px)",
+            boxShadow: 8,
+          },
+        }}
+      >
               <Box
                 component="img"
                 src={
