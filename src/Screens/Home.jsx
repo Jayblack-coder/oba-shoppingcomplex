@@ -234,7 +234,7 @@ const slideInVariant = {
     variants={imageVariants}
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.98 }}
-    src="/Images/shop4.jpeg"
+    src="/Images/marketgate1.jpeg"
     alt="Oba Shopping Complex"
     sx={{
       width: "100%",

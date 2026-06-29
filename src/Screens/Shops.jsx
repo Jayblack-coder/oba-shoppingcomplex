@@ -219,7 +219,7 @@ useEffect(() => {
                 src={
                   shop.images.length
                     ? shop.images[0]
-                    : "/Images/shop4.jpeg"
+                    : "/Images/poster.jpeg"
                 }
                 sx={{
                   height: 220,
