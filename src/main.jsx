@@ -4,14 +4,22 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./Screens/Theme.jsx";
+import { AuthProvider } from "./context/AuthContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-  <App />
-</ThemeProvider>
-
-    </BrowserRouter>
+     
+  <AuthProvider>
+  <ThemeProvider theme={theme}>
+      <App />
+      </ThemeProvider>
+    </AuthProvider>
+    </BrowserRouter> 
+    
+    
+    
+   
   </React.StrictMode>
 );
+ 

@@ -76,7 +76,7 @@ export default function ShopDetails() {
               src={
                 shop.images.length
                   ? shop.images[0]
-                  : "/Images/shop4.jpeg"
+                  : "/Images/shopcomplex.jpeg"
               }
               sx={{
                 width: "100%",

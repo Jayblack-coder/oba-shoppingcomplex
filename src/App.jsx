@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./Screens/Navbar";
 
 import Home from "./Screens/Home";
 // import About from "./Screens/About";
@@ -12,7 +12,8 @@ import Agreement from "./Screens/Agreement";
 import { Box } from "@mui/material";
 import Shops from "./Screens/Shops";
 import ShopDetails from "./Screens/ShopDetails";
-
+import Register from "./Screens/Register";
+import Login from "./Screens/Login";
 
 
 
@@ -45,7 +46,11 @@ export default function App() {
         <Route
     path="/shop/:shopCode"
     element={<ShopDetails />}
+    
 />
+<Route path="/register" element={<Register />} />
+<Route path="/login" element={<Login />} />
+
       </Routes>
       
     </Box>
