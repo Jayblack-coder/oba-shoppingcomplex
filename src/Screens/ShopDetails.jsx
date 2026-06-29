@@ -13,6 +13,7 @@ import {
   CircularProgress,
   Stack,
 } from "@mui/material";
+import api from "../api/api";
 
 export default function ShopDetails() {
   const { shopCode } = useParams();
@@ -26,8 +27,8 @@ export default function ShopDetails() {
 
   async function fetchShop() {
     try {
-      const res = await axios.get(
-        `http://localhost:5000/api/shops/code/${shopCode}`
+      const res = await api.get(
+  `/shops/code/${shopCode}`
       );
 
       setShop(res.data.shop);
