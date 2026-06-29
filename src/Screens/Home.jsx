@@ -584,7 +584,7 @@ const slideInVariant = {
 >
   <Box
     component="img"
-    src="/Images/shop2.jpeg"
+    src="/Images/marketgate1.jpeg"
     alt="Shop layout"
     sx={{ ...sectionImageStyle, mx: "auto" }}
   />
@@ -630,7 +630,7 @@ const slideInVariant = {
 >
   <Box
     component="img"
-    src="/Images/shop4.jpeg"
+    src="/Images/shopcomplex.jpeg"
     alt="Security"
     sx={sectionImageStyle}
   />
@@ -807,7 +807,7 @@ const slideInVariant = {
     <Grid item xs={12} md={6}>
       <Box
         component="img"
-        src="/Images/shop3.jpeg"
+        src="/Images/marketstreetlight.jpeg"
         alt="Amenities"
         sx={{
           width: "100%",
