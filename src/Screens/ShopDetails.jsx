@@ -14,13 +14,15 @@ import {
   Stack,
 } from "@mui/material";
 import api from "../api/api";
+import { useNavigate } from "react-router-dom";
 
 export default function ShopDetails() {
   const { shopCode } = useParams();
-
+const navigate = useNavigate();
   const [shop, setShop] = useState(null);
   const [loading, setLoading] = useState(true);
 
+ 
   useEffect(() => {
     fetchShop();
   }, [shopCode]);
@@ -39,6 +41,25 @@ export default function ShopDetails() {
     }
   }
 
+   const handleReserve = () => {
+  const buyer = JSON.parse(
+    localStorage.getItem("buyer")
+  );
+
+  if (!buyer) {
+    // Remember where the user was
+    localStorage.setItem(
+      "redirectAfterLogin",
+      `/shop/${shop.shopCode}`
+    );
+
+    navigate("/login");
+    return;
+  }
+
+  navigate(`/reserve/${shop._id}`);
+};
+
   if (loading)
     return (
       <Box
@@ -56,6 +77,7 @@ export default function ShopDetails() {
         Shop not found
       </Typography>
     );
+
 
   return (
     <Box
@@ -217,7 +239,7 @@ export default function ShopDetails() {
             )}
           </Box>
 
-          <Button
+          {/* <Button
             fullWidth
             variant="contained"
             size="large"
@@ -227,7 +249,19 @@ export default function ShopDetails() {
               py: 1.8,
             }}
             disabled={shop.status !== "Available"}
-          >
+          > */}
+          <Button
+  fullWidth
+  variant="contained"
+  size="large"
+  sx={{
+    mt: 5,
+    bgcolor: "#D4AF37",
+    py: 1.8,
+  }}
+  disabled={shop.status !== "Available"}
+  onClick={handleReserve}
+>
             {shop.status === "Available"
               ? "Reserve This Shop"
               : "Unavailable"}

@@ -50,7 +50,23 @@ export default function Login() {
         res.data.token
       );
 
-      navigate("/");
+      const redirect =
+  localStorage.getItem(
+    "redirectAfterLogin"
+  );
+
+if (redirect) {
+  localStorage.removeItem(
+    "redirectAfterLogin"
+  );
+
+  navigate(redirect);
+
+  return;
+}
+
+navigate("/");
+      
     } catch (err) {
       setError(
         err.response?.data?.message ||

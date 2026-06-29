@@ -14,6 +14,7 @@ import Shops from "./Screens/Shops";
 import ShopDetails from "./Screens/ShopDetails";
 import Register from "./Screens/Register";
 import Login from "./Screens/Login";
+import Reservation from "./Screens/Reservation"
 
 
 
@@ -27,6 +28,7 @@ export default function App() {
     }}
   >
     <Navbar />
+  
 
     {/* Page Content */}
     <Box component="main" sx={{ flexGrow: 1 }}>
@@ -50,6 +52,10 @@ export default function App() {
 />
 <Route path="/register" element={<Register />} />
 <Route path="/login" element={<Login />} />
+<Route
+  path="/reserve/:shopId"
+  element={<Reservation />}
+/>
 
       </Routes>
       
