@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import CategorySelector from "./Market/CategorySelector";
 import SearchIcon from "@mui/icons-material/Search";
+import api from "../api/api";
 
 export default function Shops() {
   const { type } = useParams();
@@ -33,9 +34,12 @@ const searchShop = async () => {
   if (!keyword.trim()) return;
 
   try {
-    const res = await axios.get(
-      `http://localhost:5000/api/shops/search?keyword=${keyword}`
-    );
+    // const res = await axios.get(
+    //   `http://localhost:5000/api/shops/search?keyword=${keyword}`
+    // );
+    const res = await api.get(
+  `/shops/search?keyword=${keyword}`
+);
 
     if (res.data.count === 1) {
       navigate(`/shop/${res.data.shops[0].shopCode}`);
@@ -81,14 +85,14 @@ useEffect(() => {
 
   try {
 
-    const shopRes = await axios.get(
-  `http://localhost:5000/api/shops/layout/${shopType}/${wing}/${block}`
+    const shopRes = await api.get(
+  `/shops/layout/${shopType}/${wing}/${block}`
 );
 
     setShops(shopRes.data.shops);
 
-    const navRes = await axios.get(
-      `http://localhost:5000/api/shops/navigation/${shopType}/${wing}/${block}`
+    const navRes = await api.get(
+  `/shops/navigation/${shopType}/${wing}/${block}`
     );
 
     setNavigation(navRes.data);
