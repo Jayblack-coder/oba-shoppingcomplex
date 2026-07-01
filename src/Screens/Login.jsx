@@ -9,6 +9,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+// import { useNavigate } from "react-router-dom";
 
 import api from "../api/api";
 
@@ -22,6 +23,7 @@ export default function Login() {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+// const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({
@@ -40,20 +42,43 @@ export default function Login() {
 
       const res = await api.post("/buyers/login", form);
 
-      localStorage.setItem(
-        "buyer",
-        JSON.stringify(res.data.buyer)
-      );
+      // localStorage.setItem(
+      //   "buyer",
+      //   JSON.stringify(res.data.buyer)
+      // );
+
+      // localStorage.setItem(
+      //   "token",
+      //   res.data.token
+      // );
 
       localStorage.setItem(
-        "token",
-        res.data.token
-      );
+  "buyer",
+  JSON.stringify({
+    ...res.data.buyer,
+    token: res.data.token,
+  })
+);
+//       const redirect =
+//   localStorage.getItem(
+//     "redirectAfterLogin"
+//   );
 
-      const redirect =
-  localStorage.getItem(
-    "redirectAfterLogin"
-  );
+// if (redirect) {
+//   localStorage.removeItem(
+//     "redirectAfterLogin"
+//   );
+
+//   navigate(redirect);
+
+//   return;
+// }
+
+// navigate("/");
+      
+const redirect = localStorage.getItem(
+  "redirectAfterLogin"
+);
 
 if (redirect) {
   localStorage.removeItem(
@@ -61,12 +86,10 @@ if (redirect) {
   );
 
   navigate(redirect);
-
-  return;
+} else {
+  navigate("/");
 }
 
-navigate("/");
-      
     } catch (err) {
       setError(
         err.response?.data?.message ||

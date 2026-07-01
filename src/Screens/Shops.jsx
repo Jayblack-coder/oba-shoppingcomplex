@@ -40,12 +40,14 @@ const searchShop = async () => {
     const res = await api.get(
   `/shops/search?keyword=${keyword}`
 );
-
+// console.log(res.data)
     if (res.data.count === 1) {
       navigate(`/shop/${res.data.shops[0].shopCode}`);
     } else {
       setShops(res.data.shops);
+      // console.log(res.data.shops)
     }
+    
   } catch (err) {
     console.log(err);
     alert("Shop not found");
@@ -90,6 +92,7 @@ useEffect(() => {
 );
 
     setShops(shopRes.data.shops);
+    console.log(shopRes.data.shops)
 
     const navRes = await api.get(
   `/shops/navigation/${shopType}/${wing}/${block}`

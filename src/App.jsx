@@ -28,7 +28,8 @@ export default function App() {
     }}
   >
     <Navbar />
-  
+  {/* <Reservation/> */}
+  {/* <Register/> */}
 
     {/* Page Content */}
     <Box component="main" sx={{ flexGrow: 1 }}>

@@ -41,16 +41,34 @@ const navigate = useNavigate();
     }
   }
 
-   const handleReserve = () => {
+//    const handleReserve = () => {
+//   const buyer = JSON.parse(
+//     localStorage.getItem("buyer")
+//   );
+
+//   if (!buyer) {
+//     // Remember where the user was
+//     localStorage.setItem(
+//       "redirectAfterLogin",
+//       `/shop/${shop.shopCode}`
+//     );
+
+//     navigate("/login");
+//     return;
+//   }
+
+//   navigate(`/reserve/${shop._id}`);
+// };
+
+const handleReserve = () => {
   const buyer = JSON.parse(
     localStorage.getItem("buyer")
   );
 
-  if (!buyer) {
-    // Remember where the user was
+  if (!buyer || !buyer.token) {
     localStorage.setItem(
       "redirectAfterLogin",
-      `/shop/${shop.shopCode}`
+      `/reserve/${shop._id}`
     );
 
     navigate("/login");
