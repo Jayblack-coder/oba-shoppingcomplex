@@ -16,6 +16,7 @@ import Register from "./Screens/Register";
 import Login from "./Screens/Login";
 import Reservation from "./Screens/Reservation"
 import Payment from "./Screens/Payment";
+import PaymentVerify from "./Screens/PaymentVerify";
 
 
 
@@ -61,6 +62,10 @@ export default function App() {
 <Route
   path="/payment/:reservationId"
   element={<Payment />}
+/>
+<Route
+  path="/payment/verify"
+  element={<PaymentVerify />}
 />
       </Routes>
       

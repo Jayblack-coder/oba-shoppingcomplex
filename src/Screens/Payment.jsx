@@ -371,6 +371,13 @@ export default function Payment() {
       ? shop?.price
       : shop?.installmentPrice;
 
+      const totalPrice = shop?.price || 0;
+
+const outstandingBalance =
+  reservation?.paymentOption === "Installment"
+    ? totalPrice - (shop?.installmentPrice || 0)
+    : 0;
+
   const reservationBlocked =
     reservation?.status === "Cancelled" ||
     reservation?.status === "Expired";
@@ -487,22 +494,86 @@ export default function Payment() {
             <Divider sx={{ my: 2 }} />
           </Grid>
 
-          <Grid item xs={12}>
-            <Typography
-              variant="h5"
-              color="primary"
-            >
-              Amount Due
-            </Typography>
+        <Grid item xs={12}>
+  <Divider sx={{ my: 2 }} />
 
-            <Typography
-              variant="h4"
-              fontWeight="bold"
-            >
-              ₦
-              {amountDue?.toLocaleString()}
-            </Typography>
-          </Grid>
+  <Typography
+    variant="h5"
+    color="primary"
+    gutterBottom
+  >
+    Payment Summary
+  </Typography>
+
+  <Paper
+    variant="outlined"
+    sx={{
+      p: 3,
+      bgcolor: "#fafafa",
+    }}
+  >
+    <Grid container spacing={2}>
+
+      <Grid item xs={6}>
+        <Typography color="text.secondary">
+          Total Shop Price
+        </Typography>
+
+        <Typography
+          variant="h6"
+          fontWeight="bold"
+        >
+          ₦{totalPrice.toLocaleString()}
+        </Typography>
+      </Grid>
+
+      <Grid item xs={6}>
+        <Typography color="text.secondary">
+          Amount Due Now
+        </Typography>
+
+        <Typography
+          variant="h6"
+          color="primary"
+          fontWeight="bold"
+        >
+          ₦{amountDue.toLocaleString()}
+        </Typography>
+      </Grid>
+
+      {reservation.paymentOption ===
+        "Installment" && (
+        <Grid item xs={12}>
+          <Divider sx={{ my: 1 }} />
+
+          <Typography color="text.secondary">
+            Outstanding Balance
+          </Typography>
+
+          <Typography
+            variant="h6"
+            color="error"
+            fontWeight="bold"
+          >
+            ₦
+            {outstandingBalance.toLocaleString()}
+          </Typography>
+
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            mt={1}
+          >
+            This balance will remain payable after
+            this installment has been successfully
+            processed.
+          </Typography>
+        </Grid>
+      )}
+
+    </Grid>
+  </Paper>
+</Grid>
         </Grid>
 
         <Button

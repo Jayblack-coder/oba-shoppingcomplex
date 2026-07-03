@@ -303,11 +303,11 @@ useEffect(() => {
                   ₦{shop.price.toLocaleString()}
                 </Typography> */}
 
-{shop.price && (
+{/* {shop.price && (
   <Typography fontWeight="bold">
     ₦{shop.price.toLocaleString()}
   </Typography>
-)}
+)} */}
                 <Chip
                   label={shop.status}
                   color={
