@@ -15,6 +15,7 @@ import ShopDetails from "./Screens/ShopDetails";
 import Register from "./Screens/Register";
 import Login from "./Screens/Login";
 import Reservation from "./Screens/Reservation"
+import Payment from "./Screens/Payment";
 
 
 
@@ -57,7 +58,10 @@ export default function App() {
   path="/reserve/:shopId"
   element={<Reservation />}
 />
-
+<Route
+  path="/payment/:reservationId"
+  element={<Payment />}
+/>
       </Routes>
       
     </Box>

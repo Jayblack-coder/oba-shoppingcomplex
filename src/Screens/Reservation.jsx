@@ -105,7 +105,27 @@ export default function Reservation() {
 
     // navigate("/");
 
-    const res = await api.post(
+//     const res = await api.post(
+//   "/reservations",
+//   {
+//     shopId,
+//     paymentOption,
+//     notes,
+//   },
+//   {
+//     headers: {
+//       Authorization: `Bearer ${buyer.token}`,
+//     },
+//   }
+// );
+
+// console.log("Reservation Response:", res);
+
+// alert("Reservation submitted successfully.");
+
+// navigate("/");
+
+const response = await api.post(
   "/reservations",
   {
     shopId,
@@ -119,11 +139,11 @@ export default function Reservation() {
   }
 );
 
-console.log("Reservation Response:", res);
-
 alert("Reservation submitted successfully.");
 
-navigate("/");
+navigate(
+  `/payment/${response.data.reservation._id}`
+);
   } catch (err) {
     alert(
       err.response?.data?.message ||
