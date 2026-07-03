@@ -168,7 +168,7 @@ const handleReserve = () => {
             }
             label={shop.status}
           />
-
+{/* 
           {shop.price && (
   <Typography fontWeight="bold">
     ₦{shop.price.toLocaleString()}
@@ -179,7 +179,7 @@ const handleReserve = () => {
   <Typography>
     Installment: ₦{shop.installmentPrice.toLocaleString()}
   </Typography>
-)}
+)} */}
           <Divider sx={{ my: 4 }} />
 
           <Typography variant="h6">
