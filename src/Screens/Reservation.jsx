@@ -132,15 +132,16 @@ const response = await api.post(
     paymentOption,
     notes,
   },
-  {
-    headers: {
-      Authorization: `Bearer ${buyer.token}`,
-    },
-  }
+  // {
+  //   headers: {
+  //     Authorization: `Bearer ${buyer.token}`,
+  //   },
+  // }
 );
 
-alert("Reservation submitted successfully.");
-
+alert(
+"Reservation submitted successfully.\n\nYou will now be taken to the Payment Instructions page where you can view the company's bank details and complete your payment."
+);
 // navigate(
 //   `/payment/${response.data.reservation._id}`
 // );
@@ -229,6 +230,25 @@ if (!buyer) {
               Selected Shop
             </Typography>
 
+{shop?.status !== "Available" && (
+
+<Alert
+severity="warning"
+sx={{ mb:3 }}
+>
+
+This shop is currently
+
+<strong>
+{" "}
+{shop.status}
+</strong>
+
+and cannot be reserved.
+
+</Alert>
+
+)}
             <Box
               component="img"
              src={
@@ -360,7 +380,19 @@ if (!buyer) {
                 Installment
               </MenuItem>
             </TextField>
+<Typography
+sx={{ mt: 2 }}
+variant="h6"
+color="primary"
+>
+Amount Due:
 
+{" "}
+
+{paymentOption === "Full"
+    ? `₦${shop?.price?.toLocaleString()}`
+    : `₦${shop?.installmentPrice?.toLocaleString()}`}
+</Typography>
             <TextField
               fullWidth
               multiline
@@ -397,13 +429,19 @@ if (!buyer) {
 
               <br /><br />
 
-              • Payment instructions will be
-              communicated after approval.
+             • After submitting your reservation, you will receive the company's official bank account details.
 
               <br /><br />
 
               • False information may result
               in cancellation.
+              <br /><br />
+              • Kindly make payment directly into the designated account and contact management using the provided phone number.
+            <br /><br />
+            • Your reservation will remain pending until payment is verified by the management team.
+            <br /><br />
+            • Once payment has been confirmed, your reservation will be approved and the shop allocated to you.
+            <br /><br />
             </Typography>
 
             <FormControlLabel
@@ -441,7 +479,7 @@ if (!buyer) {
     ? "Submitting..."
     : shop?.status === "Available"
     ? "Submit Reservation"
-    : "Shop Not Available"}
+   : `Shop ${shop?.status}`}
 </Button>
 
           </Paper>
