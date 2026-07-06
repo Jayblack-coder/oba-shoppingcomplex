@@ -32,9 +32,16 @@ export default function Dashboard() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await api.get(
-        "/dashboard/overview"
-      );
+      const admin = JSON.parse(localStorage.getItem("admin"));
+
+const res = await api.get(
+  "/dashboard/overview",
+  {
+    headers: {
+      Authorization: `Bearer ${admin.token}`,
+    },
+  }
+);
 
       setStats(res.data);
     } catch (err) {

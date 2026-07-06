@@ -52,26 +52,65 @@ export default function Navbar() {
             Sweet Asouzu Plaza
           </Typography>
 
-          {/* Desktop Menu */}
-          <Box sx={{ display: { xs: "none", md: "block" } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item.label}
-                onClick={() => navigate(item.path)}
-                sx={{
-                  color: "#D4AF37",
-                  fontWeight: 600,
-                  "&:hover": {
-                    bgcolor: "#8B4513", // lighter brown hover
-                    color: "#fff8f2",
-                  },
-                }}
-              >
-                {item.label}
-              </Button>
-            ))}
-          </Box>
+        {/* Desktop Menu */}
+<Box
+  sx={{
+    display: { xs: "none", md: "flex" },
+    alignItems: "center",
+    gap: 1,
+  }}
+>
+  {navItems.map((item) => (
+    <Button
+      key={item.label}
+      onClick={() => navigate(item.path)}
+      sx={{
+        color: "#D4AF37",
+        fontWeight: 600,
+        "&:hover": {
+          bgcolor: "#8B4513",
+          color: "#fff8f2",
+        },
+      }}
+    >
+      {item.label}
+    </Button>
+  ))}
 
+  {/* Buyer Login */}
+  <Button
+    variant="outlined"
+    onClick={() => navigate("/login")}
+    sx={{
+      ml: 2,
+      color: "#D4AF37",
+      borderColor: "#D4AF37",
+      "&:hover": {
+        borderColor: "#fff8f2",
+        color: "#fff8f2",
+      },
+    }}
+  >
+    Login
+  </Button>
+
+  {/* Admin Login */}
+  <Button
+    variant="contained"
+    onClick={() => navigate("/admin/login")}
+    sx={{
+      bgcolor: "#D4AF37",
+      color: "#5C2D0C",
+      fontWeight: "bold",
+      ml: 1,
+      "&:hover": {
+        bgcolor: "#c79f24",
+      },
+    }}
+  >
+    Admin
+  </Button>
+</Box>
           {/* Mobile Menu Icon */}
           <IconButton
             sx={{ display: { xs: "block", md: "none" }, color: "#D4AF37" }}
@@ -85,23 +124,47 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <Box sx={{ width: 250, bgcolor: "#5C2D0C", height: "100%" }}>
-          <List>
-            {navItems.map((item) => (
-              <ListItem
-                button
-                key={item.label}
-                onClick={() => handleNavigate(item.path)}
-                sx={{
-                  "&:hover": { bgcolor: "#8B4513" },
-                }}
-              >
-                <ListItemText
-                  primary={item.label}
-                  sx={{ color: "#D4AF37", fontWeight: 600 }}
-                />
-              </ListItem>
-            ))}
-          </List>
+         <List>
+  {navItems.map((item) => (
+    <ListItem
+      button
+      key={item.label}
+      onClick={() => handleNavigate(item.path)}
+      sx={{
+        "&:hover": {
+          bgcolor: "#8B4513",
+        },
+      }}
+    >
+      <ListItemText
+        primary={item.label}
+        sx={{
+          color: "#D4AF37",
+        }}
+      />
+    </ListItem>
+  ))}
+
+  <ListItem
+  button
+  onClick={() => handleNavigate("/login")}
+>
+  <ListItemText
+    primary="Buyer Login"
+    sx={{ color: "#D4AF37" }}
+  />
+</ListItem>
+
+<ListItem
+  button
+  onClick={() => handleNavigate("/admin/login")}
+>
+  <ListItemText
+    primary="Admin Login"
+    sx={{ color: "#D4AF37" }}
+  />
+</ListItem>
+</List>
         </Box>
       </Drawer>
     </>

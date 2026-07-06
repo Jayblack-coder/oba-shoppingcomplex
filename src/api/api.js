@@ -8,10 +8,33 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
+  const buyer = JSON.parse(
+    localStorage.getItem("buyer")
+  );
 
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+  const admin = JSON.parse(
+    localStorage.getItem("admin")
+  );
+
+  // Admin requests
+  if (
+    config.url.startsWith("/admins") ||
+    config.url.startsWith("/dashboard") ||
+    config.url.startsWith("/reservations/admin") ||
+    config.url.startsWith("/shops/admin")
+  ) {
+    if (admin?.token) {
+      config.headers.Authorization =
+        `Bearer ${admin.token}`;
+    }
+  }
+
+  // Buyer requests
+  else {
+    if (buyer?.token) {
+      config.headers.Authorization =
+        `Bearer ${buyer.token}`;
+    }
   }
 
   return config;
