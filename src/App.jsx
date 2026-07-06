@@ -15,8 +15,11 @@ import ShopDetails from "./Screens/ShopDetails";
 import Register from "./Screens/Register";
 import Login from "./Screens/Login";
 import Reservation from "./Screens/Reservation"
-import Payment from "./Screens/Payment";
-import PaymentVerify from "./Screens/PaymentVerify";
+// import Payment from "./Screens/Payment";
+// import PaymentVerify from "./Screens/PaymentVerify";
+import PaymentInstructions from "./Screens/PaymentInstructions";
+import Dashboard from "./Screens/Dashboard";
+import AdminProtectedRoute from "./Screens/ProtectedRoutes/AdminProtectedRoute";
 
 
 
@@ -32,7 +35,7 @@ export default function App() {
     <Navbar />
   {/* <Reservation/> */}
   {/* <Register/> */}
-
+{/* <Dashboard/> */}
     {/* Page Content */}
     <Box component="main" sx={{ flexGrow: 1 }}>
       <Routes>
@@ -59,13 +62,25 @@ export default function App() {
   path="/reserve/:shopId"
   element={<Reservation />}
 />
-<Route
+{/* <Route
   path="/payment/:reservationId"
   element={<Payment />}
 />
 <Route
   path="/payment/verify"
   element={<PaymentVerify />}
+/> */}
+<Route
+  path="/reservation/:reservationId/instructions"
+  element={<PaymentInstructions />}
+/>
+<Route
+  path="/admin/dashboard"
+  element={
+    <AdminProtectedRoute>
+      <Dashboard />
+    </AdminProtectedRoute>
+  }
 />
       </Routes>
       

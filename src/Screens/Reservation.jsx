@@ -141,9 +141,13 @@ const response = await api.post(
 
 alert("Reservation submitted successfully.");
 
+// navigate(
+//   `/payment/${response.data.reservation._id}`
+// );
 navigate(
-  `/payment/${response.data.reservation._id}`
+  `/reservation/${response.data.reservation._id}/instructions`
 );
+
   } catch (err) {
     alert(
       err.response?.data?.message ||
