@@ -310,14 +310,39 @@ export default function PaymentInstructions() {
           WhatsApp or call the contact below.
         </Typography>
 
-        <Typography paragraph>
-          <strong>Phone:</strong> 0803 XXX XXXX
-        </Typography>
+       <Divider sx={{ my: 4 }} />
 
-        <Typography paragraph>
-          <strong>WhatsApp:</strong> 0803 XXX
-          XXXX
-        </Typography>
+<Typography
+  variant="h5"
+  gutterBottom
+>
+  Contact Information
+</Typography>
+
+<Typography paragraph>
+  <strong>Management Office:</strong><br />
+  <a href="tel:+2348098765432">
+    +234 809 876 5432
+  </a>
+  <br />
+  <a href="https://wa.me/2348098765432">
+    WhatsApp Chat
+  </a>
+</Typography>
+
+<Typography paragraph>
+  <strong>Landlord (Price Negotiation):</strong><br />
+  <a href="tel:+2348031234567">
+    +234 803 123 4567
+  </a>
+</Typography>
+
+<Typography paragraph>
+  For any negotiation regarding the purchase price or payment
+  flexibility, kindly contact the landlord directly. For payment
+  confirmation, reservation enquiries, or documentation, contact
+  the Sweet Asouzu Plaza Management Office.
+</Typography>
 
         <Typography paragraph>
           Your reservation remains
