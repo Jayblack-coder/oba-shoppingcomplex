@@ -287,7 +287,7 @@ const slideInVariant = {
 /> */}
 
 <video
-  src={getVideo("hero")}
+  src={getVideo("general")}
   
   controls
   autoPlay
