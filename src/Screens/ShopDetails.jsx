@@ -20,13 +20,28 @@ export default function ShopDetails() {
   const { shopCode } = useParams();
 const navigate = useNavigate();
   const [shop, setShop] = useState(null);
+  const [media, setMedia] = useState([]);
   const [loading, setLoading] = useState(true);
 
- 
-  useEffect(() => {
-    fetchShop();
-  }, [shopCode]);
+ const fetchMedia = async () => {
+  try {
+    const res = await api.get("/media");
+    setMedia(res.data);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
+ useEffect(() => {
+  fetchShop();
+  fetchMedia();
+}, [shopCode]);
+
+
+const getMedia = (key) => {
+  return media.find(item => item.key === key)?.url || "";
+};
+ 
   async function fetchShop() {
     try {
       const res = await api.get(
@@ -41,6 +56,7 @@ const navigate = useNavigate();
     }
   }
 
+ 
 //    const handleReserve = () => {
 //   const buyer = JSON.parse(
 //     localStorage.getItem("buyer")
@@ -90,11 +106,13 @@ const handleReserve = () => {
     );
 
   if (!shop)
-    return (
-      <Typography align="center" mt={8}>
-        Shop not found
-      </Typography>
-    );
+  return (
+    <Typography align="center" mt={8}>
+      Shop not found
+    </Typography>
+  );
+
+const poster = getMedia("poster");
 
 
   return (
@@ -112,18 +130,10 @@ const handleReserve = () => {
             sx={{ overflow: "hidden" }}
           >
             <Box
-              component="img"
-              src={
-                shop.images.length
-                  ? shop.images[0]
-                  : "/Images/shopcomplex.jpeg"
-              }
-              sx={{
-                width: "100%",
-                height: 500,
-                objectFit: "cover",
-              }}
-            />
+  component="img"
+  src={poster}
+ src={shop.image || getMedia("poster")}
+/>
           </Paper>
 
           {/* Gallery */}
@@ -137,7 +147,7 @@ const handleReserve = () => {
               <Box
                 key={index}
                 component="img"
-                src={image}
+                src={getMedia("poster")}
                 sx={{
                   width: 90,
                   height: 90,

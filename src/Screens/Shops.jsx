@@ -29,7 +29,27 @@ export default function Shops() {
   const [loading, setLoading] = useState(true);
 const [wing, setWing] = useState("A");
 const [keyword, setKeyword] = useState("");
+const [media, setMedia] = useState([]);
+const fetchMedia = async () => {
+  try {
+    const res = await api.get("/media");
+    setMedia(res.data);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
+useEffect(() => {
+  fetchMedia();
+}, []);
+
+const getMedia = (key) => {
+  return (
+    media.find(item => item.key === key)?.url ||
+    "/Images/poster.jpeg"
+  );
+  // console.log(shop.image);
+};
 const searchShop = async () => {
   if (!keyword.trim()) return;
 
@@ -87,12 +107,30 @@ useEffect(() => {
 
   try {
 
+//     useEffect(() => {
+//   fetchMedia();
+// }, []);
+
+// const fetchMedia = async () => {
+//   try {
+//     const res = await api.get("/media");
+//     setMedia(res.data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
+// const getMedia = (key) => {
+//   return media.find(item => item.key === key)?.url || "/Images/poster.jpeg";
+// };
+
     const shopRes = await api.get(
   `/shops/layout/${shopType}/${wing}/${block}`
 );
 
-    setShops(shopRes.data.shops);
-    console.log(shopRes.data.shops)
+console.log(shopRes.data.shops[0].image);
+
+setShops(shopRes.data.shops);
 
     const navRes = await api.get(
   `/shops/navigation/${shopType}/${wing}/${block}`
@@ -256,17 +294,13 @@ useEffect(() => {
   }}
 >
               <Box
-                component="img"
-                src={
-                  shop.images.length
-                    ? shop.images[0]
-                    : "/Images/poster.jpeg"
-                }
-                sx={{
-                  height: 220,
-                  objectFit: "cover",
-                }}
-              />
+  component="img"
+  src={shop.image }
+  sx={{
+    height: 220,
+    objectFit: "cover",
+  }}
+/>
 
               <CardContent>
 

@@ -63,6 +63,32 @@ const getVideo = (category) => {
   );
 };
 
+const getMedia = (key) => {
+  return media.find(item => item.key === key)?.url || "";
+};
+
+const Media = ({ category, ...props }) => {
+  const item = media.find((m) => m.category === category);
+
+  if (!item) return null;
+
+  if (item.type === "video") {
+    return (
+      <video
+        src={item.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        controls
+        {...props}
+      />
+    );
+  }
+
+  return <img src={item.url} alt={category} {...props} />;
+};
+
 const open = Boolean(anchorEl);
 
 const handleMenuOpen = (event) => {

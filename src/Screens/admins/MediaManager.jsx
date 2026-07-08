@@ -36,6 +36,17 @@ export default function MediaManager() {
     }
   };
 
+  const deleteMedia = async (id) => {
+  try {
+    await api.delete(`/media/${id}`);
+
+    // Refresh the list
+    fetchMedia();
+  } catch (err) {
+    console.error(err);
+  }
+};
+
   if (loading)
     return (
       <Box display="flex" justifyContent="center" mt={8}>
@@ -110,6 +121,13 @@ export default function MediaManager() {
               <Typography mt={2}>
                 {item.category}
               </Typography>
+               <Button
+      color="error"
+      variant="contained"
+      onClick={() => deleteMedia(item._id)}
+    >
+      Delete
+    </Button>
             </Paper>
           </Grid>
         ))}
