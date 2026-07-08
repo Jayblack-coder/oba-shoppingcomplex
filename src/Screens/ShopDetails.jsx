@@ -74,7 +74,7 @@ const handleReserve = () => {
     navigate("/login");
     return;
   }
-
+ console.log("Navigating to:", `/reserve/${shop._id}`);
   navigate(`/reserve/${shop._id}`);
 };
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import api from "../api/api";
-
+import { useNavigate } from "react-router-dom";
+import api from "../../api/api";
 import {
   Box,
   Grid,
@@ -8,7 +8,9 @@ import {
   Typography,
   CircularProgress,
   Alert,
+  Button,
 } from "@mui/material";
+
 
 import {
   Store,
@@ -18,43 +20,83 @@ import {
   CheckCircle,
   PendingActions,
 } from "@mui/icons-material";
+import ReservationDetailsDialog from "../../components/ReservationDetailsDialog";
+
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
   const [stats, setStats] = useState(null);
 
   const [error, setError] = useState("");
+  const [recentReservations, setRecentReservations] =
+  useState([]);
+const [selectedReservation, setSelectedReservation] =
+  useState(null);
+
+const [dialogOpen, setDialogOpen] =
+  useState(false);
 
   useEffect(() => {
-    fetchDashboard();
-  }, []);
+  fetchDashboard();
+}, []);
 
-  const fetchDashboard = async () => {
-    try {
-      const admin = JSON.parse(localStorage.getItem("admin"));
+const fetchDashboard = async () => {
+  try {
+    const admin = JSON.parse(
+      localStorage.getItem("admin")
+    );
 
-const res = await api.get(
-  "/dashboard/overview",
-  {
-    headers: {
+    const headers = {
       Authorization: `Bearer ${admin.token}`,
-    },
+    };
+
+    const [dashboardRes, reservationRes] =
+      await Promise.all([
+        api.get("/dashboard/overview", {
+          headers,
+        }),
+
+        api.get(
+          "/reservations/admin?limit=10&sort=latest",
+          {
+            headers,
+          }
+        ),
+      ]);
+
+    setStats(dashboardRes.data);
+
+    setRecentReservations(
+      reservationRes.data.reservations
+    );
+  } catch (err) {
+    console.log(err);
+
+    setError(
+      err.response?.data?.message ||
+        "Unable to load dashboard."
+    );
+  } finally {
+    setLoading(false);
   }
-);
+};
 
-      setStats(res.data);
-    } catch (err) {
-      console.log(err);
+  const handleView = (id) => {
+  setSelectedReservation(id);
+  setDialogOpen(true);
+};
 
-      setError(
-        err.response?.data?.message ||
-          "Unable to load dashboard."
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
+const handleApprove = async () => {
+  setDialogOpen(false);
+  fetchDashboard();
+};
+
+const handleCancel = async () => {
+  setDialogOpen(false);
+  fetchDashboard();
+};
 
   if (loading) {
     return (
@@ -183,7 +225,7 @@ const res = await api.get(
         ))}
       </Grid>
 
-      <Paper
+      {/* <Paper
         elevation={4}
         sx={{
           mt: 5,
@@ -233,7 +275,52 @@ const res = await api.get(
             {stats.completedSales}
           </strong>
         </Typography>
-      </Paper>
+      </Paper> */}
+      <Paper
+  elevation={4}
+  sx={{
+    mt: 5,
+    p: 3,
+    borderRadius: 3,
+  }}
+>
+  <Box
+    display="flex"
+    justifyContent="space-between"
+    alignItems="center"
+    mb={3}
+  >
+    <Typography
+      variant="h5"
+      fontWeight="bold"
+    >
+      Recent Reservations
+    </Typography>
+
+    <Button
+      variant="outlined"
+      onClick={() =>
+        navigate("/admin/reservations")
+      }
+    >
+      View All
+    </Button>
+  </Box>
+
+  {/* <ReservationTable
+    reservations={recentReservations}
+    onView={handleView}
+    onApprove={handleApprove}
+    onCancel={handleCancel}
+  /> */}
+</Paper>
+<ReservationDetailsDialog
+  open={dialogOpen}
+  reservationId={selectedReservation}
+  onClose={() => setDialogOpen(false)}
+  onApprove={handleApprove}
+  onCancel={handleCancel}
+/>
     </Box>
   );
 }

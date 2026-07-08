@@ -18,8 +18,10 @@ import Reservation from "./Screens/Reservation"
 // import Payment from "./Screens/Payment";
 // import PaymentVerify from "./Screens/PaymentVerify";
 import PaymentInstructions from "./Screens/PaymentInstructions";
-import Dashboard from "./Screens/Dashboard";
+import Dashboard from "./Screens/admins/Dashboard";
 import AdminProtectedRoute from "./Screens/ProtectedRoutes/AdminProtectedRoute";
+import Reservations from "./Screens/admins/Reservations";
+import MediaManager from "./Screens/admins/MediaManager";
 
 
 
@@ -80,6 +82,22 @@ export default function App() {
   element={
     <AdminProtectedRoute>
       <Dashboard />
+    </AdminProtectedRoute>
+  }
+/>
+<Route
+  path="/admin/reservations"
+  element={
+    <AdminProtectedRoute>
+      <Reservations />
+    </AdminProtectedRoute>
+  }
+/>
+<Route
+  path="/admin/media"
+  element={
+    <AdminProtectedRoute>
+      <MediaManager />
     </AdminProtectedRoute>
   }
 />

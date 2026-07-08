@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import api from "../api/api";
 import { Box, Typography, Grid, Button, Stack,Divider, Link,  Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import StorefrontIcon from "@mui/icons-material/Storefront";
@@ -18,13 +20,48 @@ import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import PaymentsIcon from "@mui/icons-material/Payments";
 
-import { useState } from "react";
+
 
 
 
 export default function Home() {
   const navigate = useNavigate();
 const [anchorEl, setAnchorEl] = useState(null);
+const [media, setMedia] = useState([]);
+
+useEffect(() => {
+  fetchMedia();
+}, []);
+
+const fetchMedia = async () => {
+  try {
+    const res = await api.get("/media");
+
+    setMedia(res.data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const getImage = (category) => {
+  return (
+    media.find(
+      (item) =>
+        item.category === category &&
+        item.type === "image"
+    )?.url || "/Images/shopcomplex.jpeg"
+  );
+};
+
+const getVideo = (category) => {
+  return (
+    media.find(
+      (item) =>
+        item.category === category &&
+        item.type === "video"
+    )?.url || ""
+  );
+};
 
 const open = Boolean(anchorEl);
 
@@ -229,22 +266,44 @@ const slideInVariant = {
 
 
   {/* HERO IMAGE */}
-  <Box
-    component={motion.img}
-    variants={imageVariants}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.98 }}
-    src="/Images/marketgate1.jpeg"
-    alt="Oba Shopping Complex"
-    sx={{
-      width: "100%",
-      height: { xs: 220, md: 400 },
-      objectFit: "cover",
-      borderRadius: 3,
-      boxShadow: 6,
-      mt: 5,
-    }}
-  />
+  {/* <Box
+  component="video"
+  src={getImage("hero")}
+  controls
+  controlsList="nodownload"
+  autoPlay
+  muted
+  loop
+  playsInline
+  sx={{
+    width: "100%",
+    height: { xs: 220, md: 400 },
+    objectFit: "cover",
+    borderRadius: 3,
+    boxShadow: 6,
+    mt: 5,
+    bgcolor: "black",
+  }}
+/> */}
+
+<video
+  src={getVideo("hero")}
+  
+  controls
+  autoPlay
+  muted
+  loop
+  playsInline
+  onError={(e) => {
+    console.log("Video error", e);
+    console.log(e.target.error);
+  }}
+  style={{
+    width: "100%",
+    height: 400,
+    background: "black",
+  }}
+/>
 
   {/* CTA BUTTONS */}
   <Stack
@@ -584,7 +643,7 @@ const slideInVariant = {
 >
   <Box
     component="img"
-    src="/Images/marketgate1.jpeg"
+    src={getImage("shops")}
     alt="Shop layout"
     sx={{ ...sectionImageStyle, mx: "auto" }}
   />
@@ -630,7 +689,7 @@ const slideInVariant = {
 >
   <Box
     component="img"
-    src="/Images/shopcomplex.jpeg"
+   src={getImage("security")}
     alt="Security"
     sx={sectionImageStyle}
   />
