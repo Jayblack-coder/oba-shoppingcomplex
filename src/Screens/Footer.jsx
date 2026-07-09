@@ -47,7 +47,7 @@ export default function Footer() {
   color: "#D4AF37",
   textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
 }}>
-            Sweet Asouzu Plaza
+            Anambra International Market, Oba
           </Typography>
 
           <Stack
@@ -59,7 +59,7 @@ export default function Footer() {
           >
             <PhoneIcon sx={{ color: "#D4AF37" }} />
             <Typography fontSize={14} color= "rgba(245,240,236,0.7)">
-              +234 800 000 0000
+              +2349162580000
             </Typography>
           </Stack>
         </Box>

@@ -247,7 +247,7 @@ setShops(shopRes.data.shops);
       <Grid
   container
   spacing={4}
-  justifyContent="center"
+  // justifyContent="center"
 >
         {shops.map((shop) => (
           <Grid
