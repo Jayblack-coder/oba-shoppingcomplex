@@ -126,13 +126,27 @@ const poster = getMedia("poster");
 
         <Grid item xs={12} md={7}>
           <Paper
-            elevation={4}
-            sx={{ overflow: "hidden" }}
-          >
-            <Box
+  elevation={5}
+  sx={{
+    borderRadius: 3,
+    overflow: "hidden",
+  }}
+>
+          <Box
   component="img"
-  src={poster}
- src={shop.image || getMedia("poster")}
+  src={shop.image || poster}
+  alt={shop.shopCode}
+  sx={{
+    width: "100%",
+    height: {
+      xs: 280,
+      sm: 420,
+      md: 520,
+    },
+    objectFit: "cover",
+    display: "block",
+    borderRadius: 2,
+  }}
 />
           </Paper>
 
@@ -142,20 +156,25 @@ const poster = getMedia("poster");
             direction="row"
             spacing={2}
             mt={2}
-          >
-            {shop.images.map((image, index) => (
-              <Box
-                key={index}
-                component="img"
-                src={getMedia("poster")}
-                sx={{
-                  width: 90,
-                  height: 90,
-                  objectFit: "cover",
-                  borderRadius: 2,
-                }}
-              />
-            ))}
+          >{shop.images?.map((image, index) => (
+  <Box
+    key={index}
+    component="img"
+    src={image}
+    alt={`Gallery ${index + 1}`}
+    sx={{
+      width: 100,
+      height: 80,
+      objectFit: "cover",
+      borderRadius: 2,
+      cursor: "pointer",
+      transition: ".3s",
+      "&:hover": {
+        opacity: 0.8,
+      },
+    }}
+  />
+))}
           </Stack>
         </Grid>
 
@@ -192,25 +211,27 @@ const poster = getMedia("poster");
 )} */}
           <Divider sx={{ my: 4 }} />
 
-          <Typography variant="h6">
-            Location
-          </Typography>
+          <Typography variant="h6" fontWeight={700} mb={2}>
+  Location
+</Typography>
 
-          <Typography>
-            Wing {shop.location.wing}
-          </Typography>
+<Stack spacing={1}>
+  <Typography>
+    <strong>Wing:</strong> {shop.location.wing}
+  </Typography>
 
-          <Typography>
-            Block {shop.location.block}
-          </Typography>
+  <Typography>
+    <strong>Block:</strong> {shop.location.block}
+  </Typography>
 
-          <Typography>
-            {shop.location.row} Facing
-          </Typography>
+  <Typography>
+    <strong>Row:</strong> {shop.location.row}
+  </Typography>
 
-          <Typography>
-            Shop {shop.location.shopNumber}
-          </Typography>
+  <Typography>
+    <strong>Shop No:</strong> {shop.location.shopNumber}
+  </Typography>
+</Stack>
 
           <Divider sx={{ my: 4 }} />
 
@@ -280,12 +301,18 @@ const poster = getMedia("poster");
           > */}
           <Button
   fullWidth
-  variant="contained"
   size="large"
+  variant="contained"
   sx={{
     mt: 5,
-    bgcolor: "#D4AF37",
     py: 1.8,
+    borderRadius: 3,
+    fontWeight: 700,
+    fontSize: "1rem",
+    bgcolor: "#D4AF37",
+    "&:hover": {
+      bgcolor: "#b88b1d",
+    },
   }}
   disabled={shop.status !== "Available"}
   onClick={handleReserve}

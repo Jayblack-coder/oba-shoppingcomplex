@@ -256,7 +256,7 @@ const slideInVariant = {
     },
   }}
 >
-  Sweet Asouzu Plaza
+  Anambra International Market, Oba
 </Typography>
 
 
@@ -274,7 +274,7 @@ const slideInVariant = {
     mb: 2,
   }}
 >
-  at Anambra State International Market, Oba
+  at Anambra State, Nigeria
 </Typography>
 
 
@@ -482,7 +482,7 @@ const slideInVariant = {
     {[
   {
     icon: <StorefrontIcon />,
-    title: "1,125 Lock-Up Shops Now Selling",
+    title: "1,280 Lock-Up Shops Now Selling",
     desc: "A limited collection of well-designed lock-up shops available for immediate purchase within the complex.",
   },
   {

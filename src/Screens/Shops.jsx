@@ -250,18 +250,15 @@ setShops(shopRes.data.shops);
   justifyContent="center"
 >
         {shops.map((shop) => (
-           <Grid
-      item
-      xs={12}
-      sm={6}
-      md={4}
-      lg={3}
-      key={shop._id}
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+          <Grid
+  size={{
+    xs: 12,
+    sm: 6,
+    md: 6,
+    lg: 4,
+  }}
+  key={shop._id}
+>
             {/* <Card
         sx={{
           width: "100%",
@@ -276,7 +273,7 @@ setShops(shopRes.data.shops);
           },
         }}
       > */}
-      <Card
+      {/* <Card
   sx={{
     width: {
       xs: "95%",
@@ -292,81 +289,133 @@ setShops(shopRes.data.shops);
       boxShadow: 8,
     },
   }}
+> */}
+
+<Card
+  sx={{
+    width: "100%",
+    maxWidth: 420,
+    mx: "auto",
+    borderRadius: 4,
+    overflow: "hidden",
+    display: "flex",
+    flexDirection: "column",
+    boxShadow: 3,
+    bgcolor: "#fff",
+    transition: ".3s",
+    "&:hover": {
+      transform: "translateY(-8px)",
+      boxShadow: 8,
+    },
+  }}
 >
-              <Box
+              {/* <Box
   component="img"
   src={shop.image }
   sx={{
     height: 220,
     objectFit: "cover",
   }}
+/> */}
+
+<Box
+  sx={{
+    width: "100%",
+    height: {
+      xs: 220,
+      md: 260,
+    },
+    overflow: "hidden",
+    bgcolor: "#f8f8f8",
+  }}
+>
+ <Box
+  component="img"
+  src={shop.image || getMedia("poster")}
+  alt={shop.shopCode}
+  sx={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
+    transition: ".4s",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
+  }}
 />
+</Box>
+              <CardContent
+  sx={{
+    flexGrow: 1,
+    display: "flex",
+    flexDirection: "column",
+    gap: 1,
+    p: 3,
+  }}
+>
 
-              <CardContent>
+    <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        mb={2}
+    >
+        <Typography
+            variant="h6"
+            fontWeight={700}
+        >
+            {shop.shopCode}
+        </Typography>
 
-                <Typography
-                  variant="h6"
-                  fontWeight="bold"
-                >
-                  {shop.shopCode}
-                </Typography>
+        <Chip
+            size="small"
+            label={shop.status}
+            color={
+                shop.status === "Available"
+                    ? "success"
+                    : "error"
+            }
+        />
+    </Box>
 
-                <Typography>
-  Wing {shop.location.wing}
-</Typography>
+    <Typography
+        color="text.secondary"
+        gutterBottom
+    >
+        {shop.shopType} Shop
+    </Typography>
 
-<Typography>
-  Block {shop.location.block}
-</Typography>
+    <Typography>
+        Wing <strong>{shop.location.wing}</strong> • Block{" "}
+        <strong>{shop.location.block}</strong>
+    </Typography>
 
-<Typography>
-  {shop.location.row} Row
-</Typography>
+    <Typography>
+        {shop.location.row} Row
+    </Typography>
 
-<Typography>
-  Shop {shop.location.shopNumber}
-</Typography>
-                <Typography mt={2}>
-                  Area: {shop.area} sqm
-                </Typography>
+    <Typography>
+        Area: <strong>{shop.area} sqm</strong>
+    </Typography>
 
-                {/* <Typography
-                  fontWeight="bold"
-                  mt={1}
-                >
-                  ₦{shop.price.toLocaleString()}
-                </Typography> */}
+    <Button
+        fullWidth
+        variant="contained"
+        sx={{
+            mt: 3,
+            bgcolor: "#D4AF37",
+            py: 1.2,
+            fontWeight: 700,
+        }}
+        onClick={() =>
+            navigate(`/shop/${shop.shopCode}`)
+        }
+    >
+        View Details
+    </Button>
 
-{/* {shop.price && (
-  <Typography fontWeight="bold">
-    ₦{shop.price.toLocaleString()}
-  </Typography>
-)} */}
-                <Chip
-                  label={shop.status}
-                  color={
-                    shop.status === "Available"
-                      ? "success"
-                      : "error"
-                  }
-                  sx={{ mt: 2 }}
-                />
-
-                <Button
-                  fullWidth
-                  variant="contained"
-                  sx={{
-                    mt: 3,
-                    bgcolor: "#D4AF37",
-                  }}
-                  onClick={() =>
-                    navigate(`/shop/${shop.shopCode}`)
-                  }
-                >
-                  View Shop
-                </Button>
-
-              </CardContent>
+</CardContent>
             </Card>
           </Grid>
         ))}
