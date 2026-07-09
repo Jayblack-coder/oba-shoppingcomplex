@@ -1033,7 +1033,7 @@ const slideInVariant = {
           variant="contained"
           fullWidth
           sx={{ mt: 4, bgcolor: "#D4AF37", "&:hover": { bgcolor: "#5C2D0C" } }}
-          onClick={() => navigate("/contact")}
+          onClick={() => navigate("/shops/Standard")}
         >
           Buy Standard Shop
         </Button>
@@ -1109,7 +1109,7 @@ const slideInVariant = {
           variant="contained"
           fullWidth
           sx={{ mt: 4, bgcolor: "#D4AF37", "&:hover": { bgcolor: "#5C2D0C" } }}
-          onClick={() => navigate("/contact")}
+          onClick={() => navigate("/shops/Premium")}
         >
           Buy Premium Shop
         </Button>
@@ -1164,7 +1164,7 @@ const slideInVariant = {
           variant="contained"
           fullWidth
           sx={{ mt: 4, bgcolor: "#D4AF37", "&:hover": { bgcolor: "#5C2D0C" } }}
-          onClick={() => navigate("/contact")}
+          onClick={() => navigate("/shops/Executive")}
         >
           Buy Executive Shop
         </Button>

@@ -83,18 +83,43 @@ const [block, setBlock] = useState(
 
 const [navigation, setNavigation] = useState({});
 
- useEffect(() => {
+//  useEffect(() => {
 
-  setWing("A");
+//   setWing("A");
 
-  if (type === "Standard") {
-    setBlock(1);
-  } else if (type === "Premium") {
-    setBlock(3);
-  } else {
-    setBlock(5);
-  }
+//   if (type === "Standard") {
+//     setBlock(1);
+//   } else if (type === "Premium") {
+//     setBlock(3);
+//   } else {
+//     setBlock(5);
+//   }
 
+// }, [type]);
+
+useEffect(() => {
+    if (!type) return;
+
+    setShopType(type);
+
+    setWing("A");
+
+    switch (type) {
+        case "Standard":
+            setBlock(1);
+            break;
+
+        case "Premium":
+            setBlock(3);
+            break;
+
+        case "Executive":
+            setBlock(5);
+            break;
+
+        default:
+            setBlock(1);
+    }
 }, [type]);
 
 useEffect(() => {
@@ -128,7 +153,7 @@ useEffect(() => {
   `/shops/layout/${shopType}/${wing}/${block}`
 );
 
-console.log(shopRes.data.shops[0].image);
+// console.log(shopRes.data.shops[0].image);
 
 setShops(shopRes.data.shops);
 
