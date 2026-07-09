@@ -951,7 +951,7 @@ const slideInVariant = {
   color: "#D4AF37",
   textShadow: "0 0 12px rgba(212, 175, 55, 0.35)",
 }}>
-          Ready to Own a Shop at Oba International Market?
+          Ready to Own a Shop at Anambra International Market?
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }} textAlign="center" mb={6}>
           Secure your space in one of Anambra State’s most modern commercial hubs.
@@ -1017,17 +1017,17 @@ const slideInVariant = {
       >
         <StorefrontIcon sx={{ fontSize: 50, color: "#D4AF37" }} />
         <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#D4AF37"}}>
-          Standard Shop
+          Standard Shop(Upstairs)
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}mt={1}>
-          Ideal for small-scale retail businesses
+          Ideal for small-scale retail businesses/Offices
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
-          ₦3.5M
+          ₦8M
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
-          Or ₦1.2M x 3 installments
+          Or ₦3M x 3 installments
         </Typography>
         <Button
           variant="contained"
@@ -1093,17 +1093,17 @@ const slideInVariant = {
 
         <StarIcon sx={{ fontSize: 50, color: "#D4AF37" }} />
         <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#D4AF37"}}>
-          Premium Shop
+          Premium Shop(Downstairs)
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
           High visibility & heavy foot traffic
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
-          ₦5.5M
+          ₦10M
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
-          Or ₦2M x 3 installments
+          Or ₦3.5M x 3 installments
         </Typography>
         <Button
           variant="contained"
@@ -1154,11 +1154,11 @@ const slideInVariant = {
           Corner shops & flagship locations
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
-          ₦8M
+          ₦12M
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
-          Or ₦3M x 3 installments
+          Or ₦4M x 3 installments
         </Typography>
         <Button
           variant="contained"
