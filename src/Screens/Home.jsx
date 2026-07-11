@@ -1109,7 +1109,7 @@ const slideInVariant = {
           variant="contained"
           fullWidth
           sx={{ mt: 4, bgcolor: "#D4AF37", "&:hover": { bgcolor: "#5C2D0C" } }}
-          onClick={() => navigate("/shops/Premium")}
+          onClick={() => navigate("/shops/Executive")}
         >
           Buy Premium Shop
         </Button>

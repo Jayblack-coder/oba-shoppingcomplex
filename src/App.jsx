@@ -22,6 +22,7 @@ import Dashboard from "./Screens/admins/Dashboard";
 import AdminProtectedRoute from "./Screens/ProtectedRoutes/AdminProtectedRoute";
 import Reservations from "./Screens/admins/Reservations";
 import MediaManager from "./Screens/admins/MediaManager";
+import Gallery from "./Screens/Gallery";
 
 
 
@@ -46,7 +47,7 @@ export default function App() {
         <Route path="/contact" element={<Home />} />
         <Route path="/about" element={<Home />} />
         <Route path="/services" element={<Home />} />
-        <Route path="/gallery" element={<Home />} />
+       <Route path="/gallery" element={<Home />} />
       <Route
     path="/shops/:type"
     element={<Shops />}

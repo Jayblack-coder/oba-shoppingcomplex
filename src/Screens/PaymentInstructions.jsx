@@ -249,7 +249,7 @@ export default function PaymentInstructions() {
           </Typography>
 
           <Typography mb={2}>
-            Access Bank Plc
+            UBA PLC
           </Typography>
 
           <Typography fontWeight="bold">
@@ -257,7 +257,7 @@ export default function PaymentInstructions() {
           </Typography>
 
           <Typography mb={2}>
-            Sweet Asouzu Plaza Ltd.
+            ULIMITED RESOURCES AND INVESTMENT LIMITED
           </Typography>
 
           <Typography fontWeight="bold">
@@ -271,7 +271,56 @@ export default function PaymentInstructions() {
             mb={2}
           >
             <Typography>
-              0123456789
+              1030447557
+            </Typography>
+
+            <Button
+              size="small"
+              startIcon={
+                <ContentCopyIcon />
+              }
+              onClick={copyAccountNumber}
+            >
+              Copy
+            </Button>
+          </Box>
+        </Paper>
+
+         <Paper
+          variant="outlined"
+          sx={{
+            p: 3,
+            bgcolor: "#fafafa",
+          }}
+        >
+          <Typography fontWeight="bold">
+            Bank
+          </Typography>
+
+          <Typography mb={2}>
+            ZENITH BANK PLC
+          </Typography>
+
+          <Typography fontWeight="bold">
+            Account Name
+          </Typography>
+
+          <Typography mb={2}>
+            ULIMITED RESOURCES AND INVESTMENT LIMITED
+          </Typography>
+
+          <Typography fontWeight="bold">
+            Account Number
+          </Typography>
+
+          <Box
+            display="flex"
+            alignItems="center"
+            gap={2}
+            mb={2}
+          >
+            <Typography>
+              1225753948
             </Typography>
 
             <Button
@@ -321,19 +370,19 @@ export default function PaymentInstructions() {
 
 <Typography paragraph>
   <strong>Management Office:</strong><br />
-  <a href="tel:+2348098765432">
-    +234 809 876 5432
+  <a href="tel:+2349162580000.">
+    +234 916 258 0000
   </a>
   <br />
-  <a href="https://wa.me/2348098765432">
+  <a href="https://wa.me/2349162580000">
     WhatsApp Chat
   </a>
 </Typography>
 
 <Typography paragraph>
   <strong>Landlord (Price Negotiation):</strong><br />
-  <a href="tel:+2348031234567">
-    +234 803 123 4567
+  <a href="tel:+2349162590000">
+    +234 916 259 0000
   </a>
 </Typography>
 

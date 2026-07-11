@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 import {
   Box,
@@ -19,112 +19,71 @@ import CategorySelector from "./Market/CategorySelector";
 import SearchIcon from "@mui/icons-material/Search";
 import api from "../api/api";
 
+
+
+
 export default function Shops() {
   const { type } = useParams();
-
   const navigate = useNavigate();
 
+  const shopType = type || "Standard";
+
   const [shops, setShops] = useState([]);
-  const [shopType, setShopType] = useState("Standard");
   const [loading, setLoading] = useState(true);
-const [wing, setWing] = useState("A");
-const [keyword, setKeyword] = useState("");
-const [media, setMedia] = useState([]);
-const fetchMedia = async () => {
+  const [wing, setWing] = useState("A");
+  const [block, setBlock] = useState(1);
+  const [keyword, setKeyword] = useState("");
+  const [media, setMedia] = useState([]);
+  const [navigation, setNavigation] = useState({});
+
+  const fetchMedia = async () => {
   try {
     const res = await api.get("/media");
     setMedia(res.data);
   } catch (err) {
-    console.log(err);
+    console.error("Failed to fetch media:", err);
   }
 };
 
+const getMedia = (key) => {
+  return (
+    media.find((item) => item.key === key)?.url ||
+    "/Images/poster.jpeg"
+  );
+};
+
+const searchShop = async () => {
+  const searchTerm = keyword.trim();
+
+  if (!searchTerm) return;
+
+  try {
+    const res = await api.get(
+      `/shops/search?keyword=${encodeURIComponent(searchTerm)}`
+    );
+
+    if (res.data.count === 1) {
+      navigate(`/shop/${res.data.shops[0].shopCode}`);
+    } else {
+      setShops(res.data.shops || []);
+    }
+  } catch (err) {
+    console.error("Shop search failed:", err);
+    alert("Shop not found");
+  }
+};
 useEffect(() => {
   fetchMedia();
 }, []);
 
-const getMedia = (key) => {
-  return (
-    media.find(item => item.key === key)?.url ||
-    "/Images/poster.jpeg"
-  );
-  // console.log(shop.image);
-};
-const searchShop = async () => {
-  if (!keyword.trim()) return;
-
-  try {
-    // const res = await axios.get(
-    //   `http://localhost:5000/api/shops/search?keyword=${keyword}`
-    // );
-    const res = await api.get(
-  `/shops/search?keyword=${keyword}`
-);
-// console.log(res.data)
-    if (res.data.count === 1) {
-      navigate(`/shop/${res.data.shops[0].shopCode}`);
-    } else {
-      setShops(res.data.shops);
-      // console.log(res.data.shops)
-    }
-    
-  } catch (err) {
-    console.log(err);
-    alert("Shop not found");
-  }
-};
-const [block, setBlock] = useState(
-  shopType === "Standard"
-    ? 1
-    : type === "Premium"
-    ? 3
-    : 5
-);
-
-const [navigation, setNavigation] = useState({});
-
-//  useEffect(() => {
-
-//   setWing("A");
-
-//   if (type === "Standard") {
-//     setBlock(1);
-//   } else if (type === "Premium") {
-//     setBlock(3);
-//   } else {
-//     setBlock(5);
-//   }
-
-// }, [type]);
-
-useEffect(() => {
-    if (!type) return;
-
-    setShopType(type);
-
+  useEffect(() => {
     setWing("A");
+    setBlock(1);
+  }, [type]);
 
-    switch (type) {
-        case "Standard":
-            setBlock(1);
-            break;
-
-        case "Premium":
-            setBlock(3);
-            break;
-
-        case "Executive":
-            setBlock(5);
-            break;
-
-        default:
-            setBlock(1);
-    }
-}, [type]);
-
-useEffect(() => {
-  fetchShops();
-}, [shopType, wing, block]);
+  useEffect(() => {
+    fetchShops();
+  }, [shopType, wing, block]);
 
   async function fetchShops() {
 
@@ -132,27 +91,18 @@ useEffect(() => {
 
   try {
 
-//     useEffect(() => {
-//   fetchMedia();
-// }, []);
 
-// const fetchMedia = async () => {
-//   try {
-//     const res = await api.get("/media");
-//     setMedia(res.data);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
-
-// const getMedia = (key) => {
-//   return media.find(item => item.key === key)?.url || "/Images/poster.jpeg";
-// };
 
     const shopRes = await api.get(
   `/shops/layout/${shopType}/${wing}/${block}`
 );
 
+// console.table(
+//   shopRes.data.shops.map((shop) => ({
+//     code: shop.shopCode,
+//     type: shop.shopType,
+//   }))
+// );
 // console.log(shopRes.data.shops[0].image);
 
 setShops(shopRes.data.shops);
@@ -196,9 +146,8 @@ setShops(shopRes.data.shops);
         p: 4,
       }}
     >
-      <CategorySelector
+     <CategorySelector
   shopType={shopType}
-  setShopType={setShopType}
   setWing={setWing}
   setBlock={setBlock}
 />
