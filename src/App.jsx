@@ -2,10 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Screens/Navbar";
 
 import Home from "./Screens/Home";
-// import About from "./Screens/About";
-// import Services from "./Screens/Services";
-// import Gallery from "./Screens/Gallery";
-// import Contact from "./Screens/Contact";
+import About from "./Screens/About";
+import Services from "./Screens/Services";
+import Gallery from "./Screens/Gallery";
+import Contact from "./Screens/Contact";
 import Footer from "./Screens/Footer";
 // import Test from "./Screens/Test";
 import Agreement from "./Screens/Agreement";
@@ -22,7 +22,7 @@ import Dashboard from "./Screens/admins/Dashboard";
 import AdminProtectedRoute from "./Screens/ProtectedRoutes/AdminProtectedRoute";
 import Reservations from "./Screens/admins/Reservations";
 import MediaManager from "./Screens/admins/MediaManager";
-import Gallery from "./Screens/Gallery";
+
 
 
 
@@ -47,7 +47,7 @@ export default function App() {
         <Route path="/contact" element={<Home />} />
         <Route path="/about" element={<Home />} />
         <Route path="/services" element={<Home />} />
-       <Route path="/gallery" element={<Home />} />
+       <Route path="/gallery" element={<Gallery />} />
       <Route
     path="/shops/:type"
     element={<Shops />}
