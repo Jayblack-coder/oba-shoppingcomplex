@@ -1018,20 +1018,32 @@ export default function Gallery() {
   FETCH GALLERY MEDIA GET /api/media/gallery 
   ========================================== */
 
-  const fetchGallery = useCallback(async () => { 
-    try { setLoading(true); 
-    setError(""); 
-    const res = await api.get("/media/gallery"); 
-    const mediaData = Array.isArray(res.data) 
-    ? res.data : res.data?.media || res.data?.data || []; 
-    setGallery(mediaData); } 
-    catch (err) { console.error("Gallery fetch error:", err); 
-      setError( err.response?.data?.message || "We could not load the gallery at the moment." ); 
-    } 
-      finally { setLoading(false); } }, []); 
-      useEffect(() => { 
-        fetchGallery(); 
-      }, [fetchGallery]); 
+const fetchGallery = useCallback(async () => {
+  try {
+    setLoading(true);
+    setError("");
+
+    const res = await api.get("/media/gallery");
+
+    console.log("GALLERY RESPONSE:", res.data);
+
+    setGallery(res.data?.media || []);
+  } catch (err) {
+    console.error("Gallery fetch error:", err);
+
+    setError(
+      err.response?.data?.message ||
+        "We could not load the gallery at the moment."
+    );
+  } finally {
+    setLoading(false);
+  }
+}, []);
+
+
+useEffect(() => {
+  fetchGallery();
+}, [fetchGallery]);
 
   
   /* ========================================== 
@@ -1095,8 +1107,56 @@ export default function Gallery() {
               alignItems: "center", 
               justifyContent: "center", 
               overflow: "hidden", 
-              backgroundImage: ` linear-gradient( rgba(10,10,10,0.78), rgba(10,10,10,0.72) ), url("${heroImage}") `, 
-              backgroundSize: "cover", backgroundPosition: "center", }} > {/* Decorative Gold Circle */} <Box sx={{ position: "absolute", width: 300, height: 300, border: "1px solid rgba(212,175,55,0.25)", borderRadius: "50%", top: -120, right: -80, }} /> <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2, textAlign: "center", }} > <Chip icon={<CollectionsIcon />} label="Sweet Asouzu Plaza Gallery" sx={{ mb: 3, px: 1, py: 2.5, bgcolor: "rgba(212,175,55,0.15)", color: "#D4AF37", border: "1px solid rgba(212,175,55,0.5)", "& .MuiChip-icon": { color: "#D4AF37", }, }} /> <Typography variant="h1" sx={{ color: "#fff", fontWeight: 800, fontSize: { xs: "2.4rem", sm: "3.5rem", md: "4.5rem", }, lineHeight: 1.1, maxWidth: 900, mx: "auto", }} > Discover the Beauty of <Box component="span" sx={{ display: "block", color: "#D4AF37", mt: 1, }} > Sweet Asouzu Plaza </Box> </Typography> <Typography sx={{ mt: 3, mx: "auto", maxWidth: 760, color: "rgba(255,255,255,0.82)", fontSize: { xs: "1rem", md: "1.2rem", }, lineHeight: 1.8, }} > Explore our commercial spaces, architectural layout, shop interiors, facilities and the environment designed to support successful businesses. </Typography> <Button variant="contained" size="large" onClick={() => { document .getElementById( "gallery-content" ) ?.scrollIntoView({ behavior: "smooth", }); }} sx={{ mt: 4, px: 5, py: 1.5, bgcolor: "#D4AF37", color: "#111", fontWeight: 700, borderRadius: 3, "&:hover": { bgcolor: "#b99425", }, }} > Explore Gallery </Button> </Container> 
+              backgroundImage: ` linear-gradient( rgba(10,10,10,0.78), rgba(10,10,10,0.72) ), 
+              url("${heroImage}") `, 
+              backgroundSize: "cover", 
+              backgroundPosition: "center", }} > 
+              {/* Decorative Gold Circle */} 
+              <Box sx={{ 
+                position: "absolute", 
+                width: 300, 
+                height: 300, 
+                border: "1px solid rgba(212,175,55,0.25)", 
+                borderRadius: "50%", 
+                top: -120, 
+                right: -80, }} /> 
+                <Container maxWidth="lg" 
+                sx={{ 
+                  position: "relative", 
+                  zIndex: 2, 
+                  textAlign: "center", }} > 
+                  <Chip icon={<CollectionsIcon />} 
+                  label="Sweet Asouzu Plaza Gallery" 
+                  sx={{ 
+                    mb: 3, 
+                    px: 1, 
+                    py: 2.5, 
+                    bgcolor: "rgba(212,175,55,0.15)", 
+                    color: "#D4AF37", 
+                    border: "1px solid rgba(212,175,55,0.5)", "& .MuiChip-icon": { color: "#D4AF37", }, }} /> 
+                    <Typography variant="h1" 
+                    sx={{ 
+                      color: "#fff", 
+                      fontWeight: 800, 
+                      fontSize: { xs: "2.4rem", sm: "3.5rem", md: "4.5rem", }, 
+                      lineHeight: 1.1, maxWidth: 900, mx: "auto", }} >
+                         Discover the Beauty of 
+                         <Box component="span" sx={{ display: "block", color: "#D4AF37", mt: 1, }} > 
+                          Sweet Asouzu Plaza 
+                          </Box> </Typography> 
+                          <Typography 
+                          sx={{
+                             mt: 3, 
+                             mx: "auto",
+                              maxWidth: 760, 
+                              color: "rgba(255,255,255,0.82)", 
+                              fontSize: { xs: "1rem", md: "1.2rem", }, 
+                              lineHeight: 1.8, }} >
+                                 Explore our commercial spaces, architectural layout, shop interiors, facilities and the environment designed to support successful businesses. 
+                                 </Typography> 
+                                 <Button variant="contained" size="large" 
+                                 onClick={() => { 
+                                  document .getElementById( "gallery-content" ) ?.scrollIntoView({ behavior: "smooth", }); }} sx={{ mt: 4, px: 5, py: 1.5, bgcolor: "#D4AF37", color: "#111", fontWeight: 700, borderRadius: 3, "&:hover": { bgcolor: "#b99425", }, }} > Explore Gallery </Button> </Container> 
         </Box>
         <Container id="gallery-content" maxWidth="xl" sx={{ py: { xs: 7, md: 10, }, }} > {/* Heading */} 
           <Box sx={{ textAlign: "center", mb: 5, }} > 
@@ -1200,18 +1260,71 @@ export default function Gallery() {
                                                  {/* MEDIA ICON */} 
                                                  <Box 
                                                  className="media-icon" 
-                                                 sx={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%) scale(.7)", 
-                                                 opacity: { xs: 1, md: 0, }, width: 58, height: 58, borderRadius: "50%", display: "flex", 
-                                                 alignItems: "center", justifyContent: "center", bgcolor: "rgba(212,175,55,.94)", transition: ".3s", color: "#111", }} > {item.type === "video" ? ( <PlayCircleOutlineIcon /> ) : ( <ZoomInIcon /> )} </Box> <Typography sx={{ color: "#D4AF37", fontSize: ".78rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, }} > {item.type === "video" ? "Video" : "Gallery"} 
+                                                 sx={{ 
+                                                  position: "absolute", 
+                                                  top: "50%", 
+                                                  left: "50%", 
+                                                  transform: "translate(-50%, -50%) scale(.7)", 
+                                                 opacity: { xs: 1, md: 0, }, 
+                                                 width: 58, 
+                                                 height: 58, 
+                                                 borderRadius: "50%", 
+                                                 display: "flex", 
+                                                 alignItems: "center", 
+                                                 justifyContent: "center",
+                                                  bgcolor: "rgba(212,175,55,.94)", 
+                                                  transition: ".3s", 
+                                                  color: "#111", }} >
+                                                     {item.type === "video" ? 
+                                                     ( <PlayCircleOutlineIcon /> ) 
+                                                     : ( <ZoomInIcon /> )}
+                                                      </Box>
+                                                       <Typography 
+                                                       sx={{ 
+                                                        color: "#D4AF37", 
+                                                        fontSize: ".78rem", 
+                                                        fontWeight: 700, 
+                                                        textTransform: "uppercase", 
+                                                        letterSpacing: 1.5, }} > 
+                                                        {item.type === "video"
+  ? "Video"
+  : item.galleryCategory || "Gallery"} 
                                                  </Typography> 
-                                                 <Typography variant="h6" sx={{ color: "#fff", fontWeight: 700, mt: 0.5, }} > {item.title || "Sweet Asouzu Plaza"} </Typography> </Box> </Box> ) )} </Box> )}
+                                                 <Typography variant="h6" 
+                                                 sx={{ 
+                                                  color: "#fff", 
+                                                  fontWeight: 700, mt: 0.5, }} > 
+                                                  {item.title || "Sweet Asouzu Plaza"} 
+                                                  </Typography>
+                                                  </Box> 
+                                                  </Box> ) )} 
+                                                  </Box> )}
                                                   </Container> 
                                                   {/* ===================================== 
                                                   FULL SCREEN LIGHTBOX 
                                                   ===================================== */} 
                                                   <Dialog open={Boolean(selectedMedia)} onClose={closeLightbox} 
-                                                  fullScreen PaperProps={{ sx: { bgcolor: "rgba(8,8,8,.98)", }, }} > {selectedMedia && ( 
-                                                  <DialogContent sx={{ position: "relative", p: { xs: 1, md: 4, }, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", }} > {/* CLOSE */} <IconButton onClick={closeLightbox} aria-label="Close media" sx={{ position: "absolute", top: { xs: 15, md: 25, }, right: { xs: 15, md: 30, }, zIndex: 20, bgcolor: "rgba(255,255,255,.12)", color: "#fff", "&:hover": { bgcolor: "#D4AF37", color: "#111", }, }} > 
+                                                  fullScreen PaperProps={{ 
+                                                    sx: { bgcolor: "rgba(8,8,8,.98)", }, }} > 
+                                                    {selectedMedia && ( 
+                                                  <DialogContent 
+                                                  sx={{ 
+                                                    position: "relative", p: { xs: 1, md: 4, }, 
+                                                  display: "flex", 
+                                                  alignItems: "center", 
+                                                  justifyContent: "center", 
+                                                  overflow: "hidden", }} > 
+                                                  {/* CLOSE */} 
+                                                  <IconButton 
+                                                  onClick={closeLightbox} aria-label="Close media" 
+                                                  sx={{ 
+                                                    position: "absolute", 
+                                                    top: { xs: 15, md: 25, }, 
+                                                    right: { xs: 15, md: 30, }, 
+                                                    zIndex: 20, 
+                                                    bgcolor: "rgba(255,255,255,.12)", 
+                                                    color: "#fff", "&:hover": { bgcolor: "#D4AF37", 
+                                                    color: "#111", }, }} > 
                                                   <CloseIcon /> 
                                                   </IconButton> {/* PREVIOUS */} {filteredGallery.length > 1 && ( 
                                                     <IconButton onClick={showPreviousMedia} aria-label="Previous media" sx={{ position: "absolute", left: { xs: 8, md: 30, }, top: "50%", transform: "translateY(-50%)", zIndex: 20, bgcolor: "rgba(255,255,255,.12)", color: "#fff", "&:hover": { bgcolor: "#D4AF37", color: "#111", }, }} > 

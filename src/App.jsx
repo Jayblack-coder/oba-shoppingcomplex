@@ -44,9 +44,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tripartite-agreement" element={<Agreement />} />
-        <Route path="/contact" element={<Home />} />
-        <Route path="/about" element={<Home />} />
-        <Route path="/services" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
        <Route path="/gallery" element={<Gallery />} />
       <Route
     path="/shops/:type"
