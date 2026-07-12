@@ -511,7 +511,7 @@ const slideInVariant = {
   {
     icon: <VerifiedIcon />,
     title: "Premium Location",
-    desc: "Strategically positioned within Oba International Market for maximum visibility and foot traffic.",
+    desc: "Strategically positioned within Anambra International Market, Oba, for maximum visibility and foot traffic.",
   },
   {
     icon: <TrendingUpIcon />,
