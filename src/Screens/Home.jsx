@@ -1017,17 +1017,17 @@ const slideInVariant = {
       >
         <StorefrontIcon sx={{ fontSize: 50, color: "#D4AF37" }} />
         <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#D4AF37"}}>
-          Standard Shop(Upstairs)
+          Standard Shop
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}mt={1}>
           Ideal for small-scale retail businesses/Offices
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
-          ₦8M
+          ₦10M
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
-          Or ₦3M x 3 installments
+          Or ₦3.5M x 3 installments
         </Typography>
         <Button
           variant="contained"
@@ -1099,17 +1099,17 @@ const slideInVariant = {
           High visibility & heavy foot traffic
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
-          ₦10M
+          ₦12M
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
-          Or ₦3.5M x 3 installments
+          Or ₦4M x 3 installments
         </Typography>
         <Button
           variant="contained"
           fullWidth
           sx={{ mt: 4, bgcolor: "#D4AF37", "&:hover": { bgcolor: "#5C2D0C" } }}
-          onClick={() => navigate("/shops/Executive")}
+          onClick={() => navigate("/shops/Premium")}
         >
           Buy Premium Shop
         </Button>
@@ -1154,11 +1154,11 @@ const slideInVariant = {
           Corner shops & flagship locations
         </Typography>
         <Typography variant="h4" fontWeight="bold" mt={3}>
-          ₦12M
+          ₦15M
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }}>One-time payment</Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
-          Or ₦4M x 3 installments
+          Or ₦5M x 3 installments
         </Typography>
         <Button
           variant="contained"
