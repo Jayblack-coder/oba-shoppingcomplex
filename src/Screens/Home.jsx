@@ -974,7 +974,7 @@ const slideInVariant = {
 >
   <Box
     component="img"
-    src="/Images/maleposter.jpeg"
+    src="/Images/maleposter2.jpeg"
     alt="World-Class Amenities"
     sx={posterImageStyle}
   />
