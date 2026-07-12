@@ -94,7 +94,7 @@ export default function Contact() {
     {
       icon: <PhoneOutlinedIcon />,
       title: "Call Us",
-      content: "Add your phone number",
+      content: "09162580000",
       secondary: "We are available during business hours",
     },
     {
