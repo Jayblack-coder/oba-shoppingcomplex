@@ -1126,7 +1126,7 @@ useEffect(() => {
                   zIndex: 2, 
                   textAlign: "center", }} > 
                   <Chip icon={<CollectionsIcon />} 
-                  label="Sweet Asouzu Plaza Gallery" 
+                  label="Anambra International Market Gallery" 
                   sx={{ 
                     mb: 3, 
                     px: 1, 
@@ -1142,7 +1142,7 @@ useEffect(() => {
                       lineHeight: 1.1, maxWidth: 900, mx: "auto", }} >
                          Discover the Beauty of 
                          <Box component="span" sx={{ display: "block", color: "#D4AF37", mt: 1, }} > 
-                          Sweet Asouzu Plaza 
+                          Anambra International Market 
                           </Box> </Typography> 
                           <Typography 
                           sx={{
@@ -1156,17 +1156,35 @@ useEffect(() => {
                                  </Typography> 
                                  <Button variant="contained" size="large" 
                                  onClick={() => { 
-                                  document .getElementById( "gallery-content" ) ?.scrollIntoView({ behavior: "smooth", }); }} sx={{ mt: 4, px: 5, py: 1.5, bgcolor: "#D4AF37", color: "#111", fontWeight: 700, borderRadius: 3, "&:hover": { bgcolor: "#b99425", }, }} > Explore Gallery </Button> </Container> 
+                                  document .getElementById( "gallery-content" ) 
+                                  ?.scrollIntoView({ behavior: "smooth", }); }} 
+                                  sx={{ 
+                                    mt: 4, 
+                                    px: 5, 
+                                    py: 1.5, 
+                                    bgcolor: "#D4AF37", 
+                                    color: "#111", 
+                                    fontWeight: 700, 
+                                    borderRadius: 3, "&:hover": { bgcolor: "#b99425", }, }} >
+                                       Explore Gallery 
+                                       </Button> 
+                                       </Container> 
         </Box>
-        <Container id="gallery-content" maxWidth="xl" sx={{ py: { xs: 7, md: 10, }, }} > {/* Heading */} 
+        <Container id="gallery-content" maxWidth="xl" sx={{ py: { xs: 7, md: 10, }, }} > 
+          
+          {/* Heading */} 
           <Box sx={{ textAlign: "center", mb: 5, }} > 
-            <Typography variant="h3" fontWeight={800} sx={{ fontSize: { xs: "2rem", md: "3rem", }, }} > Explore Our Plaza 
-              </Typography> <Box sx={{ width: 70, height: 4, bgcolor: "#D4AF37", mx: "auto", my: 2, borderRadius: 5, }} /> 
+            <Typography variant="h3" fontWeight={800} sx={{ fontSize: { xs: "2rem", md: "3rem", }, }} > 
+              Explore Our Plaza 
+              </Typography>
+               <Box sx={{ 
+                width: 70, height: 4, bgcolor: "#D4AF37", mx: "auto", my: 2, borderRadius: 5, }} /> 
               <Typography 
               color="text.secondary" 
               sx={{ maxWidth: 700, mx: "auto", lineHeight: 1.8, }} > 
               Browse through our collection of shop spaces, plaza layouts, facilities, architectural highlights and videos. 
-              </Typography> </Box> 
+              </Typography>
+               </Box> 
               {/* ===================================== 
               MEDIA FILTER 
               ===================================== */} 
@@ -1249,7 +1267,13 @@ useEffect(() => {
                                             bgcolor: "#111", 
                                             boxShadow: "0 8px 30px rgba(0,0,0,0.08)", "&:hover .gallery-media": 
                                             { transform: "scale(1.06)", }, "&:hover .gallery-overlay": { opacity: 1, }, 
-                                            "&:hover .media-icon": { transform: "translate(-50%, -50%) scale(1)", opacity: 1, }, }} > {/* IMAGE */} {item.type === "image" && ( <Box component="img" className="gallery-media" src={ item.url || FALLBACK_IMAGE } alt={ item.title || "Sweet Asouzu Plaza" } loading="lazy" onError={(event) => { event.currentTarget.src = FALLBACK_IMAGE; }} sx={{ width: "100%", display: "block", minHeight: 250, maxHeight: 550, objectFit: "cover", transition: "transform 0.6s ease", }} /> )} {/* VIDEO PREVIEW */} {item.type === "video" && ( <Box component="video" className="gallery-media" src={item.url} muted preload="metadata" sx={{ width: "100%", display: "block", minHeight: 250, maxHeight: 500, objectFit: "cover", transition: "transform 0.6s ease", }} /> )} {/* OVERLAY */} 
+                                            "&:hover .media-icon": 
+                                            { transform: "translate(-50%, -50%) scale(1)", 
+                                            opacity: 1, }, }} > 
+                                            {/* IMAGE */} 
+                                            {item.type === "image" && ( 
+                                              <Box component="img" className="gallery-media" 
+                                              src={ item.url || FALLBACK_IMAGE } alt={ item.title || "Anambra International Market" } loading="lazy" onError={(event) => { event.currentTarget.src = FALLBACK_IMAGE; }} sx={{ width: "100%", display: "block", minHeight: 250, maxHeight: 550, objectFit: "cover", transition: "transform 0.6s ease", }} /> )} {/* VIDEO PREVIEW */} {item.type === "video" && ( <Box component="video" className="gallery-media" src={item.url} muted preload="metadata" sx={{ width: "100%", display: "block", minHeight: 250, maxHeight: 500, objectFit: "cover", transition: "transform 0.6s ease", }} /> )} {/* OVERLAY */} 
                                             <Box 
                                             className="gallery-overlay" 
                                             sx={{ 
@@ -1294,7 +1318,7 @@ useEffect(() => {
                                                  sx={{ 
                                                   color: "#fff", 
                                                   fontWeight: 700, mt: 0.5, }} > 
-                                                  {item.title || "Sweet Asouzu Plaza"} 
+                                                  {item.title || "Anambra International Market"} 
                                                   </Typography>
                                                   </Box> 
                                                   </Box> ) )} 
@@ -1327,21 +1351,45 @@ useEffect(() => {
                                                     color: "#111", }, }} > 
                                                   <CloseIcon /> 
                                                   </IconButton> {/* PREVIOUS */} {filteredGallery.length > 1 && ( 
-                                                    <IconButton onClick={showPreviousMedia} aria-label="Previous media" sx={{ position: "absolute", left: { xs: 8, md: 30, }, top: "50%", transform: "translateY(-50%)", zIndex: 20, bgcolor: "rgba(255,255,255,.12)", color: "#fff", "&:hover": { bgcolor: "#D4AF37", color: "#111", }, }} > 
+                                                    <IconButton onClick={showPreviousMedia} aria-label="Previous media" 
+                                                    sx={{ 
+                                                      position: "absolute", left: { xs: 8, md: 30, }, top: "50%", transform: "translateY(-50%)", zIndex: 20, bgcolor: "rgba(255,255,255,.12)", color: "#fff", "&:hover": { bgcolor: "#D4AF37", color: "#111", }, }} > 
                                                     <ArrowBackIosNewIcon /> 
                                                     </IconButton> )} {/* MEDIA */} 
                                                     <Stack spacing={2} alignItems="center" sx={{ width: "100%", maxWidth: 1200, }} > {selectedMedia.type === "video" ? ( 
                                                       <Box component="video" src={selectedMedia.url} controls autoPlay 
                                                       sx={{ maxWidth: "100%", maxHeight: { xs: "68vh", md: "78vh", }, borderRadius: 2, }} /> ) : ( 
                                                       <Box component="img" src={ selectedMedia.url || FALLBACK_IMAGE } 
-                                                      alt={ selectedMedia.title || "Sweet Asouzu Plaza" } 
-                                                      sx={{ maxWidth: "100%", maxHeight: { xs: "68vh", md: "78vh", }, objectFit: "contain", borderRadius: 2, }} /> )} 
+                                                      alt={ selectedMedia.title || "Anambra International Market" } 
+                                                      sx={{ 
+                                                        maxWidth: "100%", 
+                                                        maxHeight: { xs: "68vh", md: "78vh", }, 
+                                                        objectFit: "contain", 
+                                                        borderRadius: 2, }} /> )} 
                                                       {/* MEDIA DETAILS */} 
                                                       <Box 
                                                       sx={{ textAlign: "center", maxWidth: 700, px: 3, }} > 
-                                                      <Typography sx={{ color: "#D4AF37", textTransform: "uppercase", letterSpacing: 1.5, fontSize: ".8rem", fontWeight: 700, }} > {selectedMedia.type === "video" ? "Video" : "Gallery Image"} </Typography> <Typography variant="h5" sx={{ color: "#fff", fontWeight: 700, mt: 0.5, }} > {selectedMedia.title || "Sweet Asouzu Plaza"} 
+                                                      <Typography sx={{ 
+                                                        color: "#D4AF37", 
+                                                        textTransform: "uppercase", 
+                                                        letterSpacing: 1.5, 
+                                                        fontSize: ".8rem", 
+                                                        fontWeight: 700, }} > 
+                                                        {selectedMedia.type === "video" ? "Video" : "Gallery Image"} 
                                                         </Typography> 
-                                                        <Typography sx={{ color: "rgba(255,255,255,.45)", mt: 1, fontSize: ".85rem", }} > {selectedMediaIndex + 1}{" "} of{" "} {filteredGallery.length} </Typography> 
+                                                        <Typography variant="h5" 
+                                                        sx={{ 
+                                                          color: "#fff", 
+                                                          fontWeight: 700, mt: 0.5, }} > 
+                                                          {selectedMedia.title || "Anambra International Market"} 
+                                                        </Typography> 
+                                                        <Typography 
+                                                        sx={{ 
+                                                          color: "rgba(255,255,255,.45)", 
+                                                          mt: 1, 
+                                                          fontSize: ".85rem", }} > 
+                                                          {selectedMediaIndex + 1}{" "} of{" "} {filteredGallery.length} 
+                                                          </Typography> 
                                                         </Box> 
                                                         </Stack> {/* NEXT */} {filteredGallery.length > 1 && ( 
                                                           <IconButton onClick={showNextMedia} aria-label="Next media" 
