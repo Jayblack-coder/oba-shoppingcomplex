@@ -1010,7 +1010,7 @@ const slideInVariant = {
           and a strong commitment to economic growth.
           <br /><br />
           With its blend of convenience, modern facilities, and strategic
-          location, the Oba International Market Shopping Complex is set to
+          location, the Anambra International Market is set to
           become the preferred destination for traders, shoppers, and investors
           across the region.
         </Typography>
