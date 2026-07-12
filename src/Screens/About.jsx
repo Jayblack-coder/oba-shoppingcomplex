@@ -126,7 +126,7 @@ export default function About() {
           >
             <Chip
               icon={<ApartmentIcon />}
-              label="About Sweet Asouzu Plaza"
+              label="About Anambra International Market Oba"
               sx={{
                 mb: 3,
                 px: 1,
@@ -180,7 +180,7 @@ export default function About() {
                 lineHeight: 1.9,
               }}
             >
-              Sweet Asouzu Plaza is a commercial
+              Anambra International Market Oba, is a commercial
               development created to provide functional,
               accessible and professionally designed
               business spaces for entrepreneurs,
@@ -276,7 +276,7 @@ export default function About() {
               <Box
                 component="img"
                 src={FALLBACK_IMAGE}
-                alt="Sweet Asouzu Plaza"
+                alt="Anambra International Market Oba"
                 sx={{
                   width: "100%",
                   minHeight: {
@@ -394,7 +394,7 @@ export default function About() {
                 fontSize: "1.05rem",
               }}
             >
-              Sweet Asouzu Plaza was developed as a
+              Anambra International Market Oba was developed as a
               modern commercial property where businesses
               can operate within a structured and
               functional environment. The development
@@ -551,7 +551,7 @@ export default function About() {
                   lineHeight: 1.9,
                 }}
               >
-                Sweet Asouzu Plaza is developed and owned
+                Anambra International Market Oba is developed and owned
                 by{" "}
                 <Box
                   component="span"
@@ -577,7 +577,7 @@ export default function About() {
                   lineHeight: 1.9,
                 }}
               >
-                Through Sweet Asouzu Plaza, the company
+                Through Anambra International Market Oba, the company
                 provides a commercial environment created
                 to accommodate businesses and support
                 productive economic activity. The
@@ -669,7 +669,7 @@ export default function About() {
               fontSize: "1.05rem",
             }}
           >
-            Sweet Asouzu Plaza is built around the idea
+            Anambra International Market Oba, is built around the idea
             that quality commercial environments should
             provide both immediate functionality and
             long-term value.
