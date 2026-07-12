@@ -972,10 +972,10 @@ const slideInVariant = {
     width: "100%",
   }}
 >
-  <Box
+   <Box
     component="img"
-    src="/Images/maleposter2.jpeg"
-    alt="World-Class Amenities"
+    src="/Images/FemalePoster.jpeg"
+    alt="Security, Comfort and Accessibility"
     sx={posterImageStyle}
   />
 </Grid>
