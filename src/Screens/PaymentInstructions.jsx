@@ -390,7 +390,7 @@ export default function PaymentInstructions() {
   For any negotiation regarding the purchase price or payment
   flexibility, kindly contact the landlord directly. For payment
   confirmation, reservation enquiries, or documentation, contact
-  the Sweet Asouzu Plaza Management Office.
+  the Anambra International Market, Oba, Management Office.
 </Typography>
 
         <Typography paragraph>
