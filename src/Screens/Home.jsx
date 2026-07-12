@@ -636,7 +636,7 @@ const slideInVariant = {
     </Typography>
     <Typography sx={{ color: "#F5F0EC" }}>
 
-      The newly constructed shopping complex at Anambra International Market Oba,
+      The newly constructed shopping complex at Anambra International Market, Oba,
             developed by <strong>Unlimited Resources and Investment Limited</strong>, through a <Box
     component="span"
     sx={{
