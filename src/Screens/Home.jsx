@@ -110,6 +110,29 @@ const handleMenuClose = () => {
     boxShadow: 6,
   },
 };
+const posterImageStyle = {
+  width: "100%",
+  height: {
+    xs: "auto",
+    sm: 500,
+    md: 600,
+  },
+  maxHeight: {
+    xs: "none",
+    md: 650,
+  },
+  objectFit: "contain",
+  objectPosition: "center",
+  display: "block",
+  borderRadius: 3,
+  boxShadow: 3,
+  bgcolor: "#3A1E0F",
+  transition: "all 0.4s ease",
+  "&:hover": {
+    transform: "scale(1.02)",
+    boxShadow: 6,
+  },
+};
 const pageBackgroundStyle = {
  
   backgroundImage: `url(${dark})`,
@@ -667,12 +690,19 @@ const slideInVariant = {
     justifyContent: "center",
   }}
 >
-  <Box
+  {/* <Box
     component="img"
-    src={getImage("shops")}
+    // src={getImage("shops")}
+    src="/Images/newgate.jpeg"
     alt="Shop layout"
     sx={{ ...sectionImageStyle, mx: "auto" }}
-  />
+  /> */}
+  <Box
+  component="img"
+  src="/Images/newgate.jpeg"
+  alt="Shop layout"
+  sx={{ ...posterImageStyle, mx: "auto" }}
+/>
 </Grid>
 
 </Grid>
@@ -699,7 +729,7 @@ const slideInVariant = {
   // py={{ xs: 4, md: 5 }}
 >
 
-  <Grid
+  {/* <Grid
   item
   xs={12}
   md={6}
@@ -715,9 +745,33 @@ const slideInVariant = {
 >
   <Box
     component="img"
-   src={getImage("security")}
+  //  src={getImage("security")}
+  src="/Images/FemalePoster.jpeg"
     alt="Security"
     sx={sectionImageStyle}
+  />
+</Grid> */}
+<Grid
+  item
+  xs={12}
+  md={6}
+  component={motion.div}
+  variants={imageFromLeftVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.3 }}
+  sx={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+  }}
+>
+  <Box
+    component="img"
+    src="/Images/FemalePoster.jpeg"
+    alt="Security, Comfort and Accessibility"
+    sx={posterImageStyle}
   />
 </Grid>
 
@@ -889,10 +943,10 @@ const slideInVariant = {
     </Grid>
 
     {/* IMAGE */}
-    <Grid item xs={12} md={6}>
+    {/* <Grid item xs={12} md={6}>
       <Box
         component="img"
-        src="/Images/marketstreetlight.jpeg"
+        src="/Images/maleposter.jpeg"
         alt="Amenities"
         sx={{
           width: "100%",
@@ -906,7 +960,25 @@ const slideInVariant = {
           },
         }}
       />
-    </Grid>
+    </Grid> */}
+    <Grid
+  item
+  xs={12}
+  md={6}
+  sx={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+  }}
+>
+  <Box
+    component="img"
+    src="/Images/maleposter.jpeg"
+    alt="World-Class Amenities"
+    sx={posterImageStyle}
+  />
+</Grid>
   </Grid>
 </Box>
 {/* <Divider sx={{ my: 8, borderColor: "rgba(139, 69, 19, 0.15)", maxWidth: "85%", mx: "auto" }} /> */}
@@ -1093,7 +1165,7 @@ const slideInVariant = {
 
         <StarIcon sx={{ fontSize: 50, color: "#D4AF37" }} />
         <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#D4AF37"}}>
-          Premium Shop(Downstairs)
+          Premium Shop
         </Typography>
         <Typography sx={{ color: "#F5F0EC" }} mt={1}>
           High visibility & heavy foot traffic
