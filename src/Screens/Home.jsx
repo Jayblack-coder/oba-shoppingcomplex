@@ -946,7 +946,7 @@ const slideInVariant = {
     {/* <Grid item xs={12} md={6}>
       <Box
         component="img"
-        src="/Images/maleposter.jpeg"
+        src="/Images/MaziFront.jpeg"
         alt="Amenities"
         sx={{
           width: "100%",
@@ -974,7 +974,7 @@ const slideInVariant = {
 >
   <Box
     component="img"
-    src="/Images/maleposter.jpeg"
+    src="/Images/MaziFront.jpeg"
     alt="World-Class Amenities"
     sx={posterImageStyle}
   />
