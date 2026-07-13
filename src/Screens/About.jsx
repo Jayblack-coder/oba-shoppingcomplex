@@ -109,7 +109,7 @@ const investments = [
 
 const directors = [
   {
-    name: "Mazi Sweet Chima Azouzu",
+    name: "Mazi Sweet Chima Asouzu",
     role: "Director",
     description:
       "He holds a Bachelor of Science degree in Telecommunications Engineering, with a minor in Management, from Alabama A&M University, USA. He is the founding Managing Director/CEO of Status Symbol International Limited and Managing Director of Calabar Cement Co. Limited. He is also Chairman of Sovereign Limited and has served as Vice President of the Petroleum Dealers Association of Nigeria (PEDAN).",
