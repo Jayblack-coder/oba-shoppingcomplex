@@ -32,7 +32,7 @@ import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 
 import { useNavigate } from "react-router-dom";
 
-const FALLBACK_IMAGE = "/Images/poster.jpeg";
+const FALLBACK_IMAGE = "/Images/Maziside.jpeg";
 
 const coreValues = [
   {
