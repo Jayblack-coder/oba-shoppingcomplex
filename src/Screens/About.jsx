@@ -291,17 +291,31 @@ export default function About() {
         <Grid container spacing={8} alignItems="center">
           <Grid item xs={12} md={6}>
             <Box
-              component="img"
-              src={FALLBACK_IMAGE}
-              alt="Anambra International Market, Oba"
-              sx={{
-                width: "100%",
-                minHeight: { xs: 350, md: 520 },
-                objectFit: "cover",
-                borderRadius: 5,
-                boxShadow: "0 25px 60px rgba(0,0,0,0.14)",
-              }}
-            />
+  component="img"
+  src={FALLBACK_IMAGE}
+  alt="Anambra International Market, Oba"
+  sx={{
+    width: "100%",
+    height: {
+      xs: "auto",
+      sm: 420,
+      md: 520,
+    },
+    maxHeight: {
+      xs: "70vh",
+      md: 520,
+    },
+    objectFit: {
+      xs: "contain",
+      md: "cover",
+    },
+    objectPosition: "center",
+    display: "block",
+    borderRadius: 5,
+    boxShadow: "0 25px 60px rgba(0,0,0,0.14)",
+    bgcolor: "#111",
+  }}
+/>
           </Grid>
 
           <Grid item xs={12} md={6}>
