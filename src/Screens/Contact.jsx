@@ -232,7 +232,7 @@ export default function Contact() {
             }}
           >
             Have questions about shop availability, leasing,
-            facilities or Sweet Asouzu Plaza? Our team is
+            facilities or Anambra International Market? Our team is
             available to provide the information you need.
           </Typography>
         </Container>
@@ -626,7 +626,7 @@ export default function Contact() {
                 },
               }}
             >
-              Find Anabra International Market, Oba
+              Find Anambra International Market, Oba
             </Typography>
 
             <Typography
